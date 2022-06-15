@@ -1,9 +1,13 @@
 package com.safetyNet.alert.dao;
 
 import com.safetyNet.alert.model.FireStation;
+import com.safetyNet.alert.model.HomePerson;
+import com.safetyNet.alert.model.PersonByStation;
 import com.safetyNet.alert.repository.FireStationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 
 @Component
@@ -39,5 +43,20 @@ public class FirestationsDaoImpl implements FirestationDao {
         return null;
     }
 
+    @Override
+    public PersonByStation getPersonByStation(String station){
+        fireStationRepository.findByStation(station);
+        return null;
+    }
+
+    @Override
+    public List<String> getPhoneByStation(String station){
+        return null;
+    }
+
+    @Override
+    public List<HomePerson> getHomeByStation(String station){
+        return null;
+    }
 
 }

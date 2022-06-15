@@ -36,6 +36,10 @@ public class Person {
     @JoinColumn(name = "medical_id", referencedColumnName = "id")
     private MedicalRecord medicalRecord;
 
+    @ManyToOne
+    @JoinColumn(name = "cart_id", referencedColumnName = "id")
+    private FireStation fireStation;
+
     public Person() {
 
     }
