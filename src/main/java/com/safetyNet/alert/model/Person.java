@@ -16,7 +16,6 @@ public class Person {
     @Column(name = "lastName")
     private String lastName;
 
-    @OneToMany(mappedBy = "FireStation")
     @Column(name = "address")
     private String address;
 
@@ -37,7 +36,7 @@ public class Person {
     private MedicalRecord medicalRecord;
 
     @ManyToOne
-    @JoinColumn(name = "cart_id", referencedColumnName = "id")
+    @JoinColumn(name = "fireStation_id", referencedColumnName = "id")
     private FireStation fireStation;
 
     public Person() {

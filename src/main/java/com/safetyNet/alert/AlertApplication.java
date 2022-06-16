@@ -7,8 +7,11 @@ import com.safetyNet.alert.model.Person;
 import com.safetyNet.alert.repository.FireStationRepository;
 import com.safetyNet.alert.repository.MedicalRecordRepository;
 import com.safetyNet.alert.repository.PersonRepository;
+import com.safetyNet.alert.service.GenerateDataService;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -19,11 +22,18 @@ public class AlertApplication {
 	FireStationRepository fireStationRepository;
 	MedicalRecordRepository medicalRecordRepository;
 	PersonRepository personRepository;
+
 	public static void main(String[] args) {
 		SpringApplication.run(AlertApplication.class, args);
 
 	}
+@Bean
+CommandLineRunner runner(GenerateDataService generateDataService) {
 
+		return args -> {
+			generateDataService.generateData();
+		};
+}
  public void bddTcheck() {
 
 	 try{
@@ -33,7 +43,7 @@ public class AlertApplication {
 
 		 BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/data.json"));
 
-		 if (fireStationRepository.count() > 12 && medicalRecordRepository.count() > 21 && personRepository.count() > 21 ) {
+		 if (fireStationRepository.count() > 0 && medicalRecordRepository.count() > 0 && personRepository.count() > 0 ) {
 
 			 DataPerson dataPerson = gson.fromJson(reader, DataPerson.class);
 			 DataMedicalRecord dataMedicalRecord = gson.fromJson(reader, DataMedicalRecord.class);

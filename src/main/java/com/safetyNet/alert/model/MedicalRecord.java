@@ -20,17 +20,18 @@ public class MedicalRecord {
     @Column(name = "birthdate")
     private String birthdate;
 
-    @Column(name = "medications")
-    private List<String> medications;
+    @OneToMany(mappedBy = "name")
+    private List<Medication> medications;
 
-    @Column(name = "allergies")
-    private List<String> allergies;
+
+    @OneToMany(mappedBy = "name")
+    private List<Allergy> allergies;
 
     public MedicalRecord() {
 
     }
 
-    public MedicalRecord(String firstName, String lastName, String birthdate, List<String> mediactions, List<String> allergies) {
+    public MedicalRecord(String firstName, String lastName, String birthdate, List<Medication> mediactions, List<Allergy> allergies) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthdate = birthdate;
@@ -58,19 +59,20 @@ public class MedicalRecord {
         this.birthdate = birthdate;
     }
 
-    public List<String> getMedications() {
+
+    public List<Medication> getMedications() {
         return medications;
     }
 
-    public void setMedications(List<String> medications) {
+    public void setMedications(List<Medication> medications) {
         this.medications = medications;
     }
 
-    public List<String> getAllergies() {
+    public List<Allergy> getAllergies() {
         return allergies;
     }
 
-    public void setAllergies(List<String> allergies) {
+    public void setAllergies(List<Allergy> allergies) {
         this.allergies = allergies;
     }
 
