@@ -43,10 +43,6 @@ public class FireStastionController {
         return firestationsDao.delete(fire);
     }
 
-    @GetMapping(path = "/firestation/{station}")
-    public PersonByStation getPersonByStation(@PathVariable String station){
-        return null;
-    }
 
     @GetMapping(path = "/phoneAlert/{station}")
     public List<String> getPhoneByStation(@PathVariable String station){

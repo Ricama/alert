@@ -1,13 +1,12 @@
 package com.safetyNet.alert.dao;
 
 
-import com.safetyNet.alert.model.ChildByAddress;
-import com.safetyNet.alert.model.Person;
-import com.safetyNet.alert.model.PersonByAddress;
-import com.safetyNet.alert.model.PersonInfo;
+import com.safetyNet.alert.model.*;
 import com.safetyNet.alert.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 
 @Component
@@ -41,7 +40,14 @@ Person personToDelete = personRepository.findByFirstNameAndLastName(firstName,la
     }
 
     @Override
+    public List<Person> getPersonByStation(String station){
+       List<Person> person =  personRepository.findByFireStationStation(station);
+        return person;
+    }
+
+    @Override
     public ChildByAddress childByAddress(String address){
+
         return null;
     }
 

@@ -31,12 +31,13 @@ public class Person {
     @Column(name = "email")
     private String email;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "medical_id", referencedColumnName = "id")
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "medical_id")
     private MedicalRecord medicalRecord;
 
-    @ManyToOne
-    @JoinColumn(name = "fireStation_id", referencedColumnName = "id")
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "fireStation_id")
     private FireStation fireStation;
 
     public Person() {
@@ -53,6 +54,21 @@ public class Person {
         this.email = email;
     }
 
+    public MedicalRecord getMedicalRecord() {
+        return medicalRecord;
+    }
+
+    public void setMedicalRecord(MedicalRecord medicalRecord) {
+        this.medicalRecord = medicalRecord;
+    }
+
+    public FireStation getFireStation() {
+        return fireStation;
+    }
+
+    public void setFireStation(FireStation fireStation) {
+        this.fireStation = fireStation;
+    }
 
     public String getFirstName() {
         return firstName;

@@ -8,18 +8,18 @@ import javax.persistence.Id;
 public class Allergy {
 
     @Id
-    @Column(name = "name")
-    String name;
+    @Column(name = "allergies")
+   private String allergies;
 
     public Allergy(String allergies) {
-        this.name = allergies;
+        this.allergies = allergies;
     }
 
-    public String getName() {
-        return name;
+    public String getAllergies() {
+        return allergies;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAllergies(String allergies) {
+        this.allergies = allergies;
     }
 }

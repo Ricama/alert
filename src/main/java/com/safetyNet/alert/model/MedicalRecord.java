@@ -20,11 +20,11 @@ public class MedicalRecord {
     @Column(name = "birthdate")
     private String birthdate;
 
-    @OneToMany(mappedBy = "name")
+    @OneToMany(mappedBy = "medications")
     private List<Medication> medications;
 
 
-    @OneToMany(mappedBy = "name")
+    @OneToMany(mappedBy = "allergies")
     private List<Allergy> allergies;
 
     public MedicalRecord() {

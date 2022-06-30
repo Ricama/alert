@@ -2,7 +2,6 @@ package com.safetyNet.alert.dao;
 
 import com.safetyNet.alert.model.FireStation;
 import com.safetyNet.alert.model.HomePerson;
-import com.safetyNet.alert.model.PersonByStation;
 import com.safetyNet.alert.repository.FireStationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -23,7 +22,7 @@ public class FirestationsDaoImpl implements FirestationDao {
 
     @Override
     public FireStation update(FireStation firestations){
-        FireStation fireStationToUpdate = fireStationRepository.findByAddress(firestations.getAddress());
+        FireStation fireStationToUpdate = fireStationRepository.findFirstByAddress(firestations.getAddress());
         fireStationToUpdate.setAddress(firestations.getAddress());
         fireStationToUpdate.setStation(firestations.getStation());
 
@@ -37,17 +36,13 @@ public class FirestationsDaoImpl implements FirestationDao {
           fireStationRepository.delete(fireStationToDelete);
       }
       else {
-          FireStation fireStationToDelete = fireStationRepository.findByAddress(fire);
+          FireStation fireStationToDelete = fireStationRepository.findFirstByAddress(fire);
           fireStationRepository.delete(fireStationToDelete);
       }
         return null;
     }
 
-    @Override
-    public PersonByStation getPersonByStation(String station){
-        fireStationRepository.findByStation(station);
-        return null;
-    }
+
 
     @Override
     public List<String> getPhoneByStation(String station){

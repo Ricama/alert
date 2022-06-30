@@ -9,19 +9,19 @@ public class Medication {
 
 
     @Id
-    @Column(name = "name")
-    String name;
+    @Column(name = "medications")
+   private String medications;
 
     public Medication(String medications) {
-        this.name = medications;
+        this.medications = medications;
     }
 
-    public String getName() {
-        return name;
+    public String getMedications() {
+        return medications;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMedications(String medications) {
+        this.medications = medications;
     }
 
 

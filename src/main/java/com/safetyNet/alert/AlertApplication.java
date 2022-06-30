@@ -32,6 +32,7 @@ CommandLineRunner runner(GenerateDataService generateDataService) {
 
 		return args -> {
 			generateDataService.generateData();
+
 		};
 }
  public void bddTcheck() {

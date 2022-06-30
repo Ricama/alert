@@ -1,6 +1,8 @@
 package com.safetyNet.alert.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class FireStation {
@@ -16,6 +18,10 @@ public class FireStation {
 
     @Column(name = "station")
     private String station;
+@OneToMany(
+        mappedBy = "fireStation",cascade = CascadeType.ALL,orphanRemoval = true
+)
+    List<Person> personList = new ArrayList<>();
 
     public FireStation() {
     }

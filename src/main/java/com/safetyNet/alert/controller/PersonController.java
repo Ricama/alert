@@ -1,13 +1,12 @@
 package com.safetyNet.alert.controller;
 
 import com.safetyNet.alert.dao.PersonDao;
-import com.safetyNet.alert.model.ChildByAddress;
-import com.safetyNet.alert.model.Person;
-import com.safetyNet.alert.model.PersonByAddress;
-import com.safetyNet.alert.model.PersonInfo;
+import com.safetyNet.alert.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -41,6 +40,12 @@ public class PersonController {
 
       return personDao.delete(person.getFirstName(), person.getLastName());
   }
+
+    @GetMapping(path = "/firestation")
+    public List<Person> getPersonByStation(@RequestParam String stationNumber){
+
+        return personDao.getPersonByStation(stationNumber);
+    }
 
   @GetMapping(path = "/childAlert/{address}" )
     public ChildByAddress childByAddress(@PathVariable String address){
