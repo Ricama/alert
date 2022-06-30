@@ -6,7 +6,7 @@ public class DataPerson {
 
     List<Person> persons;
     List<FireStation> firestations;
-    List<MedicalRecord> medicalrecords;
+    List<Medicall> medicalrecords;
 
     public List<FireStation> getFirestations() {
         return firestations;
@@ -16,11 +16,11 @@ public class DataPerson {
         this.firestations = firestations;
     }
 
-    public List<MedicalRecord> getMedicalrecords() {
+    public List<Medicall> getMedicalrecords() {
         return medicalrecords;
     }
 
-    public void setMedicalrecords(List<MedicalRecord> medicalrecords) {
+    public void setMedicalrecords(List<Medicall> medicalrecords) {
         this.medicalrecords = medicalrecords;
     }
 

@@ -41,7 +41,6 @@ public class GenerateDataServiveImpl implements GenerateDataService {
 
 
                 fireStationRepository.saveAll(dataPerson.getFirestations());
-                medicalRecordRepository.saveAll(dataPerson.getMedicalrecords());
 
                 for (int i = 0; i < dataPerson.getPersons().size(); i++) {
                     Person person = dataPerson.getPersons().get(i);
