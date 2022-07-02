@@ -1,20 +1,21 @@
 package com.safetyNet.alert.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Medication {
-
 
     @Id
     @Column(name = "medications")
    private String medications;
 
-    public Medication(String medications) {
-        this.medications = medications;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "medicalRecord_id")
+    private MedicalRecord medicalRecord;
+
+    public Medication() {
     }
+
 
     public String getMedications() {
         return medications;
@@ -23,6 +24,16 @@ public class Medication {
     public void setMedications(String medications) {
         this.medications = medications;
     }
+
+    public MedicalRecord getMedicalRecord() {
+        return medicalRecord;
+    }
+
+    public Medication(String medications, MedicalRecord medicalRecord) {
+        this.medications = medications;
+        this.medicalRecord = medicalRecord;
+    }
+
 
 
 }

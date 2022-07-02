@@ -31,7 +31,7 @@ public class Person {
     @Column(name = "email")
     private String email;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "medical_id")
     private MedicalRecord medicalRecord;
 

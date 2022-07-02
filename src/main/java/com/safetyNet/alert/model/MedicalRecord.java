@@ -6,6 +6,7 @@ import java.util.List;
 @Entity
 public class MedicalRecord {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -20,11 +21,10 @@ public class MedicalRecord {
     @Column(name = "birthdate")
     private String birthdate;
 
-    @OneToMany(mappedBy = "medications")
+    @OneToMany(mappedBy = "medications",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Medication> medications;
 
-
-    @OneToMany(mappedBy = "allergies")
+    @OneToMany(mappedBy = "allergies",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Allergy> allergies;
 
     public MedicalRecord() {
@@ -82,6 +82,14 @@ public class MedicalRecord {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override
