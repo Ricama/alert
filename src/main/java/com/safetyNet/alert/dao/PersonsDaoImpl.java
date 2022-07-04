@@ -2,10 +2,15 @@ package com.safetyNet.alert.dao;
 
 
 import com.safetyNet.alert.model.*;
+import com.safetyNet.alert.repository.MedicalRecordRepository;
 import com.safetyNet.alert.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -13,6 +18,8 @@ import java.util.List;
 public class PersonsDaoImpl implements PersonDao {
     @Autowired
     PersonRepository personRepository;
+    @Autowired
+    MedicalRecordRepository medicalRecordRepository;
 
 
     @Override
@@ -40,9 +47,36 @@ Person personToDelete = personRepository.findByFirstNameAndLastName(firstName,la
     }
 
     @Override
-    public List<Person> getPersonByStation(String station){
+    public PersonByStationList getPersonByStation(String station){
+        try {
        List<Person> person =  personRepository.findByFireStationStation(station);
-        return person;
+       int adult = 0;
+       int child = 0;
+       List<PersonByStation> personByStations = new ArrayList<>();
+       for(int i = 0; i < person.size();i++ )
+       {
+           MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(person.get(i).getFirstName(),person.get(i).getLastName());
+
+               SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+               Date date = dateFormat.parse(medicalRecord.getBirthdate());
+               Date compare = dateFormat.parse("07/04/2004");
+               if(date.before(compare)){
+                   child++;
+               }
+               else
+               {
+                   adult++;
+               }
+               PersonByStation personByStationadd = new PersonByStation(person.get(i).getFirstName(),person.get(i).getLastName(),person.get(i).getAddress(),person.get(i).getPhone());
+               personByStations.add(personByStationadd);
+           }
+       PersonByStationList result = new PersonByStationList(personByStations,adult,child);
+       return result;
+        }
+       catch (ParseException e) {
+                e.printStackTrace();
+            }
+        return null;
     }
 
     @Override

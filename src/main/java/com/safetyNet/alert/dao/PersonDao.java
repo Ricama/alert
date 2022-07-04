@@ -8,7 +8,7 @@ public interface PersonDao {
     Person create(Person persons);
     Person update(Person persons);
     Person delete(String firstName, String lastName);
-    List<Person> getPersonByStation(String station);
+    PersonByStationList getPersonByStation(String station);
     ChildByAddress childByAddress(String address);
     PersonByAddress personByAddress(String address);
     PersonInfo personInfo(String firstName, String lastName);

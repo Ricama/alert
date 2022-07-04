@@ -42,7 +42,7 @@ public class PersonController {
   }
 
     @GetMapping(path = "/firestation")
-    public List<Person> getPersonByStation(@RequestParam String stationNumber){
+    public PersonByStationList getPersonByStation(@RequestParam String stationNumber){
 
         return personDao.getPersonByStation(stationNumber);
     }

@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.List;
 
 @Service
 public class GenerateDataServiveImpl implements GenerateDataService {
@@ -29,11 +28,6 @@ public class GenerateDataServiveImpl implements GenerateDataService {
 
     @Override
     public void generateData() {
-        personRepository.deleteAll();
-        fireStationRepository.deleteAll();
-        medicalRecordRepository.deleteAll();
-        medicationRepository.deleteAll();
-        allergyRepository.deleteAll();
 
         if (personRepository.count() == 0) {
             try (BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/data.json"))) {
