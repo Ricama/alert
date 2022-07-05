@@ -82,6 +82,6 @@ public class PersonController {
 
   @GetMapping(path = "/communityEmail")
     public List<String> getPersonByEmail(@RequestParam String city){
-        return personDao.getPersonByEmail(city);
+        return personRepository.findEmailByCity(city);
   }
 }
