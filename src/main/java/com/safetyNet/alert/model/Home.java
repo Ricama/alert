@@ -4,10 +4,21 @@ import java.util.List;
 
 public class Home {
 
+    String address;
     List<HomePerson> home;
 
-    public Home(List<HomePerson> home) {
+    public Home(String address, List<HomePerson> home) {
+        this.address = address;
         this.home = home;
+    }
+
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public List<HomePerson> getHome() {
@@ -21,7 +32,8 @@ public class Home {
     @Override
     public String toString() {
         return "Home{" +
-                "home=" + home +
+                "address='" + address + '\'' +
+                ", home=" + home +
                 '}';
     }
 }

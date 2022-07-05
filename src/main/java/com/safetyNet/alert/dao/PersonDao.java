@@ -10,7 +10,9 @@ public interface PersonDao {
     Person delete(String firstName, String lastName);
     PersonByStationList getPersonByStation(String station);
     ChildByAddress childByAddress(String address);
-    PersonByAddress personByAddress(String address);
+    List<String> getPhoneByStation(String station);
+    List<PersonByAddress> personByAddress(String address);
+    Home getHomeByStation(String station);
     PersonInfo personInfo(String firstName, String lastName);
-    Person getPersonByEmail(String city);
+    List<String> getEmailByCity(String city);
 }

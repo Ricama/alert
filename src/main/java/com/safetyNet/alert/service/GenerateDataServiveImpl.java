@@ -28,7 +28,6 @@ public class GenerateDataServiveImpl implements GenerateDataService {
 
     @Override
     public void generateData() {
-
         if (personRepository.count() == 0) {
             try (BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/data.json"))) {
 
@@ -36,10 +35,6 @@ public class GenerateDataServiveImpl implements GenerateDataService {
 
 
                 DataPerson dataPerson = gson.fromJson(reader, DataPerson.class);
-                logger.info("dataPerson = {}",dataPerson.getPersons());
-                logger.info("dataFirestation = {}",dataPerson.getFirestations());
-                logger.info("dataMedicalRecord = {}",dataPerson.getMedicalrecords());
-
 
                 for (int i = 0; i < dataPerson.getMedicalrecords().size(); i++)
                 {
@@ -74,7 +69,7 @@ public class GenerateDataServiveImpl implements GenerateDataService {
                 }
 
             } catch (Exception e) {
-                System.out.println(e);
+                logger.debug("generateData()",e);
             }
         }
     }

@@ -2,8 +2,10 @@ package com.safetyNet.alert.controller;
 
 import com.safetyNet.alert.dao.PersonDao;
 import com.safetyNet.alert.model.*;
+import com.safetyNet.alert.repository.PersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,6 +14,9 @@ import java.util.List;
 @RestController
 @RequestMapping
 public class PersonController {
+
+    @Autowired
+    PersonRepository personRepository;
 
     PersonDao personDao;
 
@@ -47,23 +52,36 @@ public class PersonController {
         return personDao.getPersonByStation(stationNumber);
     }
 
-  @GetMapping(path = "/childAlert/{address}" )
-    public ChildByAddress childByAddress(@PathVariable String address){
-        return null;
+  @GetMapping(path = "/childAlert" )
+    public ChildByAddress childByAddress(@RequestParam String address){
+
+        return personDao.childByAddress(address);
   }
 
-  @GetMapping(path = "/fire/{address}")
-    public PersonByAddress personByAddress(@PathVariable String address){
-        return null;
+    @GetMapping(path = "/phoneAlert")
+    public List<String> getPhoneByStation(@RequestParam String firestation){
+        return personDao.getPhoneByStation(firestation);
+    }
+
+  @GetMapping(path = "/fire")
+    public List<PersonByAddress> personByAddress(@RequestParam String address){
+        return personDao.personByAddress(address);
   }
 
-  @GetMapping(path = "/personInfo/{firstName}/{lastName}")
-    public PersonInfo personInfo(@PathVariable String firstName, @PathVariable String lastName){
-        return null;
+    @GetMapping(path = "/flood/{station}")
+    public String getHomeByStation(@PathVariable String station){
+
+        return personRepository.findFirstAddressByFireStationStation(station) ;
+    }
+
+  @GetMapping(path = "/personInfo")
+    public PersonInfo personInfo(@RequestParam String firstName, @RequestParam String lastName){
+
+        return personDao.personInfo(firstName,lastName);
   }
 
-  @GetMapping(path = "/communityEmail/{city}")
-    public Person getPersonByEmail(@PathVariable String city){
-        return null;
+  @GetMapping(path = "/communityEmail")
+    public List<String> getPersonByEmail(@RequestParam String city){
+        return personDao.getPersonByEmail(city);
   }
 }

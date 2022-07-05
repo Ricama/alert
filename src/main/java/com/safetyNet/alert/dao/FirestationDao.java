@@ -11,6 +11,5 @@ public interface FirestationDao {
     FireStation create(FireStation firestations);
     FireStation update(FireStation firestations);
     FireStation delete(String fire);
-    List<String> getPhoneByStation(String station);
-    List<HomePerson> getHomeByStation(String station);
+
 }

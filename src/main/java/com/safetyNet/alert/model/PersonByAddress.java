@@ -8,10 +8,10 @@ public class PersonByAddress {
     String lastName;
     String phone;
     String birthdate;
-    List<String> medications;
-    List<String> allergies;
+    List<Medication> medications;
+    List<Allergy> allergies;
 
-    public PersonByAddress(String station, String firstName, String lastName, String phone, String birthdate, List<String> medications, List<String> allergies) {
+    public PersonByAddress(String station, String firstName, String lastName, String phone, String birthdate, List<Medication> medications, List<Allergy> allergies) {
         this.station = station;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -61,19 +61,19 @@ public class PersonByAddress {
         this.birthdate = birthdate;
     }
 
-    public List<String> getMedications() {
+    public List<Medication> getMedications() {
         return medications;
     }
 
-    public void setMedications(List<String> medications) {
+    public void setMedications(List<Medication> medications) {
         this.medications = medications;
     }
 
-    public List<String> getAllergies() {
+    public List<Allergy> getAllergies() {
         return allergies;
     }
 
-    public void setAllergies(List<String> allergies) {
+    public void setAllergies(List<Allergy> allergies) {
         this.allergies = allergies;
     }
 

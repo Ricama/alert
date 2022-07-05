@@ -44,15 +44,6 @@ public class FireStastionController {
     }
 
 
-    @GetMapping(path = "/phoneAlert/{station}")
-    public List<String> getPhoneByStation(@PathVariable String station){
-        return null;
-    }
-
-    @GetMapping(path = "/flood/{station}")
-    public List<HomePerson> getHomeByStation(@PathVariable String station){
-        return null;
-    }
 
 
 }

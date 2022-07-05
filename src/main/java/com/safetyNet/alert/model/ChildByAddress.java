@@ -3,40 +3,21 @@ package com.safetyNet.alert.model;
 import java.util.List;
 
 public class ChildByAddress {
-    String firstName;
-    String lastName;
-    String birthdate;
+
+    List<Child> child;
     List<Person> personList;
 
-    public ChildByAddress(String firstName, String lastName, String birthdate, List<Person> personList) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthdate = birthdate;
+    public ChildByAddress(List<Child> child, List<Person> personList) {
+        this.child = child;
         this.personList = personList;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public List<Child> getChild() {
+        return child;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getBirthdate() {
-        return birthdate;
-    }
-
-    public void setBirthdate(String birthdate) {
-        this.birthdate = birthdate;
+    public void setChild(List<Child> child) {
+        this.child = child;
     }
 
     public List<Person> getPersonList() {
@@ -50,9 +31,7 @@ public class ChildByAddress {
     @Override
     public String toString() {
         return "ChildByAddress{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", birthdate='" + birthdate + '\'' +
+                "child=" + child +
                 ", personList=" + personList +
                 '}';
     }

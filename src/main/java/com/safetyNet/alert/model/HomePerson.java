@@ -3,7 +3,6 @@ package com.safetyNet.alert.model;
 import java.util.List;
 
 public class HomePerson {
-    String address;
     String lastName;
     String firstName;
     String phone;
@@ -11,8 +10,8 @@ public class HomePerson {
     List<String> medications;
     List<String> allergies;
 
-    public HomePerson(String address, String lastName, String firstName, String phone, String birthdate, List<String> medications, List<String> allergies) {
-        this.address = address;
+    public HomePerson( String lastName, String firstName, String phone, String birthdate, List<String> medications, List<String> allergies) {
+
         this.lastName = lastName;
         this.firstName = firstName;
         this.phone = phone;
@@ -21,13 +20,7 @@ public class HomePerson {
         this.allergies = allergies;
     }
 
-    public String getAddress() {
-        return address;
-    }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     public String getLastName() {
         return lastName;
@@ -80,7 +73,6 @@ public class HomePerson {
     @Override
     public String toString() {
         return "HomePerson{" +
-                "address='" + address + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", phone='" + phone + '\'' +
