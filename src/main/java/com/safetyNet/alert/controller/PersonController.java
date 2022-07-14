@@ -15,8 +15,6 @@ import java.util.List;
 @RequestMapping
 public class PersonController {
 
-    @Autowired
-    PersonRepository personRepository;
 
     PersonDao personDao;
 
@@ -68,10 +66,10 @@ public class PersonController {
         return personDao.personByAddress(address);
   }
 
-    @GetMapping(path = "/flood/{station}")
-    public String getHomeByStation(@PathVariable String station){
+    @GetMapping(path = "/flood/stations")
+    public List<Home> getHomeByStation(@RequestParam String station){
 
-        return personRepository.findFirstAddressByFireStationStation(station) ;
+        return personDao.getHomeByStation(station) ;
     }
 
   @GetMapping(path = "/personInfo")
@@ -82,6 +80,6 @@ public class PersonController {
 
   @GetMapping(path = "/communityEmail")
     public List<String> getPersonByEmail(@RequestParam String city){
-        return personRepository.findEmailByCity(city);
+        return personDao.getEmailByCity(city);
   }
 }

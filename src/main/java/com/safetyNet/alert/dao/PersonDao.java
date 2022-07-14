@@ -12,7 +12,7 @@ public interface PersonDao {
     ChildByAddress childByAddress(String address);
     List<String> getPhoneByStation(String station);
     List<PersonByAddress> personByAddress(String address);
-    Home getHomeByStation(String station);
+    List<Home> getHomeByStation(String station);
     PersonInfo personInfo(String firstName, String lastName);
     List<String> getEmailByCity(String city);
 }

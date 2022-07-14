@@ -7,10 +7,10 @@ public class HomePerson {
     String firstName;
     String phone;
     String birthdate;
-    List<String> medications;
-    List<String> allergies;
+    List<Medication> medications;
+    List<Allergy> allergies;
 
-    public HomePerson( String lastName, String firstName, String phone, String birthdate, List<String> medications, List<String> allergies) {
+    public HomePerson( String lastName, String firstName, String phone, String birthdate, List<Medication> medications, List<Allergy> allergies) {
 
         this.lastName = lastName;
         this.firstName = firstName;
@@ -53,22 +53,23 @@ public class HomePerson {
     public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
-
-    public List<String> getMedications() {
+    public List<Medication> getMedications() {
         return medications;
     }
 
-    public void setMedications(List<String> medications) {
+    public void setMedications(List<Medication> medications) {
         this.medications = medications;
     }
 
-    public List<String> getAllergies() {
+    public List<Allergy> getAllergies() {
         return allergies;
     }
 
-    public void setAllergies(List<String> allergies) {
+    public void setAllergies(List<Allergy> allergies) {
         this.allergies = allergies;
     }
+
+
 
     @Override
     public String toString() {
