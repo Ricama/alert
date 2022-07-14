@@ -15,7 +15,6 @@ import java.util.List;
 @RequestMapping
 public class PersonController {
 
-
     PersonDao personDao;
 
     PersonController(PersonDao personsDao){

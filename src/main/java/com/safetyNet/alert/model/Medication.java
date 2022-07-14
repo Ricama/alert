@@ -5,6 +5,8 @@ import javax.persistence.*;
 @Entity
 public class Medication {
 
+
+
     @Id
     @Column(name = "medications")
    private String medications;
@@ -16,6 +18,9 @@ public class Medication {
     public Medication() {
     }
 
+    public Medication(String medications) {
+        this.medications = medications;
+    }
 
     public String getMedications() {
         return medications;

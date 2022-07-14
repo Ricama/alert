@@ -54,6 +54,18 @@ public class Person {
         this.email = email;
     }
 
+    public Person( String firstName, String lastName, String address, String city, String zip, String phone, String email, MedicalRecord medicalRecord, FireStation fireStation) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.zip = zip;
+        this.phone = phone;
+        this.email = email;
+        this.medicalRecord = medicalRecord;
+        this.fireStation = fireStation;
+    }
+
     public MedicalRecord getMedicalRecord() {
         return medicalRecord;
     }
