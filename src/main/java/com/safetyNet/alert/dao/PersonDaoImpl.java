@@ -9,11 +9,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.xml.crypto.Data;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.*;
 
 
 @Component
@@ -64,12 +65,12 @@ public class PersonDaoImpl implements PersonDao {
             int child = 0;
             List<PersonByStation> personByStations = new ArrayList<>();
             for (int i = 0; i < person.size(); i++) {
-                MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(person.get(i).getFirstName(), person.get(i).getLastName());
-
-                SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-                Date date = dateFormat.parse(medicalRecord.getBirthdate());
-                Date compare = dateFormat.parse("07/04/2004");
-                if (date.before(compare)) {
+                LocalDateTime localdate = LocalDateTime.now();
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                Date date = dateFormat.parse(person.get(i).getMedicalRecord().getBirthdate());
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(date);
+                if (localdate.getYear() - calendar.get(calendar.YEAR)  < 18) {
                     child++;
                 } else {
 
@@ -96,12 +97,13 @@ public class PersonDaoImpl implements PersonDao {
             List<Person> adult = new ArrayList<>();
             List<ChildByAddress> childByAddressList = new ArrayList<>();
             for (int i = 0; i < personList.size(); i++) {
-                MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(personList.get(i).getFirstName(), personList.get(i).getLastName());
-                SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-                Date date = dateFormat.parse(medicalRecord.getBirthdate());
-                Date compare = dateFormat.parse("07/04/2004");
-                if (date.before(compare)) {
-                    Child child = new Child(personList.get(i).getFirstName(), personList.get(i).getLastName(), medicalRecord.getBirthdate());
+                LocalDateTime localdate = LocalDateTime.now();
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                Date date = dateFormat.parse(personList.get(i).getMedicalRecord().getBirthdate());
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(date);
+                if (localdate.getYear() - calendar.get(calendar.YEAR)  < 18) {
+                    Child child = new Child(personList.get(i).getFirstName(), personList.get(i).getLastName(), personList.get(i).getMedicalRecord().getBirthdate());
                     childList.add(child);
                 } else {
                     adult.add(personList.get(i));
