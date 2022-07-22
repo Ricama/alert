@@ -14,6 +14,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 
@@ -65,12 +66,9 @@ public class PersonDaoImpl implements PersonDao {
             int child = 0;
             List<PersonByStation> personByStations = new ArrayList<>();
             for (int i = 0; i < person.size(); i++) {
-                LocalDateTime localdate = LocalDateTime.now();
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-                Date date = dateFormat.parse(person.get(i).getMedicalRecord().getBirthdate());
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTime(date);
-                if (localdate.getYear() - calendar.get(calendar.YEAR)  < 18) {
+                LocalDate currentDate = LocalDate.now();
+                LocalDate personDate = LocalDate.parse(person.get(i).getMedicalRecord().getBirthdate(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                if (currentDate.getYear() - personDate.getYear()  < 18) {
                     child++;
                 } else {
 
@@ -83,7 +81,7 @@ public class PersonDaoImpl implements PersonDao {
             PersonByStationList result = new PersonByStationList(personByStations, adult, child);
             logger.debug("PersonDaoImpl  getPersonByStation {} {}", personByStations, result);
             return result;
-        } catch (ParseException e) {
+        } catch (Exception e) {
             logger.error("Exception getPersonByStation {}", e);
         }
         return null;
@@ -97,12 +95,9 @@ public class PersonDaoImpl implements PersonDao {
             List<Person> adult = new ArrayList<>();
             List<ChildByAddress> childByAddressList = new ArrayList<>();
             for (int i = 0; i < personList.size(); i++) {
-                LocalDateTime localdate = LocalDateTime.now();
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-                Date date = dateFormat.parse(personList.get(i).getMedicalRecord().getBirthdate());
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTime(date);
-                if (localdate.getYear() - calendar.get(calendar.YEAR)  < 18) {
+                LocalDate currentDate = LocalDate.now();
+                LocalDate personDate = LocalDate.parse(personList.get(i).getMedicalRecord().getBirthdate(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                if (currentDate.getYear() - personDate.getYear()  < 18) {
                     Child child = new Child(personList.get(i).getFirstName(), personList.get(i).getLastName(), personList.get(i).getMedicalRecord().getBirthdate());
                     childList.add(child);
                 } else {
@@ -111,8 +106,8 @@ public class PersonDaoImpl implements PersonDao {
             }
             ChildByAddress childByAddress = new ChildByAddress(childList, adult);
             return childByAddress;
-        } catch (ParseException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            logger.error("Exception getPersonByStation {}", e);
         }
         return null;
     }
@@ -124,7 +119,7 @@ public class PersonDaoImpl implements PersonDao {
         for (int i = 0; i < personList.size(); i++) {
             phoneList.add(personList.get(i).getPhone());
         }
-        logger.debug("PersonDaoImpl getPgoneByStation", personList, phoneList);
+        logger.debug("PersonDaoImpl getPhoneByStation", personList, phoneList);
         return phoneList;
     }
 
