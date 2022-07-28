@@ -5,6 +5,7 @@ import com.safetyNet.alert.repository.FireStationRepository;
 import com.safetyNet.alert.repository.MedicalRecordRepository;
 import com.safetyNet.alert.repository.PersonRepository;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -52,6 +53,7 @@ class FirestationsDaoImplTest{
         );
     }
 
+    @DisplayName("")
     @Test
     void deleteTest() {
         FireStation fireStation = new FireStation("1509 Culver St","3");
