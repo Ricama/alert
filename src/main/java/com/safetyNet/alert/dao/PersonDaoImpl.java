@@ -68,7 +68,7 @@ public class PersonDaoImpl implements PersonDao {
             List<PersonByStation> personByStations = new ArrayList<>();
             for (int i = 0; i < person.size(); i++) {
                 LocalDate currentDate = LocalDate.now();
-                LocalDate personDate = LocalDate.parse(person.get(i).getMedicalRecord().getBirthdate(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                LocalDate personDate = LocalDate.parse(person.get(i).getMedicalRecord().getBirthdate(), DateTimeFormatter.ofPattern("MM/dd/yyyy"));
                 if (currentDate.getYear() - personDate.getYear()  < 18) {
                     child++;
                 } else {
@@ -97,7 +97,7 @@ public class PersonDaoImpl implements PersonDao {
             List<ChildByAddress> childByAddressList = new ArrayList<>();
             for (int i = 0; i < personList.size(); i++) {
                 LocalDate currentDate = LocalDate.now();
-                LocalDate personDate = LocalDate.parse(personList.get(i).getMedicalRecord().getBirthdate(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                LocalDate personDate = LocalDate.parse(personList.get(i).getMedicalRecord().getBirthdate(), DateTimeFormatter.ofPattern("MM/dd/yyyy"));
                 if (currentDate.getYear() - personDate.getYear()  < 18) {
                     Child child = new Child(personList.get(i).getFirstName(), personList.get(i).getLastName(), personList.get(i).getMedicalRecord().getBirthdate());
                     childList.add(child);
