@@ -15,6 +15,10 @@ public class MedicalrecordsDaoImpl implements MedicalrecordsDao{
 
     Logger logger = LoggerFactory.getLogger(MedicalrecordsDaoImpl.class);
 
+    public MedicalrecordsDaoImpl(MedicalRecordRepository medicalRecordRepository) {
+        this.medicalRecordRepository = medicalRecordRepository;
+    }
+
     @Override
     public MedicalRecord create(MedicalRecord medicalrecord){
         logger.debug("MedicalrecordsDaoImpl create",medicalrecord);
@@ -30,7 +34,8 @@ public class MedicalrecordsDaoImpl implements MedicalrecordsDao{
         medicalRecordToUpdate.setAllergies(medicalrecord.getAllergies());
 
         logger.debug("MedicalrecordsDaoImpl updateMedical",medicalrecord,medicalRecordToUpdate);
-        return medicalRecordRepository.save(medicalRecordToUpdate);
+        medicalRecordRepository.save(medicalRecordToUpdate);
+        return medicalRecordToUpdate;
     }
 
     @Override
@@ -38,6 +43,6 @@ public class MedicalrecordsDaoImpl implements MedicalrecordsDao{
         MedicalRecord medicalRecordToDelete = medicalRecordRepository.findByFirstNameAndLastName(firstName,lastName);
         medicalRecordRepository.delete(medicalRecordToDelete);
         logger.debug("MedicalrecordsDaoImpl deleteMedical",medicalRecordToDelete);
-        return null;
+        return medicalRecordToDelete;
     }
 }

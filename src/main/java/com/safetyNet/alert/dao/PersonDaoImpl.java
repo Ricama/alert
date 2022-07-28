@@ -47,7 +47,8 @@ public class PersonDaoImpl implements PersonDao {
         personToUpdate.setPhone(person.getPhone());
         personToUpdate.setEmail(person.getEmail());
         logger.debug("PersonDaoImpl update", person, personToUpdate);
-        return personRepository.save(personToUpdate);
+        personRepository.save(personToUpdate);
+        return personToUpdate;
     }
 
     @Override
@@ -55,7 +56,7 @@ public class PersonDaoImpl implements PersonDao {
         Person personToDelete = personRepository.findByFirstNameAndLastName(firstName, lastName);
         personRepository.delete(personToDelete);
         logger.debug("PersonDaoImpl delete", personToDelete);
-        return null;
+        return personToDelete ;
     }
 
     @Override
