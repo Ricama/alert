@@ -12,6 +12,9 @@ public class Home {
         this.home = home;
     }
 
+    public Home() {
+    }
+
 
     public String getAddress() {
         return address;
@@ -29,11 +32,4 @@ public class Home {
         this.home = home;
     }
 
-    @Override
-    public String toString() {
-        return "Home{" +
-                "address='" + address + '\'' +
-                ", home=" + home +
-                '}';
-    }
 }

@@ -33,10 +33,30 @@ class PersonsDaoImplTest {
     @Test
     void createTest() {
         List<Medication> medicationTestList = new ArrayList<>();
+        Medication medication = new Medication();
+        medication.setMedications("Test");
         List<Allergy> allergyTestList = new ArrayList<>();
-        MedicalRecord medicalRecordTest = new MedicalRecord("John", "Bod", "03/06/1984", medicationTestList, allergyTestList);
-        FireStation fireStationTest = new FireStation("1509 Culver St", "3");
-        Person personTest = new Person("John", "Bod", "1509 Culver St", "Culver", "97451", "841-874-6512", "jaboy@email.com", medicalRecordTest, fireStationTest);
+        Allergy allergy = new Allergy();
+        allergy.setAllergies("Test");
+        MedicalRecord medicalRecordTest = new MedicalRecord();
+        medicalRecordTest.setFirstName("John");
+        medicalRecordTest.setLastName("Bod");
+        medicalRecordTest.setBirthdate("03/06/1984");
+        medicalRecordTest.setMedications(medicationTestList);
+        medicalRecordTest.setAllergies(allergyTestList);
+        FireStation fireStationTest = new FireStation();
+        fireStationTest.setAddress("1509 Culver St");
+        fireStationTest.setStation("3");
+        Person personTest = new Person();
+        personTest.setFirstName("John");
+        personTest.setLastName("Bod");
+        personTest.setAddress("1509 Culver St");
+        personTest.setCity("Culver");
+        personTest.setZip("97451");
+        personTest.setPhone("841-874-6512");
+        personTest.setEmail("jaboy@email.com");
+        personTest.setMedicalRecord(medicalRecordTest);
+        personTest.setFireStation(fireStationTest);
         when(personRepository.save(personTest)).thenReturn(personTest);
         assertAll(
                 () -> assertEquals(personTest.getFirstName(), personDao.create(personTest).getFirstName()),
@@ -108,10 +128,17 @@ class PersonsDaoImplTest {
         List<Person> PersonTestList = new ArrayList<>();
         PersonTestList.add(personTest);
         when(personRepository.findByFireStationStation("1")).thenReturn(PersonTestList);
-        PersonByStation personByStationTest = new PersonByStation("John", "Bod", "1509 Culver St", "841-874-6512");
+        PersonByStation personByStationTest = new PersonByStation();
+        personByStationTest.setFirstName("John");
+        personByStationTest.setLastName("Bod");
+        personByStationTest.setAddress("1509 Culver St");
+        personByStationTest.setPhone("841-874-6512");
         List<PersonByStation> personByStationTestList = new ArrayList<>();
         personByStationTestList.add(personByStationTest);
-        PersonByStationList personByStationListTest = new PersonByStationList(personByStationTestList, 1, 0);
+        PersonByStationList personByStationListTest = new PersonByStationList();
+        personByStationListTest.setPerson(personByStationTestList);
+        personByStationListTest.setCountAdults(1);
+        personByStationListTest.setCountChilds(0);
 
         assertAll(
                 () -> assertEquals(personByStationListTest.getPerson().get(0).getFirstName(), personDao.getPersonByStation("1").getPerson().get(0).getFirstName()),
@@ -167,10 +194,15 @@ class PersonsDaoImplTest {
         when(personRepository.findByAddress("1509 Culver St")).thenReturn(PersonTestList);
         List<Child> childListTest = new ArrayList<>();
         List<Person> adultListTest = new ArrayList<>();
-        Child childTest = new Child("Jo", "Bode", "03/06/2012");
+        Child childTest = new Child();
+        childTest.setFirstName("Jo");
+        childTest.setLastName("Bode");
+        childTest.setBirthdate("03/06/2012");
         childListTest.add(childTest);
         adultListTest.add(firstPersonTest);
-        ChildByAddress childByAddressListTest = new ChildByAddress(childListTest, adultListTest);
+        ChildByAddress childByAddressListTest = new ChildByAddress();
+        childByAddressListTest.setChild(childListTest);
+        childByAddressListTest.setPersonList(adultListTest);
 
         assertAll(
                 () -> assertEquals(childByAddressListTest.getChild().get(0).getFirstName(), personDao.childByAddress("1509 Culver St").getChild().get(0).getFirstName()),
@@ -297,7 +329,14 @@ class PersonsDaoImplTest {
         PersonTestList.add(personTest);
         when(personRepository.findByAddress("1509 Culver St")).thenReturn(PersonTestList);
         List<PersonByAddress> personByAddressListTest = new ArrayList<>();
-        PersonByAddress firstPersonByAddressTest = new PersonByAddress(firstPersonTest.getFireStation().getStation(), firstPersonTest.getFirstName(), firstPersonTest.getLastName(), firstPersonTest.getPhone(), firstPersonTest.getMedicalRecord().getBirthdate(), firstPersonTest.getMedicalRecord().getMedications(), firstPersonTest.getMedicalRecord().getAllergies());
+        PersonByAddress firstPersonByAddressTest = new PersonByAddress();
+        firstPersonByAddressTest.setStation(firstPersonTest.getFireStation().getStation());
+        firstPersonByAddressTest.setFirstName(firstPersonTest.getFirstName());
+        firstPersonByAddressTest.setLastName(firstPersonTest.getLastName());
+        firstPersonByAddressTest.setPhone(firstPersonTest.getPhone());
+        firstPersonByAddressTest.setBirthdate(firstPersonTest.getMedicalRecord().getBirthdate());
+        firstPersonByAddressTest.setMedications(firstPersonTest.getMedicalRecord().getMedications());
+        firstPersonByAddressTest.setAllergies(firstPersonTest.getMedicalRecord().getAllergies());
         personByAddressListTest.add(firstPersonByAddressTest);
         PersonByAddress personByAddressTest = new PersonByAddress(personTest.getFireStation().getStation(), personTest.getFirstName(), personTest.getLastName(), personTest.getPhone(), personTest.getMedicalRecord().getBirthdate(), personTest.getMedicalRecord().getMedications(), personTest.getMedicalRecord().getAllergies());
         personByAddressListTest.add(personByAddressTest);
@@ -349,11 +388,19 @@ class PersonsDaoImplTest {
         List<HomePerson> homePersonListTest = new ArrayList<>();
         List<HomePerson> secondHomePersonListTest = new ArrayList<>();
         List<Home> homeListTest = new ArrayList<>();
-        HomePerson firstHomePersonTest = new HomePerson(firstPersonTest.getLastName(), firstPersonTest.getFirstName(), firstPersonTest.getPhone(), firstPersonTest.getMedicalRecord().getBirthdate(), firstPersonTest.getMedicalRecord().getMedications(), firstPersonTest.getMedicalRecord().getAllergies());
+        HomePerson firstHomePersonTest = new HomePerson();
+        firstHomePersonTest.setLastName(firstPersonTest.getLastName());
+        firstHomePersonTest.setFirstName(firstPersonTest.getFirstName());
+        firstHomePersonTest.setPhone(firstPersonTest.getPhone());
+        firstHomePersonTest.setBirthdate(firstPersonTest.getMedicalRecord().getBirthdate());
+        firstHomePersonTest.setMedications(firstPersonTest.getMedicalRecord().getMedications());
+        firstHomePersonTest.setAllergies(firstPersonTest.getMedicalRecord().getAllergies());
         homePersonListTest.add(firstHomePersonTest);
         HomePerson secondHomePersonTest = new HomePerson(secondPersonTest.getLastName(), secondPersonTest.getFirstName(), secondPersonTest.getPhone(), secondPersonTest.getMedicalRecord().getBirthdate(), secondPersonTest.getMedicalRecord().getMedications(), secondPersonTest.getMedicalRecord().getAllergies());
         homePersonListTest.add(secondHomePersonTest);
-        Home homeTest = new Home(firstPersonTest.getAddress(), homePersonListTest);
+        Home homeTest = new Home();
+        homeTest.setAddress(firstPersonTest.getAddress());
+        homeTest.setHome(homePersonListTest);
         homeListTest.add(homeTest);
         HomePerson homePersonTest = new HomePerson(personTest.getLastName(), personTest.getFirstName(), personTest.getPhone(), personTest.getMedicalRecord().getBirthdate(), personTest.getMedicalRecord().getMedications(), personTest.getMedicalRecord().getAllergies());
         secondHomePersonListTest.add(homePersonTest);
@@ -392,7 +439,12 @@ class PersonsDaoImplTest {
         FireStation firstFireStationTest = new FireStation("1509 Culver St", "3");
         Person firstPersonTest = new Person("John", "Bod", "1509 Culver St", "Culver", "97451", "841-874-6512", "jaboy@email.com", firstMedicalRecordTest, firstFireStationTest);
         when(personRepository.findByFirstNameAndLastName("John", "Bod")).thenReturn(firstPersonTest);
-        PersonInfo personInfotest = new PersonInfo(firstPersonTest.getLastName(), firstPersonTest.getMedicalRecord().getBirthdate(), firstPersonTest.getEmail(), firstPersonTest.getMedicalRecord().getMedications(), firstPersonTest.getMedicalRecord().getAllergies());
+        PersonInfo personInfotest = new PersonInfo();
+        personInfotest.setLastName(firstPersonTest.getLastName());
+        personInfotest.setBirthdate(firstPersonTest.getMedicalRecord().getBirthdate());
+        personInfotest.setEmail(firstPersonTest.getEmail());
+        personInfotest.setMedications(firstPersonTest.getMedicalRecord().getMedications());
+        personInfotest.setAllergies(firstPersonTest.getMedicalRecord().getAllergies());
 
         assertAll(
                 () -> assertEquals(personInfotest.getLastName(), personDao.personInfo("John", "Bod").getLastName()),

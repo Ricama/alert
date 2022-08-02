@@ -12,7 +12,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 
 @Service
-public class GenerateDataServiveImpl implements GenerateDataService {
+public class GenerateDataServiceImpl implements GenerateDataService {
     @Autowired
     FireStationRepository fireStationRepository;
     @Autowired
@@ -24,7 +24,15 @@ public class GenerateDataServiveImpl implements GenerateDataService {
     @Autowired
     AllergyRepository allergyRepository;
 
-    private final Logger logger = LoggerFactory.getLogger(GenerateDataServiveImpl.class);
+    public GenerateDataServiceImpl(FireStationRepository fireStationRepository, PersonRepository personRepository, MedicalRecordRepository medicalRecordRepository, MedicationRepository medicationRepository, AllergyRepository allergyRepository) {
+        this.fireStationRepository = fireStationRepository;
+        this.personRepository = personRepository;
+        this.medicalRecordRepository = medicalRecordRepository;
+        this.medicationRepository = medicationRepository;
+        this.allergyRepository = allergyRepository;
+    }
+
+    private final Logger logger = LoggerFactory.getLogger(GenerateDataServiceImpl.class);
 
     @Override
     public void generateData() {

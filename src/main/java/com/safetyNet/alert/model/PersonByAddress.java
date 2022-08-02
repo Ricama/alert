@@ -21,6 +21,9 @@ public class PersonByAddress {
         this.allergies = allergies;
     }
 
+    public PersonByAddress() {
+    }
+
     public String getStation() {
         return station;
     }
@@ -77,16 +80,4 @@ public class PersonByAddress {
         this.allergies = allergies;
     }
 
-    @Override
-    public String toString() {
-        return "PersonByAddress{" +
-                "station='" + station + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", phone='" + phone + '\'' +
-                ", birthdate='" + birthdate + '\'' +
-                ", medications=" + medications +
-                ", allergies=" + allergies +
-                '}';
-    }
 }

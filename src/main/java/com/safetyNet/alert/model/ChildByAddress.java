@@ -12,6 +12,9 @@ public class ChildByAddress {
         this.personList = personList;
     }
 
+    public ChildByAddress() {
+    }
+
     public List<Child> getChild() {
         return child;
     }
@@ -28,11 +31,4 @@ public class ChildByAddress {
         this.personList = personList;
     }
 
-    @Override
-    public String toString() {
-        return "ChildByAddress{" +
-                "child=" + child +
-                ", personList=" + personList +
-                '}';
-    }
 }

@@ -15,6 +15,10 @@ public class Child {
 
     }
 
+    public Child() {
+
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -40,12 +44,4 @@ public class Child {
     }
 
 
-    @Override
-    public String toString() {
-        return "ChildByAddress{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", birthdate='" + birthdate + '\'' +
-                '}';
-    }
 }

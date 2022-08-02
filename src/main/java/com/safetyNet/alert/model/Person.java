@@ -44,15 +44,6 @@ public class Person {
 
     }
 
-    public Person(String firstname, String lastName, String address, String city, String zip, String phone, String email) {
-        this.firstName = firstname;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.zip = zip;
-        this.phone = phone;
-        this.email = email;
-    }
 
     public Person( String firstName, String lastName, String address, String city, String zip, String phone, String email, MedicalRecord medicalRecord, FireStation fireStation) {
         this.firstName = firstName;
@@ -140,17 +131,5 @@ public class Person {
         this.lastName = lastName;
     }
 
-    @Override
-    public String toString() {
-        return "Persons{" +
-                "firstname='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", zip='" + zip + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                '}';
-    }
 
 }

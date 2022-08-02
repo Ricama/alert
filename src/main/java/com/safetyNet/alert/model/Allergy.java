@@ -23,19 +23,9 @@ public class Allergy {
     public Allergy() {
     }
 
-    public String getAllergies() {
-        return allergies;
-    }
 
     public void setAllergies(String allergies) {
         this.allergies = allergies;
     }
 
-    public MedicalRecord getMedicalRecord() {
-        return medicalRecord;
-    }
-
-    public void setMedicalRecord(MedicalRecord medicalRecord) {
-        this.medicalRecord = medicalRecord;
-    }
 }

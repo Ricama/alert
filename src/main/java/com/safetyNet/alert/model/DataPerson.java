@@ -8,27 +8,15 @@ public class DataPerson {
     List<FireStation> firestations;
     List<Medicall> medicalrecords;
 
-    public List<FireStation> getFirestations() {
-        return firestations;
-    }
-
-    public void setFirestations(List<FireStation> firestations) {
-        this.firestations = firestations;
-    }
-
-    public List<Medicall> getMedicalrecords() {
-        return medicalrecords;
-    }
-
-    public void setMedicalrecords(List<Medicall> medicalrecords) {
-        this.medicalrecords = medicalrecords;
-    }
-
     public List<Person> getPersons() {
         return persons;
     }
 
-    public void setPersons(List<Person> persons) {
-        this.persons = persons;
+    public List<FireStation> getFirestations() {
+        return firestations;
+    }
+
+    public List<Medicall> getMedicalrecords() {
+        return medicalrecords;
     }
 }

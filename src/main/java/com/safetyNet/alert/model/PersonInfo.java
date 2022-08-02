@@ -19,6 +19,9 @@ public class PersonInfo {
         this.allergies = allergies;
     }
 
+    public PersonInfo() {
+    }
+
     public String getLastName() {
         return lastName;
     }
@@ -58,15 +61,5 @@ public class PersonInfo {
         this.allergies = allergies;
     }
 
-    @Override
-    public String toString() {
-        return "PersonInfo{" +
-                "lastName='" + lastName + '\'' +
-                ", birthdate='" + birthdate + '\'' +
-                ", email='" + email + '\'' +
-                ", medications=" + medications +
-                ", allergies=" + allergies +
-                '}';
-    }
 
 }

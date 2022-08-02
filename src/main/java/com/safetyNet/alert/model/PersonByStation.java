@@ -15,6 +15,8 @@ public class PersonByStation {
         this.phone = phone;
 
     }
+    public PersonByStation() {
+    }
 
 
     public String getFirstName() {
@@ -50,14 +52,4 @@ public class PersonByStation {
     }
 
 
-
-    @Override
-    public String toString() {
-        return "PersonByStation{" +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
-    }
 }

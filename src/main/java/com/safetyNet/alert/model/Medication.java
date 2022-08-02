@@ -6,7 +6,6 @@ import javax.persistence.*;
 public class Medication {
 
 
-
     @Id
     @Column(name = "medications")
    private String medications;
@@ -18,20 +17,9 @@ public class Medication {
     public Medication() {
     }
 
-    public Medication(String medications) {
-        this.medications = medications;
-    }
-
-    public String getMedications() {
-        return medications;
-    }
 
     public void setMedications(String medications) {
         this.medications = medications;
-    }
-
-    public MedicalRecord getMedicalRecord() {
-        return medicalRecord;
     }
 
     public Medication(String medications, MedicalRecord medicalRecord) {

@@ -53,16 +53,25 @@ class FirestationsDaoImplTest{
         );
     }
 
-    @DisplayName("")
+    @DisplayName("de")
     @Test
     void deleteTest() {
         FireStation fireStation = new FireStation("1509 Culver St","3");
+        when(fireStationRepository.findByStation("1")).thenReturn(fireStation);
+        when(fireStationRepository.findByStation("2")).thenReturn(fireStation);
         when(fireStationRepository.findByStation("3")).thenReturn(fireStation);
+        when(fireStationRepository.findByStation("4")).thenReturn(fireStation);
         when(fireStationRepository.findFirstByAddress("1509 Culver St")).thenReturn(fireStation);
 
         assertAll(
+                () -> assertEquals(fireStation.getAddress(),firestationDao.delete("1").getAddress()),
+                () -> assertEquals(fireStation.getStation(),firestationDao.delete("1").getStation()),
+                () -> assertEquals(fireStation.getAddress(),firestationDao.delete("2").getAddress()),
+                () -> assertEquals(fireStation.getStation(),firestationDao.delete("2").getStation()),
                 () -> assertEquals(fireStation.getAddress(),firestationDao.delete("3").getAddress()),
                 () -> assertEquals(fireStation.getStation(),firestationDao.delete("3").getStation()),
+                () -> assertEquals(fireStation.getAddress(),firestationDao.delete("4").getAddress()),
+                () -> assertEquals(fireStation.getStation(),firestationDao.delete("4").getStation()),
                 () -> assertEquals(fireStation.getAddress(),firestationDao.delete("1509 Culver St").getAddress()),
                 () -> assertEquals(fireStation.getStation(),firestationDao.delete("1509 Culver St").getStation())
         );

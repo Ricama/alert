@@ -84,22 +84,5 @@ public class MedicalRecord {
         this.lastName = lastName;
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return "Medicalrecords{" +
-                "firstName='" + firstName + '\'' +
-                ", lastname='" + lastName + '\'' +
-                ", birthdate='" + birthdate + '\'' +
-                ", mediactions=" + medications +
-                ", allergies=" + allergies +
-                '}';
-    }
 }

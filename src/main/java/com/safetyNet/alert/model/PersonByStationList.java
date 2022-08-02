@@ -14,6 +14,9 @@ public class PersonByStationList {
         this.countChilds = countChilds;
     }
 
+    public PersonByStationList() {
+    }
+
 
     public List<PersonByStation> getPerson() {
         return person;

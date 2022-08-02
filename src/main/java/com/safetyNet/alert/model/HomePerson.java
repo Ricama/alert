@@ -20,6 +20,8 @@ public class HomePerson {
         this.allergies = allergies;
     }
 
+    public HomePerson() {
+    }
 
 
     public String getLastName() {
@@ -70,16 +72,4 @@ public class HomePerson {
     }
 
 
-
-    @Override
-    public String toString() {
-        return "HomePerson{" +
-                ", lastName='" + lastName + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", phone='" + phone + '\'' +
-                ", birthdate='" + birthdate + '\'' +
-                ", medications=" + medications +
-                ", allergies=" + allergies +
-                '}';
-    }
 }
