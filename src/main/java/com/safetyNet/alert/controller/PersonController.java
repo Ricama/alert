@@ -17,68 +17,69 @@ public class PersonController {
 
     PersonDao personDao;
 
-    PersonController(PersonDao personsDao){
+    Logger logger = LoggerFactory.getLogger(PersonController.class);
+
+    PersonController(PersonDao personsDao) {
 
         this.personDao = personsDao;
     }
 
-    Logger logger = LoggerFactory.getLogger(PersonController.class);
 
     @PostMapping(path = "/person")
-   public Person postNewPerson(@RequestBody Person person){
+    public Person postNewPerson(@RequestBody Person person) {
 
 
         return personDao.create(person);
     }
 
     @PutMapping(path = "/person")
-   public Person putPerson(@RequestBody Person person){
+    public Person putPerson(@RequestBody Person person) {
 
         return personDao.update(person);
-  }
+    }
 
-   @DeleteMapping(path = "/person")
-   public Person deletePerson(@RequestBody Person person){
+    @DeleteMapping(path = "/person")
+    public Person deletePerson(@RequestBody Person person) {
 
-      return personDao.delete(person.getFirstName(), person.getLastName());
-  }
+        return personDao.delete(person.getFirstName(), person.getLastName());
+    }
 
     @GetMapping(path = "/firestation")
-    public PersonByStationList getPersonByStation(@RequestParam String stationNumber){
+    public PersonByStationList getPersonByStation(@RequestParam String stationNumber) {
 
         return personDao.getPersonByStation(stationNumber);
     }
 
-  @GetMapping(path = "/childAlert" )
-    public ChildByAddress childByAddress(@RequestParam String address){
+    @GetMapping(path = "/childAlert")
+    public ChildByAddress childByAddress(@RequestParam String address) {
 
         return personDao.childByAddress(address);
-  }
+    }
 
     @GetMapping(path = "/phoneAlert")
-    public List<String> getPhoneByStation(@RequestParam String firestation){
+    public List<String> getPhoneByStation(@RequestParam String firestation) {
         return personDao.getPhoneByStation(firestation);
     }
 
-  @GetMapping(path = "/fire")
-    public List<PersonByAddress> personByAddress(@RequestParam String address){
+    @GetMapping(path = "/fire")
+    public List<PersonByAddress> personByAddress(@RequestParam String address) {
         return personDao.personByAddress(address);
-  }
-
-    @GetMapping(path = "/flood/stations")
-    public List<Home> getHomeByStation(@RequestParam String station){
-
-        return personDao.getHomeByStation(station) ;
     }
 
-  @GetMapping(path = "/personInfo")
-    public PersonInfo personInfo(@RequestParam String firstName, @RequestParam String lastName){
+    @GetMapping(path = "/flood/stations")
+    public List<Home> getHomeByStation(@RequestParam String station) {
 
-        return personDao.personInfo(firstName,lastName);
-  }
+        return personDao.getHomeByStation(station);
+    }
 
-  @GetMapping(path = "/communityEmail")
-    public List<String> getPersonByEmail(@RequestParam String city){
+    @GetMapping(path = "/personInfo")
+    public PersonInfo personInfo(@RequestParam String firstName, @RequestParam String lastName) {
+
+        return personDao.personInfo(firstName, lastName);
+    }
+
+    @GetMapping(path = "/communityEmail")
+    public List<String> getPersonByEmail(@RequestParam String city) {
         return personDao.getEmailByCity(city);
-  }
+    }
 }

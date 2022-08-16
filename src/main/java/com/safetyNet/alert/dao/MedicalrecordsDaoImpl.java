@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class MedicalrecordsDaoImpl implements MedicalrecordsDao{
+public class MedicalrecordsDaoImpl implements MedicalRecordDao {
     @Autowired
     MedicalRecordRepository medicalRecordRepository;
 
