@@ -41,7 +41,6 @@ public class GenerateDateServiceImplTest {
         assertAll(
                 () -> assertEquals(0,count),
                 () -> assertEquals(23,newCount)
-
         );
     }
 }

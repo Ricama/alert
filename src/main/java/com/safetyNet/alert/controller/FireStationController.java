@@ -19,8 +19,6 @@ public class FireStationController {
         this.firestationsDao = firestationsDao;
     }
 
-
-
     @PostMapping(path = "/firestation")
      public FireStation postFirestation(@RequestBody FireStation firestation){
 
@@ -38,8 +36,5 @@ public class FireStationController {
 
         return firestationsDao.delete(fire);
     }
-
-
-
 
 }

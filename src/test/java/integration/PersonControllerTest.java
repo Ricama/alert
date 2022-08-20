@@ -1,6 +1,7 @@
 package integration;
 
 import com.safetyNet.alert.AlertApplication;
+import com.safetyNet.alert.dao.PersonDao;
 import com.safetyNet.alert.model.FireStation;
 import com.safetyNet.alert.model.MedicalRecord;
 import com.safetyNet.alert.model.Person;
@@ -10,11 +11,11 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.hamcrest.Matchers.containsString;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(classes = AlertApplication.class)
 @AutoConfigureMockMvc
@@ -23,16 +24,41 @@ public class PersonControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Test
-    public void createTest() throws Exception{
-        MedicalRecord medicalRecord = new MedicalRecord();
-        FireStation fireStation = new FireStation();
-        Person person = new Person("Test","Test","8 test","Test","1337","425-452-562","test@email.com",medicalRecord,fireStation);
-        mockMvc.perform(
-                        MockMvcRequestBuilders.post("/person",person)
-                                .contentType(MediaType.APPLICATION_JSON)
+    @Autowired
+    PersonDao personDao;
 
+    @Test
+    public void createTest() throws Exception {
+        mockMvc.perform(post("/person")
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .content("{\"firstName\":\"Test\",\"lastName\":\"Test\",\"address\":\"8 test\",\"city\":\"Test\",\"zip\":\"1337\",\"phone\":\"425-452-562\",\"email\":\"test@email.com\"}")
         );
+        personDao.delete("Test","Test");
+    }
+
+    @Test
+    public void deleteTest() throws Exception{
+        MedicalRecord medicalRecord = null;
+        FireStation fireStation = null;
+        Person person = new Person("Test","Test","8 test","Test","1337","425-452-562","test@email.com",medicalRecord,fireStation);
+        personDao.create(person);
+        mockMvc.perform(delete("/person")
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .content("{\"firstName\":\"Test\",\"lastName\":\"Test\",\"address\":\"8 test\",\"city\":\"Test\",\"zip\":\"1337\",\"phone\":\"425-452-562\",\"email\":\"test@email.com\"}")
+        );
+    }
+
+    @Test
+    public void putTest() throws Exception{
+        MedicalRecord medicalRecord = null;
+        FireStation fireStation = null;
+        Person person = new Person("Test","Test","82 test","Tests","1337","425-452-562","test@email.com",medicalRecord,fireStation);
+        personDao.create(person);
+        mockMvc.perform(put("/person")
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .content("{\"firstName\":\"Test\",\"lastName\":\"Test\",\"address\":\"8 test\",\"city\":\"Test\",\"zip\":\"1337\",\"phone\":\"425-452-562\",\"email\":\"test@email.com\"}")
+        );
+        personDao.delete("Test","Test");
     }
 
     @Test
