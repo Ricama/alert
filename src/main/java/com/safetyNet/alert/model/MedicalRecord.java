@@ -1,5 +1,7 @@
 package com.safetyNet.alert.model;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -21,10 +23,10 @@ public class MedicalRecord {
     @Column(name = "birthdate")
     private String birthdate;
 
-    @OneToMany(mappedBy = "medications",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "medications",cascade = CascadeType.REMOVE,orphanRemoval = true)
     private List<Medication> medications;
 
-    @OneToMany(mappedBy = "allergies",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "allergies",cascade = CascadeType.REMOVE,orphanRemoval = true)
     private List<Allergy> allergies;
 
     public MedicalRecord() {
