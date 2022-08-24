@@ -19,18 +19,27 @@ public class FireStationController {
         this.firestationsDao = firestationsDao;
     }
 
+    /**
+     * Mapping post fireStation
+     */
     @PostMapping(path = "/firestation")
      public FireStation postFirestation(@RequestBody FireStation firestation){
 
         return firestationsDao.create(firestation);
     }
 
+    /**
+     * Mapping put fireStation
+     */
     @PutMapping(path = "/firestation")
      public FireStation putFirestation(@RequestBody FireStation firestation){
 
         return firestationsDao.update(firestation);
     }
 
+    /**
+     * Mapping delete fireStation
+     */
     @DeleteMapping(path ="/firestation/{fire}")
     public FireStation deleteStationFirestation(@PathVariable String fire){
 

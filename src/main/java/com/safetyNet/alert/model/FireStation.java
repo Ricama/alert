@@ -18,9 +18,9 @@ public class FireStation {
 
     @Column(name = "station")
     private String station;
-@OneToMany(
-        mappedBy = "fireStation",cascade = CascadeType.ALL,orphanRemoval = true
-)
+    @OneToMany(
+            mappedBy = "fireStation", cascade = CascadeType.ALL, orphanRemoval = true
+    )
     List<Person> personList = new ArrayList<>();
 
     public FireStation() {
@@ -30,7 +30,6 @@ public class FireStation {
         this.address = address;
         this.station = station;
     }
-
 
 
     public String getAddress() {
@@ -48,7 +47,6 @@ public class FireStation {
     public void setStation(String station) {
         this.station = station;
     }
-
 
 
 }

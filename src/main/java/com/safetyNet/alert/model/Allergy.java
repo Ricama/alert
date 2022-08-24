@@ -6,10 +6,9 @@ import javax.persistence.*;
 public class Allergy {
 
 
-
     @Id
     @Column(name = "allergies")
-   private String allergies;
+    private String allergies;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "medicalRecord_id")

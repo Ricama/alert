@@ -56,7 +56,7 @@ public class PersonDaoImpl implements PersonDao {
         Person personToDelete = personRepository.findByFirstNameAndLastName(firstName, lastName);
         personRepository.delete(personToDelete);
         logger.debug("PersonDaoImpl delete", personToDelete);
-        return personToDelete ;
+        return personToDelete;
     }
 
     @Override
@@ -69,7 +69,7 @@ public class PersonDaoImpl implements PersonDao {
             for (int i = 0; i < person.size(); i++) {
                 LocalDate currentDate = LocalDate.now();
                 LocalDate personDate = LocalDate.parse(person.get(i).getMedicalRecord().getBirthdate(), DateTimeFormatter.ofPattern("MM/dd/yyyy"));
-                if (currentDate.getYear() - personDate.getYear()  < 18) {
+                if (currentDate.getYear() - personDate.getYear() < 18) {
                     child++;
                 } else {
 
@@ -98,7 +98,7 @@ public class PersonDaoImpl implements PersonDao {
             for (int i = 0; i < personList.size(); i++) {
                 LocalDate currentDate = LocalDate.now();
                 LocalDate personDate = LocalDate.parse(personList.get(i).getMedicalRecord().getBirthdate(), DateTimeFormatter.ofPattern("MM/dd/yyyy"));
-                if (currentDate.getYear() - personDate.getYear()  < 18) {
+                if (currentDate.getYear() - personDate.getYear() < 18) {
                     Child child = new Child(personList.get(i).getFirstName(), personList.get(i).getLastName(), personList.get(i).getMedicalRecord().getBirthdate());
                     childList.add(child);
                 } else {
@@ -142,15 +142,15 @@ public class PersonDaoImpl implements PersonDao {
     public List<Home> getHomeByStation(String station) {
         List<String> address = personRepository.findAddressByFireStationStation(station);
         List<Home> homeList = new ArrayList<>();
-        for (int i = 0;i < address.size();i++){
-           List<Person> personList =  personRepository.findByAddress(address.get(i));
+        for (int i = 0; i < address.size(); i++) {
+            List<Person> personList = personRepository.findByAddress(address.get(i));
             List<HomePerson> homePersonList = new ArrayList<>();
-           for (int a = 0; a < personList.size();a++ ){
-               HomePerson homePerson = new HomePerson(personList.get(a).getLastName(),personList.get(a).getFirstName(),personList.get(a).getPhone(),personList.get(a).getMedicalRecord().getBirthdate(),personList.get(a).getMedicalRecord().getMedications(),personList.get(a).getMedicalRecord().getAllergies());
-               homePersonList.add(homePerson);
-           }
-           Home home = new Home(address.get(i),homePersonList);
-           homeList.add(home);
+            for (int a = 0; a < personList.size(); a++) {
+                HomePerson homePerson = new HomePerson(personList.get(a).getLastName(), personList.get(a).getFirstName(), personList.get(a).getPhone(), personList.get(a).getMedicalRecord().getBirthdate(), personList.get(a).getMedicalRecord().getMedications(), personList.get(a).getMedicalRecord().getAllergies());
+                homePersonList.add(homePerson);
+            }
+            Home home = new Home(address.get(i), homePersonList);
+            homeList.add(home);
         }
         return homeList;
     }

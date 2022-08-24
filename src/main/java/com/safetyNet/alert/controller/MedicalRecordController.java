@@ -18,19 +18,27 @@ public class MedicalRecordController {
         this.medicalRecordDao = medicalRecordDao;
     }
 
-
+    /**
+     * Mapping post medicalRecord
+     */
     @PostMapping
      public MedicalRecord postMedicalRecords(@RequestBody MedicalRecord medicalRecord){
 
       return medicalRecordDao.create(medicalRecord);
     }
 
+    /**
+     * Mapping put medicalRecord
+     */
     @PutMapping
      public MedicalRecord putMedicalRecords(@RequestBody MedicalRecord medicalRecord){
 
         return medicalRecordDao.updateMedical(medicalRecord);
     }
 
+    /**
+     * Mapping delete medicalRecord
+     */
     @DeleteMapping
      public MedicalRecord deleteMedicalRecords(@RequestBody MedicalRecord medicalRecord){
 

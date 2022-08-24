@@ -45,6 +45,7 @@ public class PersonInfo {
     public void setEmail(String email) {
         this.email = email;
     }
+
     public List<Medication> getMedications() {
         return medications;
     }

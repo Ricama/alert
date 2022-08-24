@@ -10,7 +10,7 @@ public class HomePerson {
     List<Medication> medications;
     List<Allergy> allergies;
 
-    public HomePerson( String lastName, String firstName, String phone, String birthdate, List<Medication> medications, List<Allergy> allergies) {
+    public HomePerson(String lastName, String firstName, String phone, String birthdate, List<Medication> medications, List<Allergy> allergies) {
 
         this.lastName = lastName;
         this.firstName = firstName;
@@ -55,6 +55,7 @@ public class HomePerson {
     public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
+
     public List<Medication> getMedications() {
         return medications;
     }

@@ -45,7 +45,7 @@ public class Person {
     }
 
 
-    public Person( String firstName, String lastName, String address, String city, String zip, String phone, String email, MedicalRecord medicalRecord, FireStation fireStation) {
+    public Person(String firstName, String lastName, String address, String city, String zip, String phone, String email, MedicalRecord medicalRecord, FireStation fireStation) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;

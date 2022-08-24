@@ -23,10 +23,10 @@ public class MedicalRecord {
     @Column(name = "birthdate")
     private String birthdate;
 
-    @OneToMany(mappedBy = "medications",cascade = CascadeType.REMOVE,orphanRemoval = true)
+    @OneToMany(mappedBy = "medications", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Medication> medications;
 
-    @OneToMany(mappedBy = "allergies",cascade = CascadeType.REMOVE,orphanRemoval = true)
+    @OneToMany(mappedBy = "allergies", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Allergy> allergies;
 
     public MedicalRecord() {
@@ -40,7 +40,6 @@ public class MedicalRecord {
         this.medications = mediactions;
         this.allergies = allergies;
     }
-
 
 
     public String getFirstName() {

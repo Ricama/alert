@@ -38,11 +38,11 @@ class MedicalrecordsDaoImplTest {
         when(medicalRecordRepository.save(medicalRecordTest)).thenReturn(medicalRecordTest);
 
         assertAll(
-                () -> assertEquals(medicalRecordTest.getFirstName(),medicalrecordsDao.create(medicalRecordTest).getFirstName()),
-                () -> assertEquals(medicalRecordTest.getLastName(),medicalrecordsDao.create(medicalRecordTest).getLastName()),
-                () -> assertEquals(medicalRecordTest.getBirthdate(),medicalrecordsDao.create(medicalRecordTest).getBirthdate()),
-                () -> assertEquals(medicalRecordTest.getMedications(),medicalrecordsDao.create(medicalRecordTest).getMedications()),
-                () -> assertEquals(medicalRecordTest.getAllergies(),medicalrecordsDao.create(medicalRecordTest).getAllergies())
+                () -> assertEquals(medicalRecordTest.getFirstName(), medicalrecordsDao.create(medicalRecordTest).getFirstName()),
+                () -> assertEquals(medicalRecordTest.getLastName(), medicalrecordsDao.create(medicalRecordTest).getLastName()),
+                () -> assertEquals(medicalRecordTest.getBirthdate(), medicalrecordsDao.create(medicalRecordTest).getBirthdate()),
+                () -> assertEquals(medicalRecordTest.getMedications(), medicalrecordsDao.create(medicalRecordTest).getMedications()),
+                () -> assertEquals(medicalRecordTest.getAllergies(), medicalrecordsDao.create(medicalRecordTest).getAllergies())
         );
     }
 

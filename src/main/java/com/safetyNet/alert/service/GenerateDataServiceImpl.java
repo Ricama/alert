@@ -44,24 +44,22 @@ public class GenerateDataServiceImpl implements GenerateDataService {
 
                 DataPerson dataPerson = gson.fromJson(reader, DataPerson.class);
 
-                for (int i = 0; i < dataPerson.getMedicalrecords().size(); i++)
-                {
+                for (int i = 0; i < dataPerson.getMedicalrecords().size(); i++) {
                     MedicalRecord medicalRecord = new MedicalRecord();
                     medicalRecord.setFirstName(dataPerson.getMedicalrecords().get(i).getFirstName());
                     medicalRecord.setLastName(dataPerson.getMedicalrecords().get(i).getLastName());
                     medicalRecord.setBirthdate(dataPerson.getMedicalrecords().get(i).getBirthdate());
                     medicalRecordRepository.save(medicalRecord);
                 }
-                for (int i = 0; i < dataPerson.getMedicalrecords().size(); i++)
-                {
+                for (int i = 0; i < dataPerson.getMedicalrecords().size(); i++) {
                     for (int a = 0; a < dataPerson.getMedicalrecords().get(i).getMedications().size(); a++) {
-                        MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(dataPerson.getMedicalrecords().get(i).getFirstName(),dataPerson.getMedicalrecords().get(i).getLastName());
-                        Medication medication = new Medication(dataPerson.getMedicalrecords().get(i).getMedications().get(a),medicalRecord);
+                        MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(dataPerson.getMedicalrecords().get(i).getFirstName(), dataPerson.getMedicalrecords().get(i).getLastName());
+                        Medication medication = new Medication(dataPerson.getMedicalrecords().get(i).getMedications().get(a), medicalRecord);
                         medicationRepository.save(medication);
                     }
                     for (int a = 0; a < dataPerson.getMedicalrecords().get(i).getAllergies().size(); a++) {
-                        MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(dataPerson.getMedicalrecords().get(i).getFirstName(),dataPerson.getMedicalrecords().get(i).getLastName());
-                        Allergy allergy = new Allergy(dataPerson.getMedicalrecords().get(i).getAllergies().get(a),medicalRecord);
+                        MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(dataPerson.getMedicalrecords().get(i).getFirstName(), dataPerson.getMedicalrecords().get(i).getLastName());
+                        Allergy allergy = new Allergy(dataPerson.getMedicalrecords().get(i).getAllergies().get(a), medicalRecord);
                         allergyRepository.save(allergy);
                     }
                 }
@@ -77,9 +75,9 @@ public class GenerateDataServiceImpl implements GenerateDataService {
                 }
 
             } catch (Exception e) {
-                logger.debug("generateData()",e);
+                logger.debug("generateData()", e);
             }
         }
     }
 
-    }
+}

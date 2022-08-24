@@ -8,8 +8,21 @@ import java.util.List;
 
 
 public interface FirestationDao {
+
+    /**
+     * save new fireStation in dataBase
+     */
     FireStation create(FireStation firestations);
+
+    /**
+     * update fireStation
+     */
     FireStation update(FireStation firestations);
+
+    /**
+     * @param fire = address or station
+     * Tcheck if fire are a address or a station
+     */
     FireStation delete(String fire);
 
 }

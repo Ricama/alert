@@ -31,7 +31,7 @@ public class Medicall {
 
     private String birthdate;
     private List<String> medications;
-    private  List<String> allergies;
+    private List<String> allergies;
 
 
 }

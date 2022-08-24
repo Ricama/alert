@@ -31,11 +31,6 @@ class MedicalRecordControllerTest {
     @Autowired
     MedicalRecordDao medicalRecordDao;
 
-    @Autowired
-    MedicationRepository medicationRepository;
-
-    @Autowired
-    AllergyRepository allergyRepository;
 
     @Test
     void postMedicalRecords() throws Exception {
@@ -43,27 +38,27 @@ class MedicalRecordControllerTest {
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content("{\"firstName\":\"Test\",\"lastName\":\"Test\",\"birthdate\":\"02/18/2012\"}")
         );
-        medicalRecordDao.deleteMedical("Test","Test");
+        medicalRecordDao.deleteMedical("Test", "Test");
     }
 
     @Test
     void putMedicalRecords() throws Exception {
         List<Medication> medicationList = new ArrayList<>();
         List<Allergy> allergyList = new ArrayList<>();
-        MedicalRecord medicalRecord = new MedicalRecord("Test","Test","02/18/2011",medicationList,allergyList);
+        MedicalRecord medicalRecord = new MedicalRecord("Test", "Test", "02/18/2011", medicationList, allergyList);
         medicalRecordDao.create(medicalRecord);
         mockMvc.perform(put("/medicalRecord")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content("{\"firstName\":\"Test\",\"lastName\":\"Test\",\"birthdate\":\"02/18/2012\",\"medication\":\"[\"aznol:350mg\"]\", \"allergies\":[\"nillacilan\"] }")
         );
-medicalRecordDao.deleteMedical("Test","Test");
+        medicalRecordDao.deleteMedical("Test", "Test");
     }
 
     @Test
     void deleteMedicalRecords() throws Exception {
         List<Medication> medicationList = new ArrayList<>();
         List<Allergy> allergyList = new ArrayList<>();
-        MedicalRecord medicalRecord = new MedicalRecord("Test","Test","02/18/2011",medicationList,allergyList);
+        MedicalRecord medicalRecord = new MedicalRecord("Test", "Test", "02/18/2011", medicationList, allergyList);
         medicalRecordDao.create(medicalRecord);
         mockMvc.perform(delete("/medicalRecord")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)

@@ -30,7 +30,9 @@ class GenerateDataServiveImplTest {
 
 
     @BeforeEach
-    private void setup() { generateDataService = new GenerateDataServiceImpl(fireStationRepository,personRepository,medicalRecordRepository,medicationRepository,allergyRepository);}
+    private void setup() {
+        generateDataService = new GenerateDataServiceImpl(fireStationRepository, personRepository, medicalRecordRepository, medicationRepository, allergyRepository);
+    }
 
     @Test
     void generateData() {

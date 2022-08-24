@@ -33,14 +33,14 @@ public class PersonControllerTest {
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content("{\"firstName\":\"Test\",\"lastName\":\"Test\",\"address\":\"8 test\",\"city\":\"Test\",\"zip\":\"1337\",\"phone\":\"425-452-562\",\"email\":\"test@email.com\"}")
         );
-        personDao.delete("Test","Test");
+        personDao.delete("Test", "Test");
     }
 
     @Test
-    public void deleteTest() throws Exception{
+    public void deleteTest() throws Exception {
         MedicalRecord medicalRecord = null;
         FireStation fireStation = null;
-        Person person = new Person("Test","Test","8 test","Test","1337","425-452-562","test@email.com",medicalRecord,fireStation);
+        Person person = new Person("Test", "Test", "8 test", "Test", "1337", "425-452-562", "test@email.com", medicalRecord, fireStation);
         personDao.create(person);
         mockMvc.perform(delete("/person")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
@@ -49,16 +49,16 @@ public class PersonControllerTest {
     }
 
     @Test
-    public void putTest() throws Exception{
+    public void putTest() throws Exception {
         MedicalRecord medicalRecord = null;
         FireStation fireStation = null;
-        Person person = new Person("Test","Test","82 test","Tests","1337","425-452-562","test@email.com",medicalRecord,fireStation);
+        Person person = new Person("Test", "Test", "82 test", "Tests", "1337", "425-452-562", "test@email.com", medicalRecord, fireStation);
         personDao.create(person);
         mockMvc.perform(put("/person")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content("{\"firstName\":\"Test\",\"lastName\":\"Test\",\"address\":\"8 test\",\"city\":\"Test\",\"zip\":\"1337\",\"phone\":\"425-452-562\",\"email\":\"test@email.com\"}")
         );
-        personDao.delete("Test","Test");
+        personDao.delete("Test", "Test");
     }
 
     @Test

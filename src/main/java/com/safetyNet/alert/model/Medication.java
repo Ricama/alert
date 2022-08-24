@@ -8,7 +8,7 @@ public class Medication {
 
     @Id
     @Column(name = "medications")
-   private String medications;
+    private String medications;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "medicalRecord_id")
@@ -26,7 +26,6 @@ public class Medication {
         this.medications = medications;
         this.medicalRecord = medicalRecord;
     }
-
 
 
 }
