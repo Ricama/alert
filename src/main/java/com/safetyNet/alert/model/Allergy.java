@@ -14,6 +14,10 @@ public class Allergy {
     @JoinColumn(name = "medicalRecord_id")
     private MedicalRecord medicalRecord;
 
+    public Allergy(String allergies) {
+        this.allergies = allergies;
+    }
+
     public Allergy(String allergies, MedicalRecord medicalRecord) {
         this.allergies = allergies;
         this.medicalRecord = medicalRecord;
@@ -22,6 +26,9 @@ public class Allergy {
     public Allergy() {
     }
 
+    public String getAllergies() {
+        return allergies;
+    }
 
     public void setAllergies(String allergies) {
         this.allergies = allergies;

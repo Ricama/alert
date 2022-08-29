@@ -36,9 +36,8 @@ class MedicalRecordControllerTest {
     void postMedicalRecords() throws Exception {
         mockMvc.perform(post("/medicalRecord")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .content("{\"firstName\":\"Test\",\"lastName\":\"Test\",\"birthdate\":\"02/18/2012\"}")
+                .content("{ \"firstName\":\"John\", \"lastName\":\"Boyd\", \"birthdate\":\"03/06/1984\", \"medications\":[\"aznol:350mg\", \"hydrapermazol:100mg\"], \"allergies\":[\"nillacilan\"] }")
         );
-        medicalRecordDao.deleteMedical("Test", "Test");
     }
 
     @Test
