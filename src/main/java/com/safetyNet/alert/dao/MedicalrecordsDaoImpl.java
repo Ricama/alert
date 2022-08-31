@@ -11,6 +11,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Component
 public class MedicalrecordsDaoImpl implements MedicalRecordDao {
@@ -74,9 +77,25 @@ public class MedicalrecordsDaoImpl implements MedicalRecordDao {
 
     @Override
     public MedicalRecord deleteMedical(String firstName, String lastName) {
-        MedicalRecord medicalRecordToDelete = medicalRecordRepository.findByFirstNameAndLastName(firstName, lastName);
-        medicalRecordRepository.delete(medicalRecordToDelete);
-        logger.debug("MedicalrecordsDaoImpl deleteMedical", medicalRecordToDelete);
-        return medicalRecordToDelete;
+        MedicalRecord medicalRecordapp= medicalRecordRepository.findByFirstNameAndLastName(firstName, lastName);
+        List<Medication> medication = medicationRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(firstName, lastName);
+        List<Allergy> allergy = allergyRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(firstName, lastName);
+
+        List<Medication> medicationList = new ArrayList<>();
+        List<Allergy> allergyList = new ArrayList<>();
+        for (int i = 0;i < medication.size();i++){
+           medicationRepository.delete(medication.get(i));
+            Medication medication1 = new Medication(medication.get(i).getMedications());
+            medicationList.add(medication1);
+        }
+        for (int i = 0;i < allergy.size();i++){
+            allergyRepository.delete(allergy.get(i));
+            Allergy allergy1 = new Allergy(allergy.get(i).getAllergies());
+            allergyList.add(allergy1);
+        }
+        MedicalRecord medicalRecord = new MedicalRecord(firstName,lastName,medicalRecordapp.getBirthdate(),medicationList,allergyList);
+        medicalRecordRepository.deleteById(medicalRecordapp.getId());
+        logger.debug("MedicalrecordsDaoImpl deleteMedical", medicalRecord);
+        return medicalRecord;
     }
 }

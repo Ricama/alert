@@ -20,11 +20,15 @@ public class MedicalRecord {
     @Column(name = "birthdate")
     private String birthdate;
 
-    @OneToMany(mappedBy = "medications", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "medications")
     private List<Medication> medications;
 
-    @OneToMany(mappedBy = "allergies", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "allergies")
     private List<Allergy> allergies;
+
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "person_id")
+    private Person person;
 
     public MedicalRecord() {
 
@@ -38,6 +42,9 @@ public class MedicalRecord {
         this.allergies = allergies;
     }
 
+    public Long getId() {
+        return id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -82,5 +89,8 @@ public class MedicalRecord {
         this.lastName = lastName;
     }
 
+    public void setPerson(Person person) {
+        this.person = person;
+    }
 
 }

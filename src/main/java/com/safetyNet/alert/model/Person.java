@@ -31,10 +31,6 @@ public class Person {
     @Column(name = "email")
     private String email;
 
-    @OneToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "medical_id")
-    private MedicalRecord medicalRecord;
-
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "fireStation_id")
@@ -45,7 +41,7 @@ public class Person {
     }
 
 
-    public Person(String firstName, String lastName, String address, String city, String zip, String phone, String email, MedicalRecord medicalRecord, FireStation fireStation) {
+    public Person(String firstName, String lastName, String address, String city, String zip, String phone, String email, FireStation fireStation) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -53,17 +49,11 @@ public class Person {
         this.zip = zip;
         this.phone = phone;
         this.email = email;
-        this.medicalRecord = medicalRecord;
+
         this.fireStation = fireStation;
     }
 
-    public MedicalRecord getMedicalRecord() {
-        return medicalRecord;
-    }
 
-    public void setMedicalRecord(MedicalRecord medicalRecord) {
-        this.medicalRecord = medicalRecord;
-    }
 
     public FireStation getFireStation() {
         return fireStation;

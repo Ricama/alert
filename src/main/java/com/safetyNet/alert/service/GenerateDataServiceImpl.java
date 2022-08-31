@@ -44,11 +44,22 @@ public class GenerateDataServiceImpl implements GenerateDataService {
 
                 DataPerson dataPerson = gson.fromJson(reader, DataPerson.class);
 
+                fireStationRepository.saveAll(dataPerson.getFirestations());
+
+                for (int i = 0; i < dataPerson.getPersons().size(); i++) {
+                    Person person = dataPerson.getPersons().get(i);
+                    FireStation fireStation = fireStationRepository.findFirstByAddress(person.getAddress());
+                    person.setFireStation(fireStation);
+                    personRepository.save(person);
+                }
+
                 for (int i = 0; i < dataPerson.getMedicalrecords().size(); i++) {
                     MedicalRecord medicalRecord = new MedicalRecord();
                     medicalRecord.setFirstName(dataPerson.getMedicalrecords().get(i).getFirstName());
                     medicalRecord.setLastName(dataPerson.getMedicalrecords().get(i).getLastName());
                     medicalRecord.setBirthdate(dataPerson.getMedicalrecords().get(i).getBirthdate());
+                    Person person = personRepository.findByFirstNameAndLastName(medicalRecord.getFirstName(),medicalRecord.getLastName());
+                    medicalRecord.setPerson(person);
                     medicalRecordRepository.save(medicalRecord);
                 }
                 for (int i = 0; i < dataPerson.getMedicalrecords().size(); i++) {
@@ -63,16 +74,7 @@ public class GenerateDataServiceImpl implements GenerateDataService {
                         allergyRepository.save(allergy);
                     }
                 }
-                fireStationRepository.saveAll(dataPerson.getFirestations());
 
-                for (int i = 0; i < dataPerson.getPersons().size(); i++) {
-                    Person person = dataPerson.getPersons().get(i);
-                    FireStation fireStation = fireStationRepository.findFirstByAddress(person.getAddress());
-                    person.setFireStation(fireStation);
-                    MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(person.getFirstName(), person.getLastName());
-                    person.setMedicalRecord(medicalRecord);
-                    personRepository.save(person);
-                }
 
             } catch (Exception e) {
                 logger.debug("generateData()", e);

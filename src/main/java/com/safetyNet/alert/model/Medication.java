@@ -6,10 +6,12 @@ import javax.persistence.*;
 public class Medication {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Long id;
+
     @Column(name = "medications")
     private String medications;
-
-
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "medicalRecord_id")
