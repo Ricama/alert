@@ -2,6 +2,7 @@ package com.safetyNet.alert.dao;
 
 
 import com.safetyNet.alert.model.*;
+import com.safetyNet.alert.repository.FireStationRepository;
 import com.safetyNet.alert.repository.MedicalRecordRepository;
 import com.safetyNet.alert.repository.PersonRepository;
 import org.slf4j.Logger;
@@ -21,6 +22,8 @@ import java.util.*;
 @Component
 public class PersonDaoImpl implements PersonDao {
     @Autowired
+    FireStationRepository fireStationRepository;
+    @Autowired
     PersonRepository personRepository;
     @Autowired
     MedicalRecordRepository medicalRecordRepository;
@@ -35,6 +38,8 @@ public class PersonDaoImpl implements PersonDao {
     @Override
     public Person create(Person person) {
         logger.debug("PersonDaoImpl create", person);
+        FireStation fireStation = fireStationRepository.findFirstByAddress(person.getAddress());
+        person.setFireStation(fireStation);
         return personRepository.save(person);
     }
 
