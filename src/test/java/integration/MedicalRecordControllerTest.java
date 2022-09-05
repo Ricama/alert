@@ -3,9 +3,7 @@ package integration;
 import com.safetyNet.alert.AlertApplication;
 import com.safetyNet.alert.dao.MedicalRecordDao;
 //import com.safetyNet.alert.dao.PersonDao;
-import com.safetyNet.alert.model.Allergy;
-import com.safetyNet.alert.model.MedicalRecord;
-import com.safetyNet.alert.model.Medication;
+import com.safetyNet.alert.model.*;
 import com.safetyNet.alert.repository.AllergyRepository;
 import com.safetyNet.alert.repository.MedicationRepository;
 import org.junit.jupiter.api.Test;
@@ -42,9 +40,15 @@ class MedicalRecordControllerTest {
 
     @Test
     void putMedicalRecords() throws Exception {
+        Medication medication = new Medication("Test");
+        Allergy allergy = new Allergy("Test");
         List<Medication> medicationList = new ArrayList<>();
         List<Allergy> allergyList = new ArrayList<>();
-        MedicalRecord medicalRecord = new MedicalRecord("Test", "Test", "02/18/2011", medicationList, allergyList);
+        medicationList.add(medication);
+        allergyList.add(allergy);
+        FireStation firstFireStationTest = new FireStation("1509 Culver St", "3");
+        Person firstPersonTest = new Person("Test", "Test", "1509 Culver St", "Culver", "97451", "841-874-6512", "jaboy@email.com", firstFireStationTest);
+        MedicalRecord medicalRecord = new MedicalRecord("Test", "Test", "02/18/2011", medicationList, allergyList,firstPersonTest);
         medicalRecordDao.create(medicalRecord);
         mockMvc.perform(put("/medicalRecord")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
@@ -55,9 +59,15 @@ class MedicalRecordControllerTest {
 
     @Test
     void deleteMedicalRecords() throws Exception {
+        Medication medication = new Medication("Test");
+        Allergy allergy = new Allergy("Test");
         List<Medication> medicationList = new ArrayList<>();
         List<Allergy> allergyList = new ArrayList<>();
-        MedicalRecord medicalRecord = new MedicalRecord("Test", "Test", "02/18/2011", medicationList, allergyList);
+        medicationList.add(medication);
+        allergyList.add(allergy);
+        FireStation firstFireStationTest = new FireStation("1509 Culver St", "3");
+        Person firstPersonTest = new Person("Test", "Test", "1509 Culver St", "Culver", "97451", "841-874-6512", "jaboy@email.com", firstFireStationTest);
+        MedicalRecord medicalRecord = new MedicalRecord("Test", "Test", "02/18/2011", medicationList, allergyList,firstPersonTest);
         medicalRecordDao.create(medicalRecord);
         mockMvc.perform(delete("/medicalRecord")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)

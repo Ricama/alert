@@ -1,8 +1,7 @@
 package com.safetyNet.alert.dao;
 
 import com.safetyNet.alert.model.*;
-import com.safetyNet.alert.repository.MedicalRecordRepository;
-import com.safetyNet.alert.repository.PersonRepository;
+import com.safetyNet.alert.repository.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,10 +23,16 @@ class PersonsDaoImplTest {
     private PersonRepository personRepository;
     @Mock
     private MedicalRecordRepository medicalRecordRepository;
+    @Mock
+    private FireStationRepository fireStationRepository;
+    @Mock
+    private MedicationRepository medicationRepository;
+    @Mock
+    private AllergyRepository allergyRepository;
 
     @BeforeEach
     private void setup() {
-        personDao = new PersonDaoImpl(personRepository, medicalRecordRepository);
+        personDao = new PersonDaoImpl(fireStationRepository,personRepository,medicalRecordRepository,medicationRepository,allergyRepository);
     }
 
     @Test
@@ -98,12 +103,15 @@ class PersonsDaoImplTest {
     @Test
     void getPersonByStationOneAdultTest() {
 
+        List<Medication> medicationTestList = new ArrayList<>();
+        List<Allergy> allergyTestList = new ArrayList<>();
+        MedicalRecord medicalRecordTest = new MedicalRecord("John", "Bod", "03/06/1988", medicationTestList, allergyTestList);
         FireStation fireStationTest = new FireStation("1509 Culver St", "3");
         Person personTest = new Person("John", "Bod", "1509 Culver St", "Culver", "97451", "841-874-6512", "jaboy@email.com", fireStationTest);
         List<Person> PersonTestList = new ArrayList<>();
         PersonTestList.add(personTest);
         when(personRepository.findByFireStationStation("1")).thenReturn(PersonTestList);
-        when(medicalRecordRepository.findBirthdateByFirstNameAndLastName(personTest.getFirstName(),personTest.getLastName())).thenReturn("03/06/1988");
+        when(medicalRecordRepository.findByFirstNameAndLastName(personTest.getFirstName(),personTest.getLastName())).thenReturn(medicalRecordTest);
         PersonByStation personByStationTest = new PersonByStation();
         personByStationTest.setFirstName("John");
         personByStationTest.setLastName("Bod");
@@ -129,12 +137,15 @@ class PersonsDaoImplTest {
     @Test
     void getPersonByStationOneChildTest() {
 
+        List<Medication> medicationTestList = new ArrayList<>();
+        List<Allergy> allergyTestList = new ArrayList<>();
+        MedicalRecord medicalRecordTest = new MedicalRecord("John", "Bod", "03/06/2012", medicationTestList, allergyTestList);
         FireStation fireStationTest = new FireStation("1509 Culver St", "3");
         Person personTest = new Person("John", "Bod", "1509 Culver St", "Culver", "97451", "841-874-6512", "jaboy@email.com", fireStationTest);
         List<Person> PersonTestList = new ArrayList<>();
         PersonTestList.add(personTest);
         when(personRepository.findByFireStationStation("1")).thenReturn(PersonTestList);
-        when(medicalRecordRepository.findBirthdateByFirstNameAndLastName(personTest.getFirstName(),personTest.getLastName())).thenReturn("03/06/2012");
+        when(medicalRecordRepository.findByFirstNameAndLastName(personTest.getFirstName(),personTest.getLastName())).thenReturn(medicalRecordTest);
         PersonByStation personByStationTest = new PersonByStation("John", "Bod", "1509 Culver St", "841-874-6512");
         List<PersonByStation> personByStationTestList = new ArrayList<>();
         personByStationTestList.add(personByStationTest);
@@ -153,6 +164,10 @@ class PersonsDaoImplTest {
 
     @Test
     void childByAddressOneAdultOneChildTest() {
+        List<Medication> medicationTestList = new ArrayList<>();
+        List<Allergy> allergyTestList = new ArrayList<>();
+        MedicalRecord medicalRecordTestOne = new MedicalRecord("John", "Bod", "03/06/1988", medicationTestList, allergyTestList);
+        MedicalRecord medicalRecordTestSecond = new MedicalRecord("Jo", "Bode", "03/06/2012", medicationTestList, allergyTestList);
         List<Person> PersonTestList = new ArrayList<>();
         FireStation firstFireStationTest = new FireStation("1509 Culver St", "3");
         Person firstPersonTest = new Person("John", "Bod", "1509 Culver St", "Culver", "97451", "841-874-6512", "jaboy@email.com", firstFireStationTest);
@@ -161,8 +176,8 @@ class PersonsDaoImplTest {
         Person personTest = new Person("Jo", "Bode", "1509 Culver St", "Culver", "97451", "841-873-6512", "jaboyd@email.com", fireStationTest);
         PersonTestList.add(personTest);
         when(personRepository.findByAddress("1509 Culver St")).thenReturn(PersonTestList);
-        when(medicalRecordRepository.findBirthdateByFirstNameAndLastName(firstPersonTest.getFirstName(),firstPersonTest.getLastName())).thenReturn("03/06/1988");
-        when(medicalRecordRepository.findBirthdateByFirstNameAndLastName(personTest.getFirstName(),personTest.getLastName())).thenReturn("03/06/2012");
+        when(medicalRecordRepository.findByFirstNameAndLastName(firstPersonTest.getFirstName(),firstPersonTest.getLastName())).thenReturn(medicalRecordTestOne);
+        when(medicalRecordRepository.findByFirstNameAndLastName(personTest.getFirstName(),personTest.getLastName())).thenReturn(medicalRecordTestSecond);
         List<Child> childListTest = new ArrayList<>();
         List<Person> adultListTest = new ArrayList<>();
         Child childTest = new Child();
@@ -190,6 +205,10 @@ class PersonsDaoImplTest {
 
     @Test
     void childByAddressJustAdultTest() {
+        List<Medication> medicationTestList = new ArrayList<>();
+        List<Allergy> allergyTestList = new ArrayList<>();
+        MedicalRecord medicalRecordTestOne = new MedicalRecord("John", "Bod", "03/06/1988", medicationTestList, allergyTestList);
+        MedicalRecord medicalRecordTestSecond = new MedicalRecord("Jo", "Bode", "03/06/1988", medicationTestList, allergyTestList);
         List<Person> PersonTestList = new ArrayList<>();
         FireStation firstFireStationTest = new FireStation("1509 Culver St", "3");
         Person firstPersonTest = new Person("John", "Bod", "1509 Culver St", "Culver", "97451", "841-874-6512", "jaboy@email.com",  firstFireStationTest);
@@ -197,8 +216,8 @@ class PersonsDaoImplTest {
         FireStation fireStationTest = new FireStation("1509 Culver St", "3");
         Person personTest = new Person("Jo", "Bode", "1509 Culver St", "Culver", "97451", "841-873-6512", "jaboyd@email.com",  fireStationTest);
         PersonTestList.add(personTest);
-        when(medicalRecordRepository.findBirthdateByFirstNameAndLastName(firstPersonTest.getFirstName(),firstPersonTest.getLastName())).thenReturn("03/06/1988");
-        when(medicalRecordRepository.findBirthdateByFirstNameAndLastName(personTest.getFirstName(),personTest.getLastName())).thenReturn("03/06/1988");
+        when(medicalRecordRepository.findByFirstNameAndLastName(firstPersonTest.getFirstName(),firstPersonTest.getLastName())).thenReturn(medicalRecordTestOne);
+        when(medicalRecordRepository.findByFirstNameAndLastName(personTest.getFirstName(),personTest.getLastName())).thenReturn(medicalRecordTestSecond);
         when(personRepository.findByAddress("1509 Culver St")).thenReturn(PersonTestList);
         List<Child> childListTest = new ArrayList<>();
         List<Person> adultListTest = new ArrayList<>();
@@ -211,6 +230,10 @@ class PersonsDaoImplTest {
 
     @Test
     void childByAddressJustChildTest() {
+        List<Medication> medicationTestList = new ArrayList<>();
+        List<Allergy> allergyTestList = new ArrayList<>();
+        MedicalRecord medicalRecordTestOne = new MedicalRecord("John", "Bod", "03/06/2020", medicationTestList, allergyTestList);
+        MedicalRecord medicalRecordTestSecond = new MedicalRecord("Jo", "Bode", "03/06/2012", medicationTestList, allergyTestList);
         List<Person> PersonTestList = new ArrayList<>();
         FireStation firstFireStationTest = new FireStation("1509 Culver St", "3");
         Person firstPersonTest = new Person("John", "Bod", "1509 Culver St", "Culver", "97451", "841-874-6512", "jaboy@email.com", firstFireStationTest);
@@ -218,8 +241,8 @@ class PersonsDaoImplTest {
         FireStation fireStationTest = new FireStation("1509 Culver St", "3");
         Person personTest = new Person("Jo", "Bode", "1509 Culver St", "Culver", "97451", "841-873-6512", "jaboyd@email.com", fireStationTest);
         PersonTestList.add(personTest);
-        when(medicalRecordRepository.findBirthdateByFirstNameAndLastName(firstPersonTest.getFirstName(),firstPersonTest.getLastName())).thenReturn("03/06/2020");
-        when(medicalRecordRepository.findBirthdateByFirstNameAndLastName(personTest.getFirstName(),personTest.getLastName())).thenReturn("03/06/2012");
+        when(medicalRecordRepository.findByFirstNameAndLastName(firstPersonTest.getFirstName(),firstPersonTest.getLastName())).thenReturn(medicalRecordTestOne);
+        when(medicalRecordRepository.findByFirstNameAndLastName(personTest.getFirstName(),personTest.getLastName())).thenReturn(medicalRecordTestSecond);
         when(personRepository.findByAddress("1509 Culver St")).thenReturn(PersonTestList);
         List<Child> childListTest = new ArrayList<>();
         List<Person> adultListTest = new ArrayList<>();
@@ -261,6 +284,7 @@ class PersonsDaoImplTest {
 
     @Test
     void personByAddressTest() {
+
         List<Person> PersonTestList = new ArrayList<>();
         List<Medication> medicationTestList = new ArrayList<>();
         List<Allergy> allergyTestList = new ArrayList<>();

@@ -3,9 +3,11 @@ package com.safetyNet.alert.dao;
 import com.safetyNet.alert.model.Allergy;
 import com.safetyNet.alert.model.MedicalRecord;
 import com.safetyNet.alert.model.Medication;
+import com.safetyNet.alert.model.Person;
 import com.safetyNet.alert.repository.AllergyRepository;
 import com.safetyNet.alert.repository.MedicalRecordRepository;
 import com.safetyNet.alert.repository.MedicationRepository;
+import com.safetyNet.alert.repository.PersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,10 @@ import java.util.List;
 
 @Component
 public class MedicalrecordsDaoImpl implements MedicalRecordDao {
+
+    @Autowired
+    PersonRepository personRepository;
+
     @Autowired
     MedicalRecordRepository medicalRecordRepository;
 
@@ -28,13 +34,18 @@ public class MedicalrecordsDaoImpl implements MedicalRecordDao {
 
     Logger logger = LoggerFactory.getLogger(MedicalrecordsDaoImpl.class);
 
-    public MedicalrecordsDaoImpl(MedicalRecordRepository medicalRecordRepository) {
+    public MedicalrecordsDaoImpl(PersonRepository personRepository, MedicalRecordRepository medicalRecordRepository, MedicationRepository medicationRepository, AllergyRepository allergyRepository) {
+        this.personRepository = personRepository;
         this.medicalRecordRepository = medicalRecordRepository;
+        this.medicationRepository = medicationRepository;
+        this.allergyRepository = allergyRepository;
     }
 
     @Override
     public MedicalRecord create(MedicalRecord medicalrecord) {
         logger.debug("MedicalrecordsDaoImpl create", medicalrecord);
+        Person person = personRepository.findByFirstNameAndLastName(medicalrecord.getFirstName(), medicalrecord.getLastName());
+        medicalrecord.setPerson(person);
         medicalRecordRepository.save(medicalrecord);
         if (medicalrecord.getMedications() != null) {
             for (int i = 0; i < medicalrecord.getMedications().size(); i++) {
@@ -46,22 +57,17 @@ public class MedicalrecordsDaoImpl implements MedicalRecordDao {
                 allergyRepository.save(allergy);
             }
         }
-        else{
-            Medication medication = new Medication("",medicalrecord);
-            Allergy allergy = new Allergy("",medicalrecord);
-        }
-
         return medicalrecord;
     }
 
     @Override
     public MedicalRecord updateMedical(MedicalRecord medicalrecord) {
-
+        Person person = personRepository.findByFirstNameAndLastName(medicalrecord.getFirstName(), medicalrecord.getLastName());
         MedicalRecord medicalRecordToUpdate = medicalRecordRepository.findByFirstNameAndLastName(medicalrecord.getFirstName(), medicalrecord.getLastName());
         medicalRecordToUpdate.setBirthdate(medicalrecord.getBirthdate());
         medicalRecordToUpdate.setMedications(medicalrecord.getMedications());
         medicalRecordToUpdate.setAllergies(medicalrecord.getAllergies());
-
+        medicalRecordToUpdate.setPerson(person);
         logger.debug("MedicalrecordsDaoImpl updateMedical", medicalrecord, medicalRecordToUpdate);
         medicalRecordRepository.save(medicalRecordToUpdate);
         for (int i = 0; i < medicalRecordToUpdate.getMedications().size(); i++) {
@@ -80,7 +86,6 @@ public class MedicalrecordsDaoImpl implements MedicalRecordDao {
         MedicalRecord medicalRecordapp= medicalRecordRepository.findByFirstNameAndLastName(firstName, lastName);
         List<Medication> medication = medicationRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(firstName, lastName);
         List<Allergy> allergy = allergyRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(firstName, lastName);
-
         List<Medication> medicationList = new ArrayList<>();
         List<Allergy> allergyList = new ArrayList<>();
         for (int i = 0;i < medication.size();i++){
@@ -94,7 +99,7 @@ public class MedicalrecordsDaoImpl implements MedicalRecordDao {
             allergyList.add(allergy1);
         }
         MedicalRecord medicalRecord = new MedicalRecord(firstName,lastName,medicalRecordapp.getBirthdate(),medicationList,allergyList);
-        medicalRecordRepository.deleteById(medicalRecordapp.getId());
+        medicalRecordRepository.delete(medicalRecord);
         logger.debug("MedicalrecordsDaoImpl deleteMedical", medicalRecord);
         return medicalRecord;
     }
