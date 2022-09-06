@@ -98,7 +98,7 @@ public class MedicalrecordsDaoImpl implements MedicalRecordDao {
             Allergy allergy1 = new Allergy(allergy.get(i).getAllergies());
             allergyList.add(allergy1);
         }
-        MedicalRecord medicalRecord = new MedicalRecord(firstName,lastName,medicalRecordapp.getBirthdate(),medicationList,allergyList);
+        MedicalRecord medicalRecord = new MedicalRecord(firstName,lastName,medicalRecordapp.getBirthdate(),medication,allergy);
         medicalRecordRepository.delete(medicalRecord);
         logger.debug("MedicalrecordsDaoImpl deleteMedical", medicalRecord);
         return medicalRecord;

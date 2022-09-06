@@ -53,8 +53,8 @@ class MedicalRecordControllerTest {
         mockMvc.perform(put("/medicalRecord")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content("{\"firstName\":\"Test\",\"lastName\":\"Test\",\"birthdate\":\"02/18/2012\",\"medication\":\"[\"aznol:350mg\"]\", \"allergies\":[\"nillacilan\"] }")
+
         );
-        medicalRecordDao.deleteMedical("Test", "Test");
     }
 
     @Test

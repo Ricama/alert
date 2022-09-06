@@ -94,6 +94,8 @@ class MedicalrecordsDaoImplTest {
         allergyTestList.add(allergy);
         MedicalRecord medicalRecordTest = new MedicalRecord("John", "Bod", "03/06/1984", medicationTestList, allergyTestList);
         when(medicalRecordRepository.findByFirstNameAndLastName("John","Bod")).thenReturn(medicalRecordTest);
+        when(medicationRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName("John","Bod")).thenReturn(medicationTestList);
+        when(allergyRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName("John","Bod")).thenReturn(allergyTestList);
         assertAll(
                 () -> assertEquals(medicalRecordTest.getFirstName(),medicalrecordsDao.deleteMedical("John","Bod").getFirstName()),
                 () -> assertEquals(medicalRecordTest.getLastName(),medicalrecordsDao.deleteMedical("John","Bod").getLastName()),
