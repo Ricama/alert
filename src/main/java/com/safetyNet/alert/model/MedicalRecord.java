@@ -5,7 +5,6 @@ import java.util.List;
 @Entity
 public class MedicalRecord {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -101,5 +100,7 @@ public class MedicalRecord {
     public void setPerson(Person person) {
         this.person = person;
     }
+
+
 
 }

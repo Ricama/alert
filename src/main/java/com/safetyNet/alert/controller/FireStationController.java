@@ -14,7 +14,7 @@ public class FireStationController {
 
     private final FirestationDao firestationsDao;
 
-    public FireStationController(FirestationDao firestationsDao){
+    public FireStationController(FirestationDao firestationsDao) {
 
         this.firestationsDao = firestationsDao;
     }
@@ -23,8 +23,9 @@ public class FireStationController {
      * Mapping post fireStation
      */
     @PostMapping(path = "/firestation")
-     public FireStation postFirestation(@RequestBody FireStation firestation){
-
+    public FireStation postFirestation(@RequestBody FireStation firestation) {
+        logger.info("POST FireStation executed");
+        logger.error("POST FireStation.(FireStation :"+firestation.toString()+"");
         return firestationsDao.create(firestation);
     }
 
@@ -32,17 +33,19 @@ public class FireStationController {
      * Mapping put fireStation
      */
     @PutMapping(path = "/firestation")
-     public FireStation putFirestation(@RequestBody FireStation firestation){
-
+    public FireStation putFirestation(@RequestBody FireStation firestation) {
+        logger.info("PUT FireStation executed");
+        logger.error("PUT FireStation.(FireStation :"+firestation.toString()+"");
         return firestationsDao.update(firestation);
     }
 
     /**
      * Mapping delete fireStation
      */
-    @DeleteMapping(path ="/firestation/{fire}")
-    public FireStation deleteStationFirestation(@PathVariable String fire){
-
+    @DeleteMapping(path = "/firestation/{fire}")
+    public FireStation deleteStationFirestation(@PathVariable String fire) {
+        logger.info("DELETE FireStation executed");
+        logger.error("DELETE FireStation.(Param :"+fire+"");
         return firestationsDao.delete(fire);
     }
 

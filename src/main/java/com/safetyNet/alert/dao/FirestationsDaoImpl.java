@@ -25,8 +25,10 @@ public class FirestationsDaoImpl implements FirestationDao {
 
     @Override
     public FireStation create(FireStation firestation) {
-        logger.debug("FirestationsDaoImpl create", firestation);
-        return fireStationRepository.save(firestation);
+        fireStationRepository.save(firestation);
+        logger.info("FireStation create.");
+        logger.debug("FireStationDaoImpl create.(FireStation: "+firestation.toString()+")");
+        return firestation;
     }
 
     @Override
@@ -34,23 +36,25 @@ public class FirestationsDaoImpl implements FirestationDao {
         FireStation fireStationToUpdate = fireStationRepository.findFirstByAddress(firestation.getAddress());
         fireStationToUpdate.setAddress(firestation.getAddress());
         fireStationToUpdate.setStation(firestation.getStation());
-
-        logger.debug("FirestationsDaoImpl update", firestation, fireStationToUpdate);
         fireStationRepository.save(fireStationToUpdate);
+        logger.info("FireStation update.");
+        logger.debug("FireStationDaoImpl update.(FireStation: "+firestation.toString()+" FireStationToUpdate: "+fireStationToUpdate.toString()+")");
         return fireStationToUpdate;
     }
 
     @Override
     public FireStation delete(String fire) {
         if (fire == "1" || fire == "2" || fire == "3" || fire == "4") {
+            logger.info("FireStation delete by station number");
             FireStation fireStationToDelete = fireStationRepository.findByStation(fire);
             fireStationRepository.delete(fireStationToDelete);
-            logger.debug("FirestationsDaoImpl create", fireStationToDelete);
+            logger.debug("FireStationDaoImpl delete by station number.(FireStationToDelete: "+fireStationToDelete.toString()+")");
             return fireStationToDelete;
         } else {
+            logger.info("FireStation delete by address");
             FireStation fireStationToDelete = fireStationRepository.findFirstByAddress(fire);
             fireStationRepository.delete(fireStationToDelete);
-            logger.debug("FirestationsDaoImpl create", fireStationToDelete);
+            logger.debug("FireStationDaoImpl delete by address.(FireStationToDelete: "+fireStationToDelete.toString()+")");
             return fireStationToDelete;
         }
     }

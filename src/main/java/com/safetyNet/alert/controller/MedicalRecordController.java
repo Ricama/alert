@@ -23,7 +23,8 @@ public class MedicalRecordController {
      */
     @PostMapping
      public MedicalRecord postMedicalRecords(@RequestBody MedicalRecord medicalRecord){
-
+        logger.info("POST MedicalRecord executed");
+        logger.error("POST MedicalRecord.(MedicalRecord :"+medicalRecord.toString()+"");
       return medicalRecordDao.create(medicalRecord);
     }
 
@@ -32,7 +33,8 @@ public class MedicalRecordController {
      */
     @PutMapping
      public MedicalRecord putMedicalRecords(@RequestBody MedicalRecord medicalRecord){
-
+        logger.info("PUT MedicalRecord executed");
+        logger.error("PUT MedicalRecord.(MedicalRecord :"+medicalRecord.toString()+"");
         return medicalRecordDao.updateMedical(medicalRecord);
     }
 
@@ -41,7 +43,8 @@ public class MedicalRecordController {
      */
     @DeleteMapping
      public MedicalRecord deleteMedicalRecords(@RequestBody MedicalRecord medicalRecord){
-
+        logger.info("DELETE MedicalRecord executed");
+        logger.error("DELETE MedicalRecord.(MedicalRecord :"+medicalRecord.toString()+"");
         return medicalRecordDao.deleteMedical(medicalRecord.getFirstName(), medicalRecord.getLastName());
     }
 
