@@ -8,11 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.xml.crypto.Data;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
@@ -46,7 +42,7 @@ public class PersonDaoImpl implements PersonDao {
         logger.info("Person create");
         FireStation fireStation = fireStationRepository.findFirstByAddress(person.getAddress());
         person.setFireStation(fireStation);
-        logger.debug("PersonDaoImpl create. (Person: "+person.toString()+" FireStation: "+fireStation.toString()+")");
+        logger.debug("PersonDaoImpl create. (Person: " + person.toString() + " FireStation: " + fireStation.toString() + ")");
         return personRepository.save(person);
     }
 
@@ -61,7 +57,7 @@ public class PersonDaoImpl implements PersonDao {
         personToUpdate.setPhone(person.getPhone());
         personToUpdate.setEmail(person.getEmail());
         personToUpdate.setFireStation(fireStationToUpdate);
-        logger.debug("PersonDaoImpl update. (Person: "+person.toString()+" PersonToUpdate: "+personToUpdate.toString()+" FireStationToUpdate: "+fireStationToUpdate.toString()+")");
+        logger.debug("PersonDaoImpl update. (Person: " + person.toString() + " PersonToUpdate: " + personToUpdate.toString() + " FireStationToUpdate: " + fireStationToUpdate.toString() + ")");
         personRepository.save(personToUpdate);
         return personToUpdate;
     }
@@ -71,7 +67,7 @@ public class PersonDaoImpl implements PersonDao {
         logger.info("Person delete");
         Person personToDelete = personRepository.findByFirstNameAndLastName(firstName, lastName);
         personRepository.delete(personToDelete);
-        logger.debug("PersonDaoImpl delete. (Person: "+personToDelete.toString()+" Param: "+firstName+","+lastName+")");
+        logger.debug("PersonDaoImpl delete. (Person: " + personToDelete.toString() + " Param: " + firstName + "," + lastName + ")");
         return personToDelete;
     }
 
@@ -84,7 +80,7 @@ public class PersonDaoImpl implements PersonDao {
             int child = 0;
             List<PersonByStation> personByStations = new ArrayList<>();
             for (int i = 0; i < person.size(); i++) {
-                MedicalRecord medicalRecord= medicalRecordRepository.findByFirstNameAndLastName(person.get(i).getFirstName(),person.get(i).getLastName());
+                MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(person.get(i).getFirstName(), person.get(i).getLastName());
                 LocalDate currentDate = LocalDate.now();
                 LocalDate personDate = LocalDate.parse(medicalRecord.getBirthdate(), DateTimeFormatter.ofPattern("MM/dd/yyyy"));
                 if (currentDate.getYear() - personDate.getYear() < 18) {
@@ -98,7 +94,7 @@ public class PersonDaoImpl implements PersonDao {
                 personByStations.add(personByStationadd);
             }
             PersonByStationList result = new PersonByStationList(personByStations, adult, child);
-            logger.debug("PersonByStationList. (Station: "+station+" Persons: "+person.toString()+" PersonByStations: "+personByStations.toString()+"");
+            logger.debug("PersonByStationList. (Station: " + station + " Persons: " + person.toString() + " PersonByStations: " + personByStations.toString() + "");
             return result;
         } catch (Exception e) {
             logger.error("Exception getPersonByStation {}", e);
@@ -115,7 +111,7 @@ public class PersonDaoImpl implements PersonDao {
             List<Person> adult = new ArrayList<>();
             int childCount = 0;
             for (int i = 0; i < personList.size(); i++) {
-                MedicalRecord medicalRecord= medicalRecordRepository.findByFirstNameAndLastName(personList.get(i).getFirstName(),personList.get(i).getLastName());
+                MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(personList.get(i).getFirstName(), personList.get(i).getLastName());
                 LocalDate currentDate = LocalDate.now();
                 LocalDate personDate = LocalDate.parse(medicalRecord.getBirthdate(), DateTimeFormatter.ofPattern("MM/dd/yyyy"));
                 if (currentDate.getYear() - personDate.getYear() < 18) {
@@ -128,10 +124,10 @@ public class PersonDaoImpl implements PersonDao {
             }
             ChildByAddress childByAddress = new ChildByAddress(childList, adult);
             if (childCount > 0) {
-                logger.debug("PersonDaoImpl childByAddress. (Address: "+address+" PersonList: "+personList.toString()+" ChildList: "+childList.toString()+" Adult: "+adult.toString()+" ChildByAddress: "+childByAddress.toString()+" ChildCount: "+childCount+")");
+                logger.debug("PersonDaoImpl childByAddress. (Address: " + address + " PersonList: " + personList.toString() + " ChildList: " + childList.toString() + " Adult: " + adult.toString() + " ChildByAddress: " + childByAddress.toString() + " ChildCount: " + childCount + ")");
                 return childByAddress;
             } else {
-                logger.debug("PersonDaoImpl childByAddress return null ChildCount:"+childCount+"");
+                logger.debug("PersonDaoImpl childByAddress return null ChildCount:" + childCount + "");
                 return null;
             }
 
@@ -150,7 +146,7 @@ public class PersonDaoImpl implements PersonDao {
         for (int i = 0; i < personList.size(); i++) {
             phoneList.add(personList.get(i).getPhone());
         }
-        logger.debug("PersonDaoImpl getPhoneByStation. (Station: "+station+" PhoneList: "+phoneList.toString()+" PersonList: "+personList.toString()+")");
+        logger.debug("PersonDaoImpl getPhoneByStation. (Station: " + station + " PhoneList: " + phoneList.toString() + " PersonList: " + personList.toString() + ")");
         return phoneList;
     }
 
@@ -160,13 +156,13 @@ public class PersonDaoImpl implements PersonDao {
         List<Person> person = personRepository.findByAddress(address);
         List<PersonByAddress> personByAddressList = new ArrayList<>();
         for (int i = 0; i < person.size(); i++) {
-            MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(person.get(i).getFirstName(),person.get(i).getLastName());
-            List<Medication> medicationList = medicationRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(person.get(i).getFirstName(),person.get(i).getLastName());
-            List<Allergy> allergyList = allergyRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(person.get(i).getFirstName(),person.get(i).getLastName());
-            PersonByAddress personByAddress = new PersonByAddress(person.get(i).getFireStation().getStation(), person.get(i).getFirstName(), person.get(i).getLastName(), person.get(i).getPhone(), medicalRecord.getBirthdate(), medicationList,allergyList);
+            MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(person.get(i).getFirstName(), person.get(i).getLastName());
+            List<Medication> medicationList = medicationRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(person.get(i).getFirstName(), person.get(i).getLastName());
+            List<Allergy> allergyList = allergyRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(person.get(i).getFirstName(), person.get(i).getLastName());
+            PersonByAddress personByAddress = new PersonByAddress(person.get(i).getFireStation().getStation(), person.get(i).getFirstName(), person.get(i).getLastName(), person.get(i).getPhone(), medicalRecord.getBirthdate(), medicationList, allergyList);
             personByAddressList.add(personByAddress);
         }
-        logger.debug("PersonDaoImpl personByAddress. (Address: "+address+" Person: "+person.toString()+" PersonByAddressList: "+ personByAddressList.toString()+")");
+        logger.debug("PersonDaoImpl personByAddress. (Address: " + address + " Person: " + person.toString() + " PersonByAddressList: " + personByAddressList.toString() + ")");
         return personByAddressList;
 
     }
@@ -181,16 +177,16 @@ public class PersonDaoImpl implements PersonDao {
             List<Person> personList = personRepository.findByAddress(address.get(i));
             List<HomePerson> homePersonList = new ArrayList<>();
             for (int a = 0; a < personList.size(); a++) {
-                MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(personList.get(a).getFirstName(),personList.get(a).getLastName());
-                List<Medication> medicationList = medicationRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(personList.get(a).getFirstName(),personList.get(a).getLastName());
-                List<Allergy> allergyList = allergyRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(personList.get(a).getFirstName(),personList.get(a).getLastName());
+                MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(personList.get(a).getFirstName(), personList.get(a).getLastName());
+                List<Medication> medicationList = medicationRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(personList.get(a).getFirstName(), personList.get(a).getLastName());
+                List<Allergy> allergyList = allergyRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(personList.get(a).getFirstName(), personList.get(a).getLastName());
                 HomePerson homePerson = new HomePerson(personList.get(a).getLastName(), personList.get(a).getFirstName(), personList.get(a).getPhone(), medicalRecord.getBirthdate(), medicationList, allergyList);
                 homePersonList.add(homePerson);
             }
             Home home = new Home(address.get(i), homePersonList);
             homeList.add(home);
         }
-        logger.debug("PersonDaoImpl getHomeByStation. (Station: "+station+" Address: "+address.toString()+" HomeList: "+homeList.toString()+")");
+        logger.debug("PersonDaoImpl getHomeByStation. (Station: " + station + " Address: " + address.toString() + " HomeList: " + homeList.toString() + ")");
         return homeList;
     }
 
@@ -199,17 +195,17 @@ public class PersonDaoImpl implements PersonDao {
         logger.info("personInfo");
         Person person = personRepository.findByFirstNameAndLastName(firstName, lastName);
         MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(firstName, lastName);
-        List<Medication> medicationList = medicationRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(person.getFirstName(),person.getLastName());
-        List<Allergy> allergyList = allergyRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(person.getFirstName(),person.getLastName());
-        PersonInfo personInfo = new PersonInfo(person.getLastName(), medicalRecord.getBirthdate(), person.getEmail(),medicationList,allergyList);
-        logger.debug("PersonDaoImpl personInfo. (FirstName: "+firstName+" LastName: "+lastName+" Person: "+person.toString()+" MedicalRecord: "+medicalRecord.toString()+" MedicationList: "+medicationList.toString()+" AllergyList: "+allergyList.toString()+" PersonInfo: "+personInfo.toString()+")");
+        List<Medication> medicationList = medicationRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(person.getFirstName(), person.getLastName());
+        List<Allergy> allergyList = allergyRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(person.getFirstName(), person.getLastName());
+        PersonInfo personInfo = new PersonInfo(person.getLastName(), medicalRecord.getBirthdate(), person.getEmail(), medicationList, allergyList);
+        logger.debug("PersonDaoImpl personInfo. (FirstName: " + firstName + " LastName: " + lastName + " Person: " + person.toString() + " MedicalRecord: " + medicalRecord.toString() + " MedicationList: " + medicationList.toString() + " AllergyList: " + allergyList.toString() + " PersonInfo: " + personInfo.toString() + ")");
         return personInfo;
     }
 
     @Override
     public List<String> getEmailByCity(String city) {
         logger.info("getEmailByCity");
-        logger.debug("PersonDaoImpl getEmailByCity. (City: "+city+"");
+        logger.debug("PersonDaoImpl getEmailByCity. (City: " + city + "");
         return personRepository.findEmailByCity(city);
     }
 }
