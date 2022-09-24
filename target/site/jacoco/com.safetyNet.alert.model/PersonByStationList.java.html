@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PersonByStationList.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">alert</a> &gt; <a href="index.source.html" class="el_package">com.safetyNet.alert.model</a> &gt; <span class="el_source">PersonByStationList.java</span></div><h1>PersonByStationList.java</h1><pre class="source lang-java linenums">package com.safetyNet.alert.model;
+
+import java.util.List;
+
+public class PersonByStationList {
+
+    List&lt;PersonByStation&gt; person;
+    int countAdults;
+    int countChilds;
+
+<span class="fc" id="L11">    public PersonByStationList(List&lt;PersonByStation&gt; person, int countAdults, int countChilds) {</span>
+<span class="fc" id="L12">        this.person = person;</span>
+<span class="fc" id="L13">        this.countAdults = countAdults;</span>
+<span class="fc" id="L14">        this.countChilds = countChilds;</span>
+<span class="fc" id="L15">    }</span>
+
+<span class="fc" id="L17">    public PersonByStationList() {</span>
+<span class="fc" id="L18">    }</span>
+
+
+    public List&lt;PersonByStation&gt; getPerson() {
+<span class="fc" id="L22">        return person;</span>
+    }
+
+    public void setPerson(List&lt;PersonByStation&gt; person) {
+<span class="fc" id="L26">        this.person = person;</span>
+<span class="fc" id="L27">    }</span>
+
+    public int getCountAdults() {
+<span class="fc" id="L30">        return countAdults;</span>
+    }
+
+    public void setCountAdults(int countAdults) {
+<span class="fc" id="L34">        this.countAdults = countAdults;</span>
+<span class="fc" id="L35">    }</span>
+
+    public int getCountChilds() {
+<span class="fc" id="L38">        return countChilds;</span>
+    }
+
+    public void setCountChilds(int countChilds) {
+<span class="fc" id="L42">        this.countChilds = countChilds;</span>
+<span class="fc" id="L43">    }</span>
+
+    @Override
+    public String toString() {
+<span class="nc" id="L47">        return &quot;PersonByStationList{&quot; +</span>
+                &quot;person=&quot; + person +
+                &quot;, countAdults='&quot; + countAdults + '\'' +
+                &quot;, countChilds='&quot; + countChilds + '\'' +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

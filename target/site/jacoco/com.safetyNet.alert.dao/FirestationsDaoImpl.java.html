@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FirestationsDaoImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">alert</a> &gt; <a href="index.source.html" class="el_package">com.safetyNet.alert.dao</a> &gt; <span class="el_source">FirestationsDaoImpl.java</span></div><h1>FirestationsDaoImpl.java</h1><pre class="source lang-java linenums">package com.safetyNet.alert.dao;
+
+import com.safetyNet.alert.model.FireStation;
+import com.safetyNet.alert.model.HomePerson;
+import com.safetyNet.alert.repository.FireStationRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+
+@Component
+public class FirestationsDaoImpl implements FirestationDao {
+
+    @Autowired
+    FireStationRepository fireStationRepository;
+
+<span class="fc" id="L20">    Logger logger = LoggerFactory.getLogger(FirestationsDaoImpl.class);</span>
+
+<span class="fc" id="L22">    public FirestationsDaoImpl(FireStationRepository fireStationRepository) {</span>
+<span class="fc" id="L23">        this.fireStationRepository = fireStationRepository;</span>
+<span class="fc" id="L24">    }</span>
+
+    @Override
+    public FireStation create(FireStation firestation) {
+<span class="fc" id="L28">        fireStationRepository.save(firestation);</span>
+<span class="fc" id="L29">        logger.info(&quot;FireStation create.&quot;);</span>
+<span class="fc" id="L30">        logger.debug(&quot;FireStationDaoImpl create.(FireStation: &quot;+firestation.toString()+&quot;)&quot;);</span>
+<span class="fc" id="L31">        return firestation;</span>
+    }
+
+    @Override
+    public FireStation update(FireStation firestation) {
+<span class="fc" id="L36">        FireStation fireStationToUpdate = fireStationRepository.findFirstByAddress(firestation.getAddress());</span>
+<span class="fc" id="L37">        fireStationToUpdate.setAddress(firestation.getAddress());</span>
+<span class="fc" id="L38">        fireStationToUpdate.setStation(firestation.getStation());</span>
+<span class="fc" id="L39">        fireStationRepository.save(fireStationToUpdate);</span>
+<span class="fc" id="L40">        logger.info(&quot;FireStation update.&quot;);</span>
+<span class="fc" id="L41">        logger.debug(&quot;FireStationDaoImpl update.(FireStation: &quot;+firestation.toString()+&quot; FireStationToUpdate: &quot;+fireStationToUpdate.toString()+&quot;)&quot;);</span>
+<span class="fc" id="L42">        return fireStationToUpdate;</span>
+    }
+
+    @Override
+    public FireStation delete(String fire) {
+<span class="pc bpc" id="L47" title="1 of 10 branches missed.">        if (fire == &quot;1&quot; || fire == &quot;2&quot; || fire == &quot;3&quot; || fire == &quot;4&quot; || fire == &quot;5&quot;) {</span>
+<span class="fc" id="L48">            logger.info(&quot;FireStation delete by station number&quot;);</span>
+<span class="fc" id="L49">            FireStation fireStationToDelete = fireStationRepository.findByStation(fire);</span>
+<span class="fc" id="L50">            fireStationRepository.delete(fireStationToDelete);</span>
+<span class="fc" id="L51">            logger.debug(&quot;FireStationDaoImpl delete by station number.(FireStationToDelete: &quot;+fireStationToDelete.toString()+&quot;)&quot;);</span>
+<span class="fc" id="L52">            return fireStationToDelete;</span>
+        } else {
+<span class="fc" id="L54">            logger.info(&quot;FireStation delete by address&quot;);</span>
+<span class="fc" id="L55">            FireStation fireStationToDelete = fireStationRepository.findFirstByAddress(fire);</span>
+<span class="fc" id="L56">            fireStationRepository.delete(fireStationToDelete);</span>
+<span class="fc" id="L57">            logger.debug(&quot;FireStationDaoImpl delete by address.(FireStationToDelete: &quot;+fireStationToDelete.toString()+&quot;)&quot;);</span>
+<span class="fc" id="L58">            return fireStationToDelete;</span>
+        }
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

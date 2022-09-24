@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PersonDaoImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">alert</a> &gt; <a href="index.source.html" class="el_package">com.safetyNet.alert.dao</a> &gt; <span class="el_source">PersonDaoImpl.java</span></div><h1>PersonDaoImpl.java</h1><pre class="source lang-java linenums">package com.safetyNet.alert.dao;
+
+
+import com.safetyNet.alert.model.*;
+import com.safetyNet.alert.repository.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+
+
+@Component
+public class PersonDaoImpl implements PersonDao {
+    @Autowired
+    FireStationRepository fireStationRepository;
+    @Autowired
+    PersonRepository personRepository;
+    @Autowired
+    MedicalRecordRepository medicalRecordRepository;
+    @Autowired
+    MedicationRepository medicationRepository;
+    @Autowired
+    AllergyRepository allergyRepository;
+
+<span class="fc" id="L29">    private final Logger logger = LoggerFactory.getLogger(PersonDaoImpl.class);</span>
+
+
+<span class="fc" id="L32">    public PersonDaoImpl(FireStationRepository fireStationRepository, PersonRepository personRepository, MedicalRecordRepository medicalRecordRepository, MedicationRepository medicationRepository, AllergyRepository allergyRepository) {</span>
+<span class="fc" id="L33">        this.fireStationRepository = fireStationRepository;</span>
+<span class="fc" id="L34">        this.personRepository = personRepository;</span>
+<span class="fc" id="L35">        this.medicalRecordRepository = medicalRecordRepository;</span>
+<span class="fc" id="L36">        this.medicationRepository = medicationRepository;</span>
+<span class="fc" id="L37">        this.allergyRepository = allergyRepository;</span>
+<span class="fc" id="L38">    }</span>
+
+    @Override
+    public Person create(Person person) {
+<span class="fc" id="L42">        logger.info(&quot;Person create&quot;);</span>
+<span class="fc" id="L43">        FireStation fireStation = fireStationRepository.findFirstByAddress(person.getAddress());</span>
+<span class="fc" id="L44">        person.setFireStation(fireStation);</span>
+<span class="fc" id="L45">        logger.debug(&quot;PersonDaoImpl create. (Person: &quot; + person.toString() + &quot;)&quot;);</span>
+<span class="fc" id="L46">        return personRepository.save(person);</span>
+    }
+
+    @Override
+    public Person update(Person person) {
+<span class="fc" id="L51">        logger.info(&quot;Person update&quot;);</span>
+<span class="fc" id="L52">        Person personToUpdate = personRepository.findByFirstNameAndLastName(person.getFirstName(), person.getLastName());</span>
+<span class="fc" id="L53">        FireStation fireStationToUpdate = fireStationRepository.findFirstByAddress(person.getAddress());</span>
+<span class="fc" id="L54">        personToUpdate.setAddress(person.getAddress());</span>
+<span class="fc" id="L55">        personToUpdate.setCity(person.getCity());</span>
+<span class="fc" id="L56">        personToUpdate.setZip(person.getZip());</span>
+<span class="fc" id="L57">        personToUpdate.setPhone(person.getPhone());</span>
+<span class="fc" id="L58">        personToUpdate.setEmail(person.getEmail());</span>
+<span class="fc" id="L59">        personToUpdate.setFireStation(fireStationToUpdate);</span>
+<span class="fc" id="L60">        logger.debug(&quot;PersonDaoImpl update. (Person: &quot; + person.toString() + &quot; PersonToUpdate: &quot; + personToUpdate.toString() + &quot;)&quot;);</span>
+<span class="fc" id="L61">        personRepository.save(personToUpdate);</span>
+<span class="fc" id="L62">        return personToUpdate;</span>
+    }
+
+    @Override
+    public Person delete(String firstName, String lastName) {
+<span class="fc" id="L67">        logger.info(&quot;Person delete&quot;);</span>
+<span class="fc" id="L68">        Person personToDelete = personRepository.findByFirstNameAndLastName(firstName, lastName);</span>
+<span class="fc" id="L69">        personRepository.delete(personToDelete);</span>
+<span class="fc" id="L70">        logger.debug(&quot;PersonDaoImpl delete. (Person: &quot; + personToDelete.toString() + &quot; Param: &quot; + firstName + &quot;,&quot; + lastName + &quot;)&quot;);</span>
+<span class="fc" id="L71">        return personToDelete;</span>
+    }
+
+    @Override
+    public PersonByStationList getPersonByStation(String station) {
+<span class="fc" id="L76">        logger.info(&quot;PersonByStationList&quot;);</span>
+        try {
+<span class="fc" id="L78">            List&lt;Person&gt; person = personRepository.findByFireStationStation(station);</span>
+<span class="fc" id="L79">            int adult = 0;</span>
+<span class="fc" id="L80">            int child = 0;</span>
+<span class="fc" id="L81">            List&lt;PersonByStation&gt; personByStations = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">            for (int i = 0; i &lt; person.size(); i++) {</span>
+<span class="fc" id="L83">                MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(person.get(i).getFirstName(), person.get(i).getLastName());</span>
+<span class="fc" id="L84">                LocalDate currentDate = LocalDate.now();</span>
+<span class="fc" id="L85">                LocalDate personDate = LocalDate.parse(medicalRecord.getBirthdate(), DateTimeFormatter.ofPattern(&quot;MM/dd/yyyy&quot;));</span>
+<span class="fc bfc" id="L86" title="All 2 branches covered.">                if (currentDate.getYear() - personDate.getYear() &lt; 18) {</span>
+<span class="fc" id="L87">                    child++;</span>
+                } else {
+
+<span class="fc" id="L90">                    adult++;</span>
+                }
+
+<span class="fc" id="L93">                PersonByStation personByStationadd = new PersonByStation(person.get(i).getFirstName(), person.get(i).getLastName(), person.get(i).getAddress(), person.get(i).getPhone());</span>
+<span class="fc" id="L94">                personByStations.add(personByStationadd);</span>
+            }
+<span class="fc" id="L96">            PersonByStationList result = new PersonByStationList(personByStations, adult, child);</span>
+<span class="fc" id="L97">            logger.debug(&quot;PersonByStationList. (Station: &quot; + station + &quot; Persons: &quot; + person.toString() + &quot; PersonByStations: &quot; + personByStations.toString() + &quot;&quot;);</span>
+<span class="fc" id="L98">            return result;</span>
+<span class="nc" id="L99">        } catch (Exception e) {</span>
+<span class="nc" id="L100">            logger.error(&quot;Exception getPersonByStation {}&quot;, e);</span>
+        }
+<span class="nc" id="L102">        return null;</span>
+    }
+
+    @Override
+    public ChildByAddress childByAddress(String address) {
+<span class="fc" id="L107">        logger.info(&quot;childByAddress&quot;);</span>
+        try {
+<span class="fc" id="L109">            List&lt;Person&gt; personList = personRepository.findByAddress(address);</span>
+<span class="fc" id="L110">            List&lt;Child&gt; childList = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L111">            List&lt;Person&gt; adult = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L112">            int childCount = 0;</span>
+<span class="fc bfc" id="L113" title="All 2 branches covered.">            for (int i = 0; i &lt; personList.size(); i++) {</span>
+<span class="fc" id="L114">                MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(personList.get(i).getFirstName(), personList.get(i).getLastName());</span>
+<span class="fc" id="L115">                LocalDate currentDate = LocalDate.now();</span>
+<span class="fc" id="L116">                LocalDate personDate = LocalDate.parse(medicalRecord.getBirthdate(), DateTimeFormatter.ofPattern(&quot;MM/dd/yyyy&quot;));</span>
+<span class="fc bfc" id="L117" title="All 2 branches covered.">                if (currentDate.getYear() - personDate.getYear() &lt; 18) {</span>
+<span class="fc" id="L118">                    Child child = new Child(personList.get(i).getFirstName(), personList.get(i).getLastName(), medicalRecord.getBirthdate());</span>
+<span class="fc" id="L119">                    childList.add(child);</span>
+<span class="fc" id="L120">                    childCount++;</span>
+<span class="fc" id="L121">                } else {</span>
+<span class="fc" id="L122">                    adult.add(personList.get(i));</span>
+                }
+            }
+<span class="fc" id="L125">            ChildByAddress childByAddress = new ChildByAddress(childList, adult);</span>
+<span class="fc bfc" id="L126" title="All 2 branches covered.">            if (childCount &gt; 0) {</span>
+<span class="fc" id="L127">                logger.debug(&quot;PersonDaoImpl childByAddress. (Address: &quot; + address + &quot; PersonList: &quot; + personList.toString() + &quot; ChildList: &quot; + childList.toString() + &quot; Adult: &quot; + adult.toString() + &quot; ChildByAddress: &quot; + childByAddress.toString() + &quot; ChildCount: &quot; + childCount + &quot;)&quot;);</span>
+<span class="fc" id="L128">                return childByAddress;</span>
+            } else {
+<span class="fc" id="L130">                logger.debug(&quot;PersonDaoImpl childByAddress return null ChildCount:&quot; + childCount + &quot;&quot;);</span>
+<span class="fc" id="L131">                return null;</span>
+            }
+
+<span class="nc" id="L134">        } catch (Exception e) {</span>
+
+<span class="nc" id="L136">            logger.error(&quot;Exception getPersonByStation {}&quot;, e);</span>
+        }
+<span class="nc" id="L138">        return null;</span>
+    }
+
+    @Override
+    public List&lt;String&gt; getPhoneByStation(String station) {
+<span class="fc" id="L143">        logger.info(&quot;getPhoneByStation&quot;);</span>
+<span class="fc" id="L144">        List&lt;String&gt; phoneList = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L145">        List&lt;Person&gt; personList = personRepository.findByFireStationStation(station);</span>
+<span class="fc bfc" id="L146" title="All 2 branches covered.">        for (int i = 0; i &lt; personList.size(); i++) {</span>
+<span class="fc" id="L147">            phoneList.add(personList.get(i).getPhone());</span>
+        }
+<span class="fc" id="L149">        logger.debug(&quot;PersonDaoImpl getPhoneByStation. (Station: &quot; + station + &quot; PhoneList: &quot; + phoneList.toString() + &quot; PersonList: &quot; + personList.toString() + &quot;)&quot;);</span>
+<span class="fc" id="L150">        return phoneList;</span>
+    }
+
+    @Override
+    public List&lt;PersonByAddress&gt; personByAddress(String address) {
+<span class="fc" id="L155">        logger.info(&quot;personByAddress&quot;);</span>
+<span class="fc" id="L156">        List&lt;Person&gt; person = personRepository.findByAddress(address);</span>
+<span class="fc" id="L157">        List&lt;PersonByAddress&gt; personByAddressList = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L158" title="All 2 branches covered.">        for (int i = 0; i &lt; person.size(); i++) {</span>
+<span class="fc" id="L159">            MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(person.get(i).getFirstName(), person.get(i).getLastName());</span>
+<span class="fc" id="L160">            List&lt;Medication&gt; medicationList = medicationRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(person.get(i).getFirstName(), person.get(i).getLastName());</span>
+<span class="fc" id="L161">            List&lt;Allergy&gt; allergyList = allergyRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(person.get(i).getFirstName(), person.get(i).getLastName());</span>
+<span class="fc" id="L162">            PersonByAddress personByAddress = new PersonByAddress(person.get(i).getFireStation().getStation(), person.get(i).getFirstName(), person.get(i).getLastName(), person.get(i).getPhone(), medicalRecord.getBirthdate(), medicationList, allergyList);</span>
+<span class="fc" id="L163">            personByAddressList.add(personByAddress);</span>
+        }
+<span class="fc" id="L165">        logger.debug(&quot;PersonDaoImpl personByAddress. (Address: &quot; + address + &quot; Person: &quot; + person.toString() + &quot; PersonByAddressList: &quot; + personByAddressList.toString() + &quot;)&quot;);</span>
+<span class="fc" id="L166">        return personByAddressList;</span>
+
+    }
+
+
+    @Override
+    public List&lt;Home&gt; getHomeByStation(String station) {
+<span class="fc" id="L173">        logger.info(&quot;getHomeByStation&quot;);</span>
+<span class="fc" id="L174">        List&lt;String&gt; address = personRepository.findAddressByFireStationStation(station);</span>
+<span class="fc" id="L175">        List&lt;Home&gt; homeList = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L176" title="All 2 branches covered.">        for (int i = 0; i &lt; address.size(); i++) {</span>
+<span class="fc" id="L177">            List&lt;Person&gt; personList = personRepository.findByAddress(address.get(i));</span>
+<span class="fc" id="L178">            List&lt;HomePerson&gt; homePersonList = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L179" title="All 2 branches covered.">            for (int a = 0; a &lt; personList.size(); a++) {</span>
+<span class="fc" id="L180">                MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(personList.get(a).getFirstName(), personList.get(a).getLastName());</span>
+<span class="fc" id="L181">                List&lt;Medication&gt; medicationList = medicationRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(personList.get(a).getFirstName(), personList.get(a).getLastName());</span>
+<span class="fc" id="L182">                List&lt;Allergy&gt; allergyList = allergyRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(personList.get(a).getFirstName(), personList.get(a).getLastName());</span>
+<span class="fc" id="L183">                HomePerson homePerson = new HomePerson(personList.get(a).getLastName(), personList.get(a).getFirstName(), personList.get(a).getPhone(), medicalRecord.getBirthdate(), medicationList, allergyList);</span>
+<span class="fc" id="L184">                homePersonList.add(homePerson);</span>
+            }
+<span class="fc" id="L186">            Home home = new Home(address.get(i), homePersonList);</span>
+<span class="fc" id="L187">            homeList.add(home);</span>
+        }
+<span class="fc" id="L189">        logger.debug(&quot;PersonDaoImpl getHomeByStation. (Station: &quot; + station + &quot; Address: &quot; + address.toString() + &quot; HomeList: &quot; + homeList.toString() + &quot;)&quot;);</span>
+<span class="fc" id="L190">        return homeList;</span>
+    }
+
+    @Override
+    public PersonInfo personInfo(String firstName, String lastName) {
+<span class="fc" id="L195">        logger.info(&quot;personInfo&quot;);</span>
+<span class="fc" id="L196">        Person person = personRepository.findByFirstNameAndLastName(firstName, lastName);</span>
+<span class="fc" id="L197">        MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(firstName, lastName);</span>
+<span class="fc" id="L198">        List&lt;Medication&gt; medicationList = medicationRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(person.getFirstName(), person.getLastName());</span>
+<span class="fc" id="L199">        List&lt;Allergy&gt; allergyList = allergyRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(person.getFirstName(), person.getLastName());</span>
+<span class="fc" id="L200">        PersonInfo personInfo = new PersonInfo(person.getLastName(), medicalRecord.getBirthdate(), person.getEmail(), medicationList, allergyList);</span>
+<span class="fc" id="L201">        logger.debug(&quot;PersonDaoImpl personInfo. (FirstName: &quot; + firstName + &quot; LastName: &quot; + lastName + &quot; Person: &quot; + person.toString() + &quot; MedicalRecord: &quot; + medicalRecord.toString() + &quot; MedicationList: &quot; + medicationList.toString() + &quot; AllergyList: &quot; + allergyList.toString() + &quot; PersonInfo: &quot; + personInfo.toString() + &quot;)&quot;);</span>
+<span class="fc" id="L202">        return personInfo;</span>
+    }
+
+    @Override
+    public List&lt;String&gt; getEmailByCity(String city) {
+<span class="fc" id="L207">        logger.info(&quot;getEmailByCity&quot;);</span>
+<span class="fc" id="L208">        logger.debug(&quot;PersonDaoImpl getEmailByCity. (City: &quot; + city + &quot;&quot;);</span>
+<span class="fc" id="L209">        return personRepository.findEmailByCity(city);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

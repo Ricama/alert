@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="81315f23-4586-41df-87ee-3cef2651628e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/dao/FirestationsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/dao/FirestationsDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/dao/MedicalrecordsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/dao/MedicalrecordsDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/dao/PersonDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/dao/PersonDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/integration/PersonControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/integration/PersonControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/controller/MedicalRecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/controller/MedicalRecordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/dao/FirestationsDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/dao/FirestationsDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/dao/MedicalrecordsDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/dao/MedicalrecordsDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/model/FireStation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/model/FireStation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/model/MedicalRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/model/MedicalRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/model/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/repository/MedicalRecordRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/repository/MedicalRecordRepository.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="29eTdh1f9CL3F22M9441whwCSz0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projet2" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.notifications" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\code\alert\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\code\alert\src" />
+      <recent name="F:\code\alert\src\main\resources" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="integration" />
+      <recent name="com.safetyNet.alert.service" />
+      <recent name="com.safetyNet.alert.dao" />
+      <recent name="com.safetyNet.alert.controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.AlertApplication">
+    <configuration name="AlertApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.safetyNet.alert.AlertApplication" />
+      <module name="alert" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.safetyNet.alert.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="alert" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integration" />
+      <option name="MAIN_CLASS_NAME" value="integration.PersonControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonControllerTest.getHomeByStationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="alert" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integration" />
+      <option name="MAIN_CLASS_NAME" value="integration.PersonControllerTest" />
+      <option name="METHOD_NAME" value="getHomeByStationTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonControllerTest.getPhoneByStationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="alert" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integration" />
+      <option name="MAIN_CLASS_NAME" value="integration.PersonControllerTest" />
+      <option name="METHOD_NAME" value="getPhoneByStationTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonControllerTest.personByAddressTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="alert" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integration" />
+      <option name="MAIN_CLASS_NAME" value="integration.PersonControllerTest" />
+      <option name="METHOD_NAME" value="personByAddressTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AlertApplication" />
+        <item itemvalue="JUnit.PersonControllerTest" />
+        <item itemvalue="JUnit.PersonControllerTest.personByAddressTest" />
+        <item itemvalue="JUnit.PersonControllerTest.getHomeByStationTest" />
+        <item itemvalue="JUnit.PersonControllerTest.getPhoneByStationTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="81315f23-4586-41df-87ee-3cef2651628e" name="Changes" comment="" />
+      <created>1653472643734</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653472643734</updated>
+    </task>
+    <task id="LOCAL-00001" summary="EndPoints add">
+      <created>1655300925225</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1655300925225</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Ajout Bean et relation modifier">
+      <created>1655395774738</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1655395774738</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Avancement">
+      <created>1656548059229</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656548059229</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Avancement">
+      <created>1656548718462</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656548718462</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Ajout Url PersonByStation">
+      <created>1656893863759</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656893863759</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Ajout Urls">
+      <created>1657027630122</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657027630122</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Ajout Sql Request">
+      <created>1657036808204</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657036808204</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Ajout Sql Request">
+      <created>1657795468196</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657795468196</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Test">
+      <created>1657826680311</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1657826680311</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Test">
+      <created>1658413864787</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1658413864787</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Date modif">
+      <created>1658501050244</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1658501050244</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fin test Unitaires">
+      <created>1659008716023</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1659008716023</updated>
+    </task>
+    <task id="LOCAL-00013" summary="mvn site">
+      <created>1659010224986</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1659010224986</updated>
+    </task>
+    <task id="LOCAL-00014" summary="mvn site,mvn test,Jacoco">
+      <created>1659014974025</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1659014974025</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Premier test intégration">
+      <created>1659019888572</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1659019888572</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Coverage 80%">
+      <created>1659450427242</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1659450427242</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Coverage 95%&#10;GenerateDataServiveImplTest">
+      <created>1660690664422</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1660690664422</updated>
+    </task>
+    <task id="LOCAL-00018" summary="PersonControllerTest 100%">
+      <created>1661014940423</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1661014940423</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Migration sur une base de données h2 mémoriel,&#10;modification de MedicalRecordsDaoImpl (Medication et allergy enregistrer dans la bdd)">
+      <created>1661814534593</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1661814534593</updated>
+    </task>
+    <task id="LOCAL-00020" summary="changement relation de la base de données">
+      <created>1661941624302</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1661941624302</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Modification du au changement de relation,&#10;PersonController&#10;PersonDao&#10;PersonDaoImpl&#10;Person&#10;PersonDaoImplTest&#10;MedicalRecordControllerTest&#10;PersonControllerTest">
+      <created>1662062580139</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1662062580139</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Réglage create Person du aux changement de relation">
+      <created>1662309206614</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1662309206614</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Passages des tests">
+      <created>1662395129423</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1662395129423</updated>
+    </task>
+    <task id="LOCAL-00024" summary="100% Test">
+      <created>1662477474933</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1662477474933</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Ajout des logs">
+      <created>1662545684677</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1662545684677</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Enregistrement des logs dans un fichier">
+      <created>1663685546250</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1663685546250</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="EndPoints add" />
+    <MESSAGE value="Ajout Bean et relation modifier" />
+    <MESSAGE value="Avancement" />
+    <MESSAGE value="Ajout Url PersonByStation" />
+    <MESSAGE value="Ajout Urls" />
+    <MESSAGE value="Ajout Sql Request" />
+    <MESSAGE value="Test" />
+    <MESSAGE value="Date modif" />
+    <MESSAGE value="Fin test Unitaires" />
+    <MESSAGE value="mvn site" />
+    <MESSAGE value="mvn site,mvn test,Jacoco" />
+    <MESSAGE value="Premier test intégration" />
+    <MESSAGE value="Coverage 80%" />
+    <MESSAGE value="Coverage 95%&#10;GenerateDataServiveImplTest" />
+    <MESSAGE value="PersonControllerTest 100%" />
+    <MESSAGE value="Migration sur une base de données h2 mémoriel,&#10;modification de MedicalRecordsDaoImpl (Medication et allergy enregistrer dans la bdd)" />
+    <MESSAGE value="changement relation de la base de données" />
+    <MESSAGE value="Modification du au changement de relation,&#10;PersonController&#10;PersonDao&#10;PersonDaoImpl&#10;Person&#10;PersonDaoImplTest&#10;MedicalRecordControllerTest&#10;PersonControllerTest" />
+    <MESSAGE value="Réglage create Person du aux changement de relation" />
+    <MESSAGE value="Passages des tests" />
+    <MESSAGE value="100% Test" />
+    <MESSAGE value="Ajout des logs" />
+    <MESSAGE value="Enregistrement des logs dans un fichier" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enregistrement des logs dans un fichier" />
+  </component>
+</project>

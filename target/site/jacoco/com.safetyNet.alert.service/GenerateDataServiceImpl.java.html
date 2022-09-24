@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GenerateDataServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">alert</a> &gt; <a href="index.source.html" class="el_package">com.safetyNet.alert.service</a> &gt; <span class="el_source">GenerateDataServiceImpl.java</span></div><h1>GenerateDataServiceImpl.java</h1><pre class="source lang-java linenums">package com.safetyNet.alert.service;
+
+import com.google.gson.Gson;
+import com.safetyNet.alert.model.*;
+import com.safetyNet.alert.repository.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+@Service
+public class GenerateDataServiceImpl implements GenerateDataService {
+    @Autowired
+    FireStationRepository fireStationRepository;
+    @Autowired
+    PersonRepository personRepository;
+    @Autowired
+    MedicalRecordRepository medicalRecordRepository;
+    @Autowired
+    MedicationRepository medicationRepository;
+    @Autowired
+    AllergyRepository allergyRepository;
+
+<span class="fc" id="L27">    public GenerateDataServiceImpl(FireStationRepository fireStationRepository, PersonRepository personRepository, MedicalRecordRepository medicalRecordRepository, MedicationRepository medicationRepository, AllergyRepository allergyRepository) {</span>
+<span class="fc" id="L28">        this.fireStationRepository = fireStationRepository;</span>
+<span class="fc" id="L29">        this.personRepository = personRepository;</span>
+<span class="fc" id="L30">        this.medicalRecordRepository = medicalRecordRepository;</span>
+<span class="fc" id="L31">        this.medicationRepository = medicationRepository;</span>
+<span class="fc" id="L32">        this.allergyRepository = allergyRepository;</span>
+<span class="fc" id="L33">    }</span>
+
+<span class="fc" id="L35">    private final Logger logger = LoggerFactory.getLogger(GenerateDataServiceImpl.class);</span>
+
+    @Override
+    public void generateData() {
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">        if (personRepository.count() == 0) {</span>
+<span class="fc" id="L40">            try (BufferedReader reader = new BufferedReader(new FileReader(&quot;src/main/resources/data.json&quot;))) {</span>
+
+<span class="fc" id="L42">                var gson = new Gson();</span>
+
+
+<span class="fc" id="L45">                DataPerson dataPerson = gson.fromJson(reader, DataPerson.class);</span>
+
+<span class="fc" id="L47">                fireStationRepository.saveAll(dataPerson.getFirestations());</span>
+
+<span class="fc bfc" id="L49" title="All 2 branches covered.">                for (int i = 0; i &lt; dataPerson.getPersons().size(); i++) {</span>
+<span class="fc" id="L50">                    Person person = dataPerson.getPersons().get(i);</span>
+<span class="fc" id="L51">                    FireStation fireStation = fireStationRepository.findFirstByAddress(person.getAddress());</span>
+<span class="fc" id="L52">                    person.setFireStation(fireStation);</span>
+<span class="fc" id="L53">                    personRepository.save(person);</span>
+                }
+
+<span class="fc bfc" id="L56" title="All 2 branches covered.">                for (int i = 0; i &lt; dataPerson.getMedicalrecords().size(); i++) {</span>
+<span class="fc" id="L57">                    MedicalRecord medicalRecord = new MedicalRecord();</span>
+<span class="fc" id="L58">                    medicalRecord.setFirstName(dataPerson.getMedicalrecords().get(i).getFirstName());</span>
+<span class="fc" id="L59">                    medicalRecord.setLastName(dataPerson.getMedicalrecords().get(i).getLastName());</span>
+<span class="fc" id="L60">                    medicalRecord.setBirthdate(dataPerson.getMedicalrecords().get(i).getBirthdate());</span>
+<span class="fc" id="L61">                    Person person = personRepository.findByFirstNameAndLastName(medicalRecord.getFirstName(),medicalRecord.getLastName());</span>
+<span class="fc" id="L62">                    medicalRecord.setPerson(person);</span>
+<span class="fc" id="L63">                    medicalRecordRepository.save(medicalRecord);</span>
+                }
+<span class="fc bfc" id="L65" title="All 2 branches covered.">                for (int i = 0; i &lt; dataPerson.getMedicalrecords().size(); i++) {</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">                    for (int a = 0; a &lt; dataPerson.getMedicalrecords().get(i).getMedications().size(); a++) {</span>
+<span class="fc" id="L67">                        MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(dataPerson.getMedicalrecords().get(i).getFirstName(), dataPerson.getMedicalrecords().get(i).getLastName());</span>
+<span class="fc" id="L68">                        Medication medication = new Medication(dataPerson.getMedicalrecords().get(i).getMedications().get(a), medicalRecord);</span>
+<span class="fc" id="L69">                        medicationRepository.save(medication);</span>
+                    }
+<span class="fc bfc" id="L71" title="All 2 branches covered.">                    for (int a = 0; a &lt; dataPerson.getMedicalrecords().get(i).getAllergies().size(); a++) {</span>
+<span class="fc" id="L72">                        MedicalRecord medicalRecord = medicalRecordRepository.findByFirstNameAndLastName(dataPerson.getMedicalrecords().get(i).getFirstName(), dataPerson.getMedicalrecords().get(i).getLastName());</span>
+<span class="fc" id="L73">                        Allergy allergy = new Allergy(dataPerson.getMedicalrecords().get(i).getAllergies().get(a), medicalRecord);</span>
+<span class="fc" id="L74">                        allergyRepository.save(allergy);</span>
+                    }
+                }
+
+
+<span class="nc" id="L79">            } catch (Exception e) {</span>
+<span class="nc" id="L80">                logger.debug(&quot;generateData()&quot;, e);</span>
+<span class="fc" id="L81">            }</span>
+        }
+<span class="fc" id="L83">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

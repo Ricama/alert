@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PersonController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">alert</a> &gt; <a href="index.source.html" class="el_package">com.safetyNet.alert.controller</a> &gt; <span class="el_source">PersonController.java</span></div><h1>PersonController.java</h1><pre class="source lang-java linenums">package com.safetyNet.alert.controller;
+
+import com.safetyNet.alert.dao.PersonDao;
+import com.safetyNet.alert.model.*;
+import com.safetyNet.alert.repository.PersonRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+
+@RestController
+@RequestMapping
+public class PersonController {
+
+    PersonDao personDao;
+
+<span class="fc" id="L20">    Logger logger = LoggerFactory.getLogger(PersonController.class);</span>
+
+<span class="fc" id="L22">    PersonController(PersonDao personsDao) {</span>
+
+<span class="fc" id="L24">        this.personDao = personsDao;</span>
+<span class="fc" id="L25">    }</span>
+
+    /**
+     * Mapping post person
+     */
+    @PostMapping(path = &quot;/person&quot;)
+    public Person postNewPerson(@RequestBody Person person) {
+
+
+<span class="fc" id="L34">        return personDao.create(person);</span>
+    }
+
+    /**
+     * Mapping post person
+     */
+    @PutMapping(path = &quot;/person&quot;)
+    public Person putPerson(@RequestBody Person person) {
+
+<span class="fc" id="L43">        return personDao.update(person);</span>
+    }
+
+    /**
+     * Mapping delete person
+     */
+    @DeleteMapping(path = &quot;/person&quot;)
+    public Person deletePerson(@RequestBody Person person) {
+
+<span class="fc" id="L52">        return personDao.delete(person.getFirstName(), person.getLastName());</span>
+    }
+
+    /**
+     * Mapping get
+     * @return list of person and count of the number of adults and the number of children
+     */
+    @GetMapping(path = &quot;/firestation&quot;)
+    public PersonByStationList getPersonByStation(@RequestParam String stationNumber) {
+
+<span class="fc" id="L62">        return personDao.getPersonByStation(stationNumber);</span>
+    }
+
+    /**
+     * Mapping get
+     * @return List of childrenand a list of others household members
+     */
+    @GetMapping(path = &quot;/childAlert&quot;)
+    public ChildByAddress childByAddress(@RequestParam String address) {
+
+<span class="fc" id="L72">        return personDao.childByAddress(address);</span>
+    }
+
+    /**
+     * Mapping get
+     * @return telephone Number list
+     */
+    @GetMapping(path = &quot;/phoneAlert&quot;)
+    public List&lt;String&gt; getPhoneByStation(@RequestParam String firestation) {
+<span class="fc" id="L81">        return personDao.getPhoneByStation(firestation);</span>
+    }
+
+    /**
+     * Mapping get
+     * @return person list
+     */
+    @GetMapping(path = &quot;/fire&quot;)
+    public List&lt;PersonByAddress&gt; personByAddress(@RequestParam String address) {
+<span class="fc" id="L90">        return personDao.personByAddress(address);</span>
+    }
+
+    /**
+     * Mapping get
+     * @return household list
+     */
+    @GetMapping(path = &quot;/flood/stations&quot;)
+    public List&lt;Home&gt; getHomeByStation(@RequestParam String station) {
+
+<span class="fc" id="L100">        return personDao.getHomeByStation(station);</span>
+    }
+
+    /**
+     * Mapping get
+     * @return person list
+     */
+    @GetMapping(path = &quot;/personInfo&quot;)
+    public PersonInfo personInfo(@RequestParam String firstName, @RequestParam String lastName) {
+
+<span class="fc" id="L110">        return personDao.personInfo(firstName, lastName);</span>
+    }
+
+    /**
+     * Mapping get
+     *
+     * @return email list
+     */
+    @GetMapping(path = &quot;/communityEmail&quot;)
+    public List&lt;String&gt; getPersonByEmail(@RequestParam String city) {
+<span class="fc" id="L120">        return personDao.getEmailByCity(city);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -1,0 +1,6 @@
+com\safetyNet\alert\dao\FirestationsDaoImplTest.class
+integration\FireStationControllerTest.class
+integration\PersonControllerTest.class
+integration\MedicalRecordControllerTest.class
+com\safetyNet\alert\dao\PersonsDaoImplTest.class
+com\safetyNet\alert\dao\MedicalrecordsDaoImplTest.class

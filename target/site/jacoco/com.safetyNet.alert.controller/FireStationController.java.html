@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FireStationController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">alert</a> &gt; <a href="index.source.html" class="el_package">com.safetyNet.alert.controller</a> &gt; <span class="el_source">FireStationController.java</span></div><h1>FireStationController.java</h1><pre class="source lang-java linenums">package com.safetyNet.alert.controller;
+
+import com.safetyNet.alert.model.FireStation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.*;
+import com.safetyNet.alert.dao.FirestationDao;
+
+@RestController
+@RequestMapping
+public class FireStationController {
+
+<span class="fc" id="L13">    private final Logger logger = LoggerFactory.getLogger(FireStationController.class);</span>
+
+    private final FirestationDao firestationsDao;
+
+<span class="fc" id="L17">    public FireStationController(FirestationDao firestationsDao) {</span>
+
+<span class="fc" id="L19">        this.firestationsDao = firestationsDao;</span>
+<span class="fc" id="L20">    }</span>
+
+    /**
+     * Mapping post fireStation
+     */
+    @PostMapping(path = &quot;/firestation&quot;)
+    public FireStation postFirestation(@RequestBody FireStation firestation) {
+<span class="fc" id="L27">        logger.info(&quot;POST FireStation executed&quot;);</span>
+<span class="fc" id="L28">        logger.error(&quot;POST FireStation.(FireStation :&quot;+firestation.toString()+&quot;&quot;);</span>
+<span class="fc" id="L29">        return firestationsDao.create(firestation);</span>
+    }
+
+    /**
+     * Mapping put fireStation
+     */
+    @PutMapping(path = &quot;/firestation&quot;)
+    public FireStation putFirestation(@RequestBody FireStation firestation) {
+<span class="fc" id="L37">        logger.info(&quot;PUT FireStation executed&quot;);</span>
+<span class="fc" id="L38">        logger.error(&quot;PUT FireStation.(FireStation :&quot;+firestation.toString()+&quot;&quot;);</span>
+<span class="fc" id="L39">        return firestationsDao.update(firestation);</span>
+    }
+
+    /**
+     * Mapping delete fireStation
+     */
+    @DeleteMapping(path = &quot;/firestation/{fire}&quot;)
+    public FireStation deleteStationFirestation(@PathVariable String fire) {
+<span class="fc" id="L47">        logger.info(&quot;DELETE FireStation executed&quot;);</span>
+<span class="fc" id="L48">        logger.error(&quot;DELETE FireStation.(Param :&quot;+fire+&quot;&quot;);</span>
+<span class="fc" id="L49">        return firestationsDao.delete(fire);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

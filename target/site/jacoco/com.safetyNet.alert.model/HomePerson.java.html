@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HomePerson.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">alert</a> &gt; <a href="index.source.html" class="el_package">com.safetyNet.alert.model</a> &gt; <span class="el_source">HomePerson.java</span></div><h1>HomePerson.java</h1><pre class="source lang-java linenums">package com.safetyNet.alert.model;
+
+import java.util.List;
+
+public class HomePerson {
+    String lastName;
+    String firstName;
+    String phone;
+    String birthdate;
+    List&lt;Medication&gt; medications;
+    List&lt;Allergy&gt; allergies;
+
+<span class="fc" id="L13">    public HomePerson(String lastName, String firstName, String phone, String birthdate, List&lt;Medication&gt; medications, List&lt;Allergy&gt; allergies) {</span>
+
+<span class="fc" id="L15">        this.lastName = lastName;</span>
+<span class="fc" id="L16">        this.firstName = firstName;</span>
+<span class="fc" id="L17">        this.phone = phone;</span>
+<span class="fc" id="L18">        this.birthdate = birthdate;</span>
+<span class="fc" id="L19">        this.medications = medications;</span>
+<span class="fc" id="L20">        this.allergies = allergies;</span>
+<span class="fc" id="L21">    }</span>
+
+<span class="fc" id="L23">    public HomePerson() {</span>
+<span class="fc" id="L24">    }</span>
+
+
+    public String getLastName() {
+<span class="fc" id="L28">        return lastName;</span>
+    }
+
+    public void setLastName(String lastName) {
+<span class="fc" id="L32">        this.lastName = lastName;</span>
+<span class="fc" id="L33">    }</span>
+
+    public String getFirstName() {
+<span class="fc" id="L36">        return firstName;</span>
+    }
+
+    public void setFirstName(String firstName) {
+<span class="fc" id="L40">        this.firstName = firstName;</span>
+<span class="fc" id="L41">    }</span>
+
+    public String getPhone() {
+<span class="fc" id="L44">        return phone;</span>
+    }
+
+    public void setPhone(String phone) {
+<span class="fc" id="L48">        this.phone = phone;</span>
+<span class="fc" id="L49">    }</span>
+
+    public String getBirthdate() {
+<span class="fc" id="L52">        return birthdate;</span>
+    }
+
+    public void setBirthdate(String birthdate) {
+<span class="fc" id="L56">        this.birthdate = birthdate;</span>
+<span class="fc" id="L57">    }</span>
+
+    public List&lt;Medication&gt; getMedications() {
+<span class="fc" id="L60">        return medications;</span>
+    }
+
+    public void setMedications(List&lt;Medication&gt; medications) {
+<span class="fc" id="L64">        this.medications = medications;</span>
+<span class="fc" id="L65">    }</span>
+
+    public List&lt;Allergy&gt; getAllergies() {
+<span class="fc" id="L68">        return allergies;</span>
+    }
+
+    public void setAllergies(List&lt;Allergy&gt; allergies) {
+<span class="fc" id="L72">        this.allergies = allergies;</span>
+<span class="fc" id="L73">    }</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

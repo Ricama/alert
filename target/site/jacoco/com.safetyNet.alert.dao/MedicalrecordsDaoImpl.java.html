@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MedicalrecordsDaoImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">alert</a> &gt; <a href="index.source.html" class="el_package">com.safetyNet.alert.dao</a> &gt; <span class="el_source">MedicalrecordsDaoImpl.java</span></div><h1>MedicalrecordsDaoImpl.java</h1><pre class="source lang-java linenums">package com.safetyNet.alert.dao;
+
+import com.safetyNet.alert.model.Allergy;
+import com.safetyNet.alert.model.MedicalRecord;
+import com.safetyNet.alert.model.Medication;
+import com.safetyNet.alert.model.Person;
+import com.safetyNet.alert.repository.AllergyRepository;
+import com.safetyNet.alert.repository.MedicalRecordRepository;
+import com.safetyNet.alert.repository.MedicationRepository;
+import com.safetyNet.alert.repository.PersonRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+@Component
+public class MedicalrecordsDaoImpl implements MedicalRecordDao {
+
+    @Autowired
+    PersonRepository personRepository;
+
+    @Autowired
+    MedicalRecordRepository medicalRecordRepository;
+
+    @Autowired
+    MedicationRepository medicationRepository;
+
+    @Autowired
+    AllergyRepository allergyRepository;
+
+<span class="fc" id="L35">    Logger logger = LoggerFactory.getLogger(MedicalrecordsDaoImpl.class);</span>
+
+<span class="fc" id="L37">    public MedicalrecordsDaoImpl(PersonRepository personRepository, MedicalRecordRepository medicalRecordRepository, MedicationRepository medicationRepository, AllergyRepository allergyRepository) {</span>
+<span class="fc" id="L38">        this.personRepository = personRepository;</span>
+<span class="fc" id="L39">        this.medicalRecordRepository = medicalRecordRepository;</span>
+<span class="fc" id="L40">        this.medicationRepository = medicationRepository;</span>
+<span class="fc" id="L41">        this.allergyRepository = allergyRepository;</span>
+<span class="fc" id="L42">    }</span>
+
+    @Override
+    public MedicalRecord create(MedicalRecord medicalrecord) {
+<span class="fc" id="L46">        logger.info(&quot;MedicalRecord create&quot;);</span>
+<span class="fc" id="L47">        Person person = personRepository.findByFirstNameAndLastName(medicalrecord.getFirstName(), medicalrecord.getLastName());</span>
+<span class="fc" id="L48">        medicalrecord.setPerson(person);</span>
+<span class="fc" id="L49">        medicalRecordRepository.save(medicalrecord);</span>
+<span class="fc" id="L50">        logger.debug(&quot;MedicalRecordImpl create. (MedicalRecord: &quot;+medicalrecord.toString()+&quot;Person: &quot;+person+&quot;)&quot;);</span>
+<span class="pc bpc" id="L51" title="1 of 2 branches missed.">        if (medicalrecord.getMedications() != null) {</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">            for (int i = 0; i &lt; medicalrecord.getMedications().size(); i++) {</span>
+<span class="fc" id="L53">                Medication medication = new Medication(medicalrecord.getMedications().get(i).getMedications(), medicalrecord);</span>
+<span class="fc" id="L54">                logger.info(&quot;medication save&quot;);</span>
+<span class="fc" id="L55">                medicationRepository.save(medication);</span>
+<span class="fc" id="L56">                logger.debug(&quot;MedicalRecordsDaoImpl create medication save. (Medication: &quot;+medication+&quot;)&quot;);</span>
+            }
+<span class="fc bfc" id="L58" title="All 2 branches covered.">            for (int i = 0; i &lt; medicalrecord.getAllergies().size(); i++) {</span>
+<span class="fc" id="L59">                Allergy allergy = new Allergy(medicalrecord.getAllergies().get(i).getAllergies(), medicalrecord);</span>
+<span class="fc" id="L60">                logger.info(&quot;allergy save&quot;);</span>
+<span class="fc" id="L61">                allergyRepository.save(allergy);</span>
+<span class="fc" id="L62">                logger.debug(&quot;MedicalRecordsDaoImpl create allergy save. (Allergy: &quot;+allergy+&quot;)&quot;);</span>
+            }
+        }
+<span class="fc" id="L65">        return medicalrecord;</span>
+    }
+
+    @Override
+    public MedicalRecord updateMedical(MedicalRecord medicalrecord) {
+<span class="fc" id="L70">        logger.info(&quot;MedicalRecord update&quot;);</span>
+<span class="fc" id="L71">        Person person = personRepository.findByFirstNameAndLastName(medicalrecord.getFirstName(), medicalrecord.getLastName());</span>
+<span class="fc" id="L72">        MedicalRecord medicalRecordToUpdate = medicalRecordRepository.findByFirstNameAndLastName(medicalrecord.getFirstName(), medicalrecord.getLastName());</span>
+<span class="fc" id="L73">        medicalRecordToUpdate.setBirthdate(medicalrecord.getBirthdate());</span>
+<span class="fc" id="L74">        medicalRecordToUpdate.setMedications(medicalrecord.getMedications());</span>
+<span class="fc" id="L75">        medicalRecordToUpdate.setAllergies(medicalrecord.getAllergies());</span>
+<span class="fc" id="L76">        medicalRecordToUpdate.setPerson(person);</span>
+<span class="fc" id="L77">       logger.debug(&quot;MedicalRecordImpl update debug. (MedicalRecord: &quot;+medicalrecord.toString()+&quot; MedicalRecordToUpdate: &quot;+medicalRecordToUpdate.toString()+&quot; Person: &quot;+person+&quot;)&quot;);</span>
+<span class="fc" id="L78">        medicalRecordRepository.save(medicalRecordToUpdate);</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        for (int i = 0; i &lt; medicalRecordToUpdate.getMedications().size(); i++) {</span>
+<span class="fc" id="L80">            logger.info(&quot;medication update&quot;);</span>
+<span class="fc" id="L81">            Medication medication = new Medication(medicalRecordToUpdate.getMedications().get(i).getMedications(), medicalRecordToUpdate);</span>
+<span class="fc" id="L82">            medicationRepository.save(medication);</span>
+<span class="fc" id="L83">            logger.debug(&quot;MedicalRecordsDaoImpl update medication save. (Medication: &quot;+medication+&quot;)&quot;);</span>
+        }
+<span class="fc bfc" id="L85" title="All 2 branches covered.">        for (int i = 0; i &lt; medicalRecordToUpdate.getAllergies().size(); i++) {</span>
+<span class="fc" id="L86">            logger.info(&quot;allergy update&quot;);</span>
+<span class="fc" id="L87">            Allergy allergy = new Allergy(medicalRecordToUpdate.getAllergies().get(i).getAllergies(), medicalRecordToUpdate);</span>
+<span class="fc" id="L88">            allergyRepository.save(allergy);</span>
+<span class="fc" id="L89">            logger.debug(&quot;MedicalRecordsDaoImpl update allergy save. (Allergy: &quot;+allergy+&quot;)&quot;);</span>
+        }
+<span class="fc" id="L91">        return medicalRecordToUpdate;</span>
+    }
+
+    @Override
+    public MedicalRecord deleteMedical(String firstName, String lastName) {
+<span class="fc" id="L96">        logger.info(&quot;MedicalRecord delete&quot;);</span>
+<span class="fc" id="L97">        MedicalRecord medicalRecordapp= medicalRecordRepository.findByFirstNameAndLastName(firstName, lastName);</span>
+<span class="fc" id="L98">        List&lt;Medication&gt; medication = medicationRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(firstName, lastName);</span>
+<span class="fc" id="L99">        List&lt;Allergy&gt; allergy = allergyRepository.findByMedicalRecordFirstNameAndMedicalRecordLastName(firstName, lastName);</span>
+<span class="fc bfc" id="L100" title="All 2 branches covered.">        for (int i = 0;i &lt; medication.size();i++){</span>
+<span class="fc" id="L101">           medicationRepository.delete(medication.get(i));</span>
+        }
+<span class="fc bfc" id="L103" title="All 2 branches covered.">        for (int i = 0;i &lt; allergy.size();i++){</span>
+<span class="fc" id="L104">            allergyRepository.delete(allergy.get(i));</span>
+        }
+<span class="fc" id="L106">        MedicalRecord medicalRecord = new MedicalRecord(firstName,lastName,medicalRecordapp.getBirthdate(),medication,allergy);</span>
+<span class="fc" id="L107">        medicalRecordRepository.delete(medicalRecord);</span>
+<span class="fc" id="L108">        logger.debug(&quot;MedicalRecordDaoImpl delete. (MedicalRecord: &quot;+medicalRecord.toString()+&quot; Medication: &quot;+medication.toString()+&quot; Allergy: &quot;+allergy+&quot;)&quot;);</span>
+<span class="fc" id="L109">        return medicalRecord;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

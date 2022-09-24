@@ -1,0 +1,951 @@
+2022-09-24 15:19:04.720  INFO 23104 --- [main] integration.FireStationControllerTest    : Starting FireStationControllerTest using Java 11.0.13 on DESKTOP-EVEM585 with PID 23104 (started by Ricama in F:\code\alert)
+2022-09-24 15:19:04.724  INFO 23104 --- [main] integration.FireStationControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:19:05.770  INFO 23104 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:19:05.825  INFO 23104 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:19:06.435  INFO 23104 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:19:06.851  INFO 23104 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:19:06.922  INFO 23104 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:19:06.992  INFO 23104 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:19:07.041  INFO 23104 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:19:07.195  INFO 23104 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:19:07.712  INFO 23104 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:19:07.727  INFO 23104 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:19:08.382  WARN 23104 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:19:09.610  INFO 23104 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:19:09.610  INFO 23104 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:19:09.615  INFO 23104 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:19:09.632  INFO 23104 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 22 ms
+2022-09-24 15:19:09.655  INFO 23104 --- [main] integration.FireStationControllerTest    : Started FireStationControllerTest in 5.227 seconds (JVM running for 7.404)
+2022-09-24 15:19:10.024  INFO 23104 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:19:10.109  INFO 23104 --- [main] c.s.a.controller.FireStationController   : PUT FireStation executed
+2022-09-24 15:19:10.110 ERROR 23104 --- [main] c.s.a.controller.FireStationController   : PUT FireStation.(FireStation :com.safetyNet.alert.model.FireStation@208e7255
+2022-09-24 15:19:10.117  INFO 23104 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation update.
+2022-09-24 15:19:10.139  INFO 23104 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:19:10.156  INFO 23104 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:19:10.159  INFO 23104 --- [main] c.s.a.controller.FireStationController   : DELETE FireStation executed
+2022-09-24 15:19:10.159 ERROR 23104 --- [main] c.s.a.controller.FireStationController   : DELETE FireStation.(Param :Test
+2022-09-24 15:19:10.159  INFO 23104 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:19:10.166  INFO 23104 --- [main] c.s.a.controller.FireStationController   : POST FireStation executed
+2022-09-24 15:19:10.166 ERROR 23104 --- [main] c.s.a.controller.FireStationController   : POST FireStation.(FireStation :com.safetyNet.alert.model.FireStation@3dbc6e59
+2022-09-24 15:19:10.168  INFO 23104 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:19:10.169  INFO 23104 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:19:10.176  INFO 23104 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.MedicalRecordControllerTest], using SpringBootContextLoader
+2022-09-24 15:19:10.176  INFO 23104 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.MedicalRecordControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-09-24 15:19:10.180  INFO 23104 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-09-24 15:19:10.180  INFO 23104 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@17de1a98, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6f6afef0, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2bc326, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4430697d, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@23dda1b9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1b78464c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@451484f6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@22876a8, org.springframework.test.context.event.EventPublishingTestExecutionListener@4c36cf3d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@15a5bad1, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7477bfa7, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@35ab0ab7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4f9e7418, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@77d52c08, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@3e163fd2]
+2022-09-24 15:19:10.190  INFO 23104 --- [main] c.s.a.c.MedicalRecordController          : POST MedicalRecord executed
+2022-09-24 15:19:10.190 ERROR 23104 --- [main] c.s.a.c.MedicalRecordController          : POST MedicalRecord.(MedicalRecord :com.safetyNet.alert.model.MedicalRecord@1bda8209
+2022-09-24 15:19:10.190  INFO 23104 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:19:10.193  INFO 23104 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:19:10.195  INFO 23104 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:19:10.197  INFO 23104 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:19:10.210  INFO 23104 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:19:10.213  INFO 23104 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:19:10.214  INFO 23104 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:19:10.217  INFO 23104 --- [main] c.s.a.c.MedicalRecordController          : DELETE MedicalRecord executed
+2022-09-24 15:19:10.217 ERROR 23104 --- [main] c.s.a.c.MedicalRecordController          : DELETE MedicalRecord.(MedicalRecord :com.safetyNet.alert.model.MedicalRecord@11f5cbc8
+2022-09-24 15:19:10.217  INFO 23104 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord delete
+2022-09-24 15:19:10.238  INFO 23104 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:19:10.240  INFO 23104 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:19:10.241  INFO 23104 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:19:10.245  WARN 23104 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('a' (code 97)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('a' (code 97)): was expecting comma to separate Object entries<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 81]]
+2022-09-24 15:19:10.248  INFO 23104 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.PersonControllerTest], using SpringBootContextLoader
+2022-09-24 15:19:10.249  INFO 23104 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.PersonControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-09-24 15:19:10.252  INFO 23104 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-09-24 15:19:10.252  INFO 23104 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5875e784, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3df1bb9, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@497a33d6, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@572adc80, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@20945826, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5b6d9d5e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4311f166, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@42defb58, org.springframework.test.context.event.EventPublishingTestExecutionListener@4089de4d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@77392c6f, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3bef692f, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@ede4131, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2b9d11, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3e4f932f, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@7e2923d8]
+2022-09-24 15:19:10.261  INFO 23104 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getEmailByCity
+2022-09-24 15:19:10.278  INFO 23104 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personInfo
+2022-09-24 15:19:10.288  INFO 23104 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : PersonByStationList
+2022-09-24 15:19:10.298  INFO 23104 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:19:10.303  INFO 23104 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personByAddress
+2022-09-24 15:19:10.312  INFO 23104 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : childByAddress
+2022-09-24 15:19:10.320  INFO 23104 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getHomeByStation
+2022-09-24 15:19:10.336  INFO 23104 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getPhoneByStation
+2022-09-24 15:19:10.342  INFO 23104 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:19:10.346  INFO 23104 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:19:10.359  INFO 23104 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:19:10.360  INFO 23104 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:19:10.463  WARN 23104 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:19:10.464 ERROR 23104 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donnÈes est dÈj‡ fermÈe (pour dÈsactiver la fermeture automatique ‡ l'arrÍt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" ‡ l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:19:10.464  WARN 23104 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:19:10.464 ERROR 23104 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donnÈes est dÈj‡ fermÈe (pour dÈsactiver la fermeture automatique ‡ l'arrÍt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" ‡ l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:19:10.464  WARN 23104 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:19:10.465  INFO 23104 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:19:10.468  INFO 23104 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:20:07.500  INFO 7816 --- [main] integration.PersonControllerTest         : Starting PersonControllerTest using Java 17.0.1 on DESKTOP-EVEM585 with PID 7816 (started by Ricama in F:\code\alert)
+2022-09-24 15:20:07.501  INFO 7816 --- [main] integration.PersonControllerTest         : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:20:08.166  INFO 7816 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:20:08.207  INFO 7816 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:20:08.559  INFO 7816 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:20:08.694  INFO 7816 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:20:08.733  INFO 7816 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:20:08.771  INFO 7816 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:20:08.886  INFO 7816 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:20:08.946  INFO 7816 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:20:09.307  INFO 7816 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:20:09.311  INFO 7816 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:20:09.858  WARN 7816 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:20:11.168  INFO 7816 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:20:11.168  INFO 7816 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:20:11.171  INFO 7816 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:20:11.187  INFO 7816 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 18 ms
+2022-09-24 15:20:11.205  INFO 7816 --- [main] integration.PersonControllerTest         : Started PersonControllerTest in 3.908 seconds (JVM running for 4.539)
+2022-09-24 15:20:11.583  INFO 7816 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getEmailByCity
+2022-09-24 15:20:11.616  INFO 7816 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personInfo
+2022-09-24 15:20:11.648  INFO 7816 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : PersonByStationList
+2022-09-24 15:20:11.663  INFO 7816 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:20:11.693  INFO 7816 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personByAddress
+2022-09-24 15:20:11.701  INFO 7816 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : childByAddress
+2022-09-24 15:20:11.712  INFO 7816 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getHomeByStation
+2022-09-24 15:20:11.739  INFO 7816 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getPhoneByStation
+2022-09-24 15:20:11.759  INFO 7816 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:20:11.766  INFO 7816 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:20:11.774  INFO 7816 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:20:11.775  INFO 7816 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:20:11.777  WARN 7816 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:20:11.777 ERROR 7816 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:20:11.777  WARN 7816 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:20:11.777 ERROR 7816 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:20:11.778  WARN 7816 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:20:11.778  INFO 7816 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:20:11.779  INFO 7816 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:23:06.749  INFO 15052 --- [main] integration.PersonControllerTest         : Starting PersonControllerTest using Java 17.0.1 on DESKTOP-EVEM585 with PID 15052 (started by Ricama in F:\code\alert)
+2022-09-24 15:23:06.750  INFO 15052 --- [main] integration.PersonControllerTest         : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:23:07.444  INFO 15052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:23:07.501  INFO 15052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:23:07.857  INFO 15052 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:23:08.018  INFO 15052 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:23:08.070  INFO 15052 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:23:08.109  INFO 15052 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:23:08.225  INFO 15052 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:23:08.294  INFO 15052 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:23:08.681  INFO 15052 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:23:08.686  INFO 15052 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:23:09.197  WARN 15052 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:23:10.575  INFO 15052 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:23:10.575  INFO 15052 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:23:10.580  INFO 15052 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:23:10.598  INFO 15052 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 23 ms
+2022-09-24 15:23:10.619  INFO 15052 --- [main] integration.PersonControllerTest         : Started PersonControllerTest in 4.045 seconds (JVM running for 4.618)
+2022-09-24 15:23:10.971  INFO 15052 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getEmailByCity
+2022-09-24 15:23:11.000  INFO 15052 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personInfo
+2022-09-24 15:23:11.036  INFO 15052 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : PersonByStationList
+2022-09-24 15:23:11.047  INFO 15052 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:23:11.068  INFO 15052 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person update
+2022-09-24 15:23:11.076  INFO 15052 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:23:11.086  INFO 15052 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personByAddress
+2022-09-24 15:23:11.097  INFO 15052 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : childByAddress
+2022-09-24 15:23:11.108  INFO 15052 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getHomeByStation
+2022-09-24 15:23:11.139  INFO 15052 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getPhoneByStation
+2022-09-24 15:23:11.146  INFO 15052 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:23:11.149  INFO 15052 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:23:11.157  INFO 15052 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:23:11.159  INFO 15052 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:23:11.171  INFO 15052 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:23:11.172  INFO 15052 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:23:11.174  WARN 15052 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:23:11.174 ERROR 15052 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:23:11.175  WARN 15052 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:23:11.175 ERROR 15052 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:23:11.175  WARN 15052 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:23:11.176  INFO 15052 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:23:11.178  INFO 15052 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:23:36.550  INFO 22184 --- [main] integration.FireStationControllerTest    : Starting FireStationControllerTest using Java 11.0.13 on DESKTOP-EVEM585 with PID 22184 (started by Ricama in F:\code\alert)
+2022-09-24 15:23:36.551  INFO 22184 --- [main] integration.FireStationControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:23:37.498  INFO 22184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:23:37.556  INFO 22184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:23:38.236  INFO 22184 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:23:38.601  INFO 22184 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:23:38.695  INFO 22184 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:23:38.746  INFO 22184 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:23:38.785  INFO 22184 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:23:38.943  INFO 22184 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:23:39.479  INFO 22184 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:23:39.486  INFO 22184 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:23:40.274  WARN 22184 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:23:41.756  INFO 22184 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:23:41.756  INFO 22184 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:23:41.765  INFO 22184 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:23:41.787  INFO 22184 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 30 ms
+2022-09-24 15:23:41.811  INFO 22184 --- [main] integration.FireStationControllerTest    : Started FireStationControllerTest in 5.533 seconds (JVM running for 7.4)
+2022-09-24 15:23:42.156  INFO 22184 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:23:42.248  INFO 22184 --- [main] c.s.a.controller.FireStationController   : PUT FireStation executed
+2022-09-24 15:23:42.248 ERROR 22184 --- [main] c.s.a.controller.FireStationController   : PUT FireStation.(FireStation :com.safetyNet.alert.model.FireStation@521aa127
+2022-09-24 15:23:42.255  INFO 22184 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation update.
+2022-09-24 15:23:42.273  INFO 22184 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:23:42.291  INFO 22184 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:23:42.296  INFO 22184 --- [main] c.s.a.controller.FireStationController   : DELETE FireStation executed
+2022-09-24 15:23:42.296 ERROR 22184 --- [main] c.s.a.controller.FireStationController   : DELETE FireStation.(Param :Test
+2022-09-24 15:23:42.296  INFO 22184 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:23:42.303  INFO 22184 --- [main] c.s.a.controller.FireStationController   : POST FireStation executed
+2022-09-24 15:23:42.303 ERROR 22184 --- [main] c.s.a.controller.FireStationController   : POST FireStation.(FireStation :com.safetyNet.alert.model.FireStation@7a4c9b21
+2022-09-24 15:23:42.304  INFO 22184 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:23:42.305  INFO 22184 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:23:42.311  INFO 22184 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.MedicalRecordControllerTest], using SpringBootContextLoader
+2022-09-24 15:23:42.312  INFO 22184 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.MedicalRecordControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-09-24 15:23:42.315  INFO 22184 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-09-24 15:23:42.316  INFO 22184 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b8a4903, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4e69cc1d, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@7e9f9ccb, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2929085a, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@50929e2d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@509bb906, org.springframework.test.context.transaction.TransactionalTestExecutionListener@52600e1a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@336aa7d4, org.springframework.test.context.event.EventPublishingTestExecutionListener@77cd2462, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7a13f014, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@28d12192, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4e63775b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5093b4c1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@35656d97, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@14191718]
+2022-09-24 15:23:42.326  INFO 22184 --- [main] c.s.a.c.MedicalRecordController          : POST MedicalRecord executed
+2022-09-24 15:23:42.327 ERROR 22184 --- [main] c.s.a.c.MedicalRecordController          : POST MedicalRecord.(MedicalRecord :com.safetyNet.alert.model.MedicalRecord@4ec22913
+2022-09-24 15:23:42.327  INFO 22184 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:23:42.330  INFO 22184 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:23:42.332  INFO 22184 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:23:42.333  INFO 22184 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:23:42.347  INFO 22184 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:23:42.349  INFO 22184 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:23:42.351  INFO 22184 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:23:42.353  INFO 22184 --- [main] c.s.a.c.MedicalRecordController          : DELETE MedicalRecord executed
+2022-09-24 15:23:42.353 ERROR 22184 --- [main] c.s.a.c.MedicalRecordController          : DELETE MedicalRecord.(MedicalRecord :com.safetyNet.alert.model.MedicalRecord@45089ef4
+2022-09-24 15:23:42.354  INFO 22184 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord delete
+2022-09-24 15:23:42.372  INFO 22184 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:23:42.375  INFO 22184 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:23:42.376  INFO 22184 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:23:42.381  WARN 22184 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('a' (code 97)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('a' (code 97)): was expecting comma to separate Object entries<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 81]]
+2022-09-24 15:23:42.384  INFO 22184 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.PersonControllerTest], using SpringBootContextLoader
+2022-09-24 15:23:42.384  INFO 22184 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.PersonControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-09-24 15:23:42.387  INFO 22184 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-09-24 15:23:42.387  INFO 22184 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@36bf74ed, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2f347d49, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@7fb0aded, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@271dc56b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6a48c579, org.springframework.test.context.support.DirtiesContextTestExecutionListener@669a234c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c3f35b7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@55c09dc6, org.springframework.test.context.event.EventPublishingTestExecutionListener@798fe90a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4eb83534, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2bcf23d9, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7a30b5cb, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7c71c43e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@73ef5f11, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@21ec6b5e]
+2022-09-24 15:23:42.395  INFO 22184 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getEmailByCity
+2022-09-24 15:23:42.410  INFO 22184 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personInfo
+2022-09-24 15:23:42.422  INFO 22184 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : PersonByStationList
+2022-09-24 15:23:42.433  INFO 22184 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:23:42.436  INFO 22184 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person update
+2022-09-24 15:23:42.441  INFO 22184 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:23:42.449  INFO 22184 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personByAddress
+2022-09-24 15:23:42.462  INFO 22184 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : childByAddress
+2022-09-24 15:23:42.471  INFO 22184 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getHomeByStation
+2022-09-24 15:23:42.494  INFO 22184 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getPhoneByStation
+2022-09-24 15:23:42.501  INFO 22184 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:23:42.504  INFO 22184 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:23:42.509  INFO 22184 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:23:42.512  INFO 22184 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:23:42.528  INFO 22184 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:23:42.529  INFO 22184 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:23:42.627  WARN 22184 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:23:42.627 ERROR 22184 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donnÈes est dÈj‡ fermÈe (pour dÈsactiver la fermeture automatique ‡ l'arrÍt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" ‡ l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:23:42.628  WARN 22184 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:23:42.628 ERROR 22184 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donnÈes est dÈj‡ fermÈe (pour dÈsactiver la fermeture automatique ‡ l'arrÍt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" ‡ l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:23:42.628  WARN 22184 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:23:42.628  INFO 22184 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:23:42.631  INFO 22184 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:24:09.068  INFO 15772 --- [main] integration.PersonControllerTest         : Starting PersonControllerTest using Java 17.0.1 on DESKTOP-EVEM585 with PID 15772 (started by Ricama in F:\code\alert)
+2022-09-24 15:24:09.069  INFO 15772 --- [main] integration.PersonControllerTest         : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:24:09.680  INFO 15772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:24:09.725  INFO 15772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:24:10.073  INFO 15772 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:24:10.202  INFO 15772 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:24:10.243  INFO 15772 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:24:10.286  INFO 15772 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:24:10.413  INFO 15772 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:24:10.483  INFO 15772 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:24:10.835  INFO 15772 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:24:10.839  INFO 15772 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:24:11.351  WARN 15772 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:24:12.567  INFO 15772 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:24:12.568  INFO 15772 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:24:12.574  INFO 15772 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:24:12.592  INFO 15772 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 24 ms
+2022-09-24 15:24:12.611  INFO 15772 --- [main] integration.PersonControllerTest         : Started PersonControllerTest in 3.724 seconds (JVM running for 4.27)
+2022-09-24 15:24:12.966  INFO 15772 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getPhoneByStation
+2022-09-24 15:24:13.006  INFO 15772 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:24:13.007  INFO 15772 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:24:13.008  WARN 15772 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:24:13.008 ERROR 15772 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:24:13.009  WARN 15772 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:24:13.009 ERROR 15772 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:24:13.009  WARN 15772 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:24:13.009  INFO 15772 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:24:13.010  INFO 15772 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:25:33.632  INFO 5200 --- [main] integration.FireStationControllerTest    : Starting FireStationControllerTest using Java 11.0.13 on DESKTOP-EVEM585 with PID 5200 (started by Ricama in F:\code\alert)
+2022-09-24 15:25:33.633  INFO 5200 --- [main] integration.FireStationControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:25:34.590  INFO 5200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:25:34.640  INFO 5200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:25:35.271  INFO 5200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:25:35.624  INFO 5200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:25:35.727  INFO 5200 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:25:35.781  INFO 5200 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:25:35.821  INFO 5200 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:25:35.961  INFO 5200 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:25:36.433  INFO 5200 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:25:36.439  INFO 5200 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:25:37.142  WARN 5200 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:25:38.530  INFO 5200 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:25:38.530  INFO 5200 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:25:38.541  INFO 5200 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:25:38.564  INFO 5200 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 34 ms
+2022-09-24 15:25:38.587  INFO 5200 --- [main] integration.FireStationControllerTest    : Started FireStationControllerTest in 5.229 seconds (JVM running for 7.199)
+2022-09-24 15:25:38.934  INFO 5200 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:25:39.012  INFO 5200 --- [main] c.s.a.controller.FireStationController   : PUT FireStation executed
+2022-09-24 15:25:39.012 ERROR 5200 --- [main] c.s.a.controller.FireStationController   : PUT FireStation.(FireStation :com.safetyNet.alert.model.FireStation@32d18431
+2022-09-24 15:25:39.018  INFO 5200 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation update.
+2022-09-24 15:25:39.037  INFO 5200 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:25:39.053  INFO 5200 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:25:39.056  INFO 5200 --- [main] c.s.a.controller.FireStationController   : DELETE FireStation executed
+2022-09-24 15:25:39.057 ERROR 5200 --- [main] c.s.a.controller.FireStationController   : DELETE FireStation.(Param :Test
+2022-09-24 15:25:39.057  INFO 5200 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:25:39.063  INFO 5200 --- [main] c.s.a.controller.FireStationController   : POST FireStation executed
+2022-09-24 15:25:39.063 ERROR 5200 --- [main] c.s.a.controller.FireStationController   : POST FireStation.(FireStation :com.safetyNet.alert.model.FireStation@546d702f
+2022-09-24 15:25:39.064  INFO 5200 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:25:39.066  INFO 5200 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:25:39.072  INFO 5200 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.MedicalRecordControllerTest], using SpringBootContextLoader
+2022-09-24 15:25:39.073  INFO 5200 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.MedicalRecordControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-09-24 15:25:39.076  INFO 5200 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-09-24 15:25:39.076  INFO 5200 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5230ba38, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2b8a4903, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4e69cc1d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7e9f9ccb, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2929085a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@50929e2d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@509bb906, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@52600e1a, org.springframework.test.context.event.EventPublishingTestExecutionListener@336aa7d4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@77cd2462, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7a13f014, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@28d12192, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4e63775b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5093b4c1, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@35656d97]
+2022-09-24 15:25:39.084  INFO 5200 --- [main] c.s.a.c.MedicalRecordController          : POST MedicalRecord executed
+2022-09-24 15:25:39.085 ERROR 5200 --- [main] c.s.a.c.MedicalRecordController          : POST MedicalRecord.(MedicalRecord :com.safetyNet.alert.model.MedicalRecord@732a09f6
+2022-09-24 15:25:39.085  INFO 5200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:25:39.088  INFO 5200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:25:39.090  INFO 5200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:25:39.091  INFO 5200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:25:39.104  INFO 5200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:25:39.106  INFO 5200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:25:39.107  INFO 5200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:25:39.109  INFO 5200 --- [main] c.s.a.c.MedicalRecordController          : DELETE MedicalRecord executed
+2022-09-24 15:25:39.109 ERROR 5200 --- [main] c.s.a.c.MedicalRecordController          : DELETE MedicalRecord.(MedicalRecord :com.safetyNet.alert.model.MedicalRecord@30c8fda4
+2022-09-24 15:25:39.109  INFO 5200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord delete
+2022-09-24 15:25:39.127  INFO 5200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:25:39.131  INFO 5200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:25:39.132  INFO 5200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:25:39.136  WARN 5200 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('a' (code 97)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('a' (code 97)): was expecting comma to separate Object entries<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 81]]
+2022-09-24 15:25:39.139  INFO 5200 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.PersonControllerTest], using SpringBootContextLoader
+2022-09-24 15:25:39.139  INFO 5200 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.PersonControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-09-24 15:25:39.141  INFO 5200 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-09-24 15:25:39.141  INFO 5200 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@249e8953, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ce69272, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@36bf74ed, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2f347d49, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7fb0aded, org.springframework.test.context.support.DirtiesContextTestExecutionListener@271dc56b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a48c579, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@669a234c, org.springframework.test.context.event.EventPublishingTestExecutionListener@1c3f35b7, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@55c09dc6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@798fe90a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4eb83534, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2bcf23d9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7a30b5cb, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@7c71c43e]
+2022-09-24 15:25:39.148  INFO 5200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getEmailByCity
+2022-09-24 15:25:39.165  INFO 5200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personInfo
+2022-09-24 15:25:39.177  INFO 5200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : PersonByStationList
+2022-09-24 15:25:39.187  INFO 5200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:25:39.190  INFO 5200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person update
+2022-09-24 15:25:39.195  INFO 5200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:25:39.201  INFO 5200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personByAddress
+2022-09-24 15:25:39.212  INFO 5200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : childByAddress
+2022-09-24 15:25:39.223  INFO 5200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getHomeByStation
+2022-09-24 15:25:39.250  INFO 5200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getPhoneByStation
+2022-09-24 15:25:39.258  INFO 5200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:25:39.261  INFO 5200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:25:39.267  INFO 5200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:25:39.270  INFO 5200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:25:39.285  INFO 5200 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:25:39.286  INFO 5200 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:25:39.380  WARN 5200 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:25:39.380 ERROR 5200 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donnÈes est dÈj‡ fermÈe (pour dÈsactiver la fermeture automatique ‡ l'arrÍt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" ‡ l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:25:39.381  WARN 5200 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:25:39.381 ERROR 5200 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donnÈes est dÈj‡ fermÈe (pour dÈsactiver la fermeture automatique ‡ l'arrÍt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" ‡ l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:25:39.381  WARN 5200 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:25:39.382  INFO 5200 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:25:39.384  INFO 5200 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:26:56.533  INFO 7984 --- [main] integration.PersonControllerTest         : Starting PersonControllerTest using Java 17.0.1 on DESKTOP-EVEM585 with PID 7984 (started by Ricama in F:\code\alert)
+2022-09-24 15:26:56.534  INFO 7984 --- [main] integration.PersonControllerTest         : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:26:57.179  INFO 7984 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:26:57.230  INFO 7984 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:26:57.622  INFO 7984 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:26:57.752  INFO 7984 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:26:57.791  INFO 7984 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:26:57.828  INFO 7984 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:26:57.952  INFO 7984 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:26:58.023  INFO 7984 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:26:58.484  INFO 7984 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:26:58.488  INFO 7984 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:26:59.087  WARN 7984 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:27:00.599  INFO 7984 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:27:00.599  INFO 7984 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:27:00.605  INFO 7984 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:27:00.619  INFO 7984 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 20 ms
+2022-09-24 15:27:00.644  INFO 7984 --- [main] integration.PersonControllerTest         : Started PersonControllerTest in 4.29 seconds (JVM running for 4.855)
+2022-09-24 15:27:01.026  INFO 7984 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getPhoneByStation
+2022-09-24 15:27:01.070  INFO 7984 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:27:01.071  INFO 7984 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:27:01.073  WARN 7984 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:27:01.073 ERROR 7984 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:27:01.074  WARN 7984 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:27:01.074 ERROR 7984 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:27:01.074  WARN 7984 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:27:01.074  INFO 7984 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:27:01.075  INFO 7984 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:27:04.182  INFO 19240 --- [main] integration.PersonControllerTest         : Starting PersonControllerTest using Java 17.0.1 on DESKTOP-EVEM585 with PID 19240 (started by Ricama in F:\code\alert)
+2022-09-24 15:27:04.183  INFO 19240 --- [main] integration.PersonControllerTest         : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:27:04.797  INFO 19240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:27:04.848  INFO 19240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:27:05.188  INFO 19240 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:27:05.328  INFO 19240 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:27:05.377  INFO 19240 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:27:05.421  INFO 19240 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:27:05.543  INFO 19240 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:27:05.603  INFO 19240 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:27:06.008  INFO 19240 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:27:06.012  INFO 19240 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:27:06.555  WARN 19240 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:27:07.810  INFO 19240 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:27:07.810  INFO 19240 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:27:07.815  INFO 19240 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:27:07.834  INFO 19240 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 24 ms
+2022-09-24 15:27:07.855  INFO 19240 --- [main] integration.PersonControllerTest         : Started PersonControllerTest in 3.855 seconds (JVM running for 4.42)
+2022-09-24 15:27:08.236  INFO 19240 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getHomeByStation
+2022-09-24 15:27:08.303  INFO 19240 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:27:08.304  INFO 19240 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:27:08.306  WARN 19240 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:27:08.306 ERROR 19240 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:27:08.307  WARN 19240 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:27:08.307 ERROR 19240 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:27:08.307  WARN 19240 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:27:08.307  INFO 19240 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:27:08.309  INFO 19240 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:27:52.903  INFO 15704 --- [main] integration.PersonControllerTest         : Starting PersonControllerTest using Java 17.0.1 on DESKTOP-EVEM585 with PID 15704 (started by Ricama in F:\code\alert)
+2022-09-24 15:27:52.904  INFO 15704 --- [main] integration.PersonControllerTest         : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:27:53.541  INFO 15704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:27:53.605  INFO 15704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:27:53.945  INFO 15704 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:27:54.082  INFO 15704 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:27:54.135  INFO 15704 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:27:54.183  INFO 15704 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:27:54.297  INFO 15704 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:27:54.368  INFO 15704 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:27:54.779  INFO 15704 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:27:54.784  INFO 15704 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:27:55.318  WARN 15704 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:27:56.686  INFO 15704 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:27:56.686  INFO 15704 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:27:56.696  INFO 15704 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:27:56.717  INFO 15704 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 31 ms
+2022-09-24 15:27:56.740  INFO 15704 --- [main] integration.PersonControllerTest         : Started PersonControllerTest in 4.036 seconds (JVM running for 4.599)
+2022-09-24 15:27:57.088  INFO 15704 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getHomeByStation
+2022-09-24 15:27:57.160  INFO 15704 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:27:57.161  INFO 15704 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:27:57.163  WARN 15704 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:27:57.163 ERROR 15704 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:27:57.163  WARN 15704 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:27:57.163 ERROR 15704 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:27:57.163  WARN 15704 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:27:57.164  INFO 15704 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:27:57.165  INFO 15704 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:28:08.858  INFO 22708 --- [main] integration.FireStationControllerTest    : Starting FireStationControllerTest using Java 11.0.13 on DESKTOP-EVEM585 with PID 22708 (started by Ricama in F:\code\alert)
+2022-09-24 15:28:08.859  INFO 22708 --- [main] integration.FireStationControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:28:09.812  INFO 22708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:28:09.878  INFO 22708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:28:10.466  INFO 22708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:28:10.836  INFO 22708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:28:10.927  INFO 22708 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:28:10.971  INFO 22708 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:28:11.008  INFO 22708 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:28:11.150  INFO 22708 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:28:11.594  INFO 22708 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:28:11.601  INFO 22708 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:28:12.289  WARN 22708 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:28:13.668  INFO 22708 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:28:13.668  INFO 22708 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:28:13.674  INFO 22708 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:28:13.692  INFO 22708 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 24 ms
+2022-09-24 15:28:13.715  INFO 22708 --- [main] integration.FireStationControllerTest    : Started FireStationControllerTest in 5.128 seconds (JVM running for 7.054)
+2022-09-24 15:28:14.034  INFO 22708 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:28:14.112  INFO 22708 --- [main] c.s.a.controller.FireStationController   : PUT FireStation executed
+2022-09-24 15:28:14.112 ERROR 22708 --- [main] c.s.a.controller.FireStationController   : PUT FireStation.(FireStation :com.safetyNet.alert.model.FireStation@713a124c
+2022-09-24 15:28:14.118  INFO 22708 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation update.
+2022-09-24 15:28:14.136  INFO 22708 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:28:14.153  INFO 22708 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:28:14.158  INFO 22708 --- [main] c.s.a.controller.FireStationController   : DELETE FireStation executed
+2022-09-24 15:28:14.158 ERROR 22708 --- [main] c.s.a.controller.FireStationController   : DELETE FireStation.(Param :Test
+2022-09-24 15:28:14.158  INFO 22708 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:28:14.165  INFO 22708 --- [main] c.s.a.controller.FireStationController   : POST FireStation executed
+2022-09-24 15:28:14.165 ERROR 22708 --- [main] c.s.a.controller.FireStationController   : POST FireStation.(FireStation :com.safetyNet.alert.model.FireStation@1060256b
+2022-09-24 15:28:14.167  INFO 22708 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:28:14.168  INFO 22708 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:28:14.175  INFO 22708 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.MedicalRecordControllerTest], using SpringBootContextLoader
+2022-09-24 15:28:14.176  INFO 22708 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.MedicalRecordControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-09-24 15:28:14.179  INFO 22708 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-09-24 15:28:14.179  INFO 22708 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3473333d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2b1e1bad, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2e633491, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4220cec, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@29e52d8e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@72fd886c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@450dfd1e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@51dcdc3f, org.springframework.test.context.event.EventPublishingTestExecutionListener@51d512d7, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4ff54e69, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@653abf84, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5230ba38, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2b8a4903, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4e69cc1d, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@7e9f9ccb]
+2022-09-24 15:28:14.189  INFO 22708 --- [main] c.s.a.c.MedicalRecordController          : POST MedicalRecord executed
+2022-09-24 15:28:14.190 ERROR 22708 --- [main] c.s.a.c.MedicalRecordController          : POST MedicalRecord.(MedicalRecord :com.safetyNet.alert.model.MedicalRecord@6ddf29e3
+2022-09-24 15:28:14.190  INFO 22708 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:28:14.193  INFO 22708 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:28:14.195  INFO 22708 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:28:14.196  INFO 22708 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:28:14.208  INFO 22708 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:28:14.210  INFO 22708 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:28:14.211  INFO 22708 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:28:14.213  INFO 22708 --- [main] c.s.a.c.MedicalRecordController          : DELETE MedicalRecord executed
+2022-09-24 15:28:14.214 ERROR 22708 --- [main] c.s.a.c.MedicalRecordController          : DELETE MedicalRecord.(MedicalRecord :com.safetyNet.alert.model.MedicalRecord@6ec6866e
+2022-09-24 15:28:14.214  INFO 22708 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord delete
+2022-09-24 15:28:14.232  INFO 22708 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:28:14.235  INFO 22708 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:28:14.236  INFO 22708 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:28:14.239  WARN 22708 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('a' (code 97)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('a' (code 97)): was expecting comma to separate Object entries<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 81]]
+2022-09-24 15:28:14.242  INFO 22708 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.PersonControllerTest], using SpringBootContextLoader
+2022-09-24 15:28:14.242  INFO 22708 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.PersonControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-09-24 15:28:14.244  INFO 22708 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-09-24 15:28:14.244  INFO 22708 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4b4d3f27, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@45a55153, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2a9d1f84, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@32539a64, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@10c52f0e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7f85cb8c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3d269ac7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1308b7bd, org.springframework.test.context.event.EventPublishingTestExecutionListener@2a8c578d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7b0420fb, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@727d7dfe, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@249e8953, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6ce69272, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@36bf74ed, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2f347d49]
+2022-09-24 15:28:14.253  INFO 22708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getEmailByCity
+2022-09-24 15:28:14.268  INFO 22708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personInfo
+2022-09-24 15:28:14.278  INFO 22708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : PersonByStationList
+2022-09-24 15:28:14.288  INFO 22708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:28:14.291  INFO 22708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person update
+2022-09-24 15:28:14.296  INFO 22708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:28:14.303  INFO 22708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personByAddress
+2022-09-24 15:28:14.316  INFO 22708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : childByAddress
+2022-09-24 15:28:14.325  INFO 22708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getHomeByStation
+2022-09-24 15:28:14.353  INFO 22708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getPhoneByStation
+2022-09-24 15:28:14.360  INFO 22708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:28:14.363  INFO 22708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:28:14.369  INFO 22708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:28:14.376  INFO 22708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:28:14.394  INFO 22708 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:28:14.395  INFO 22708 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:28:14.494  WARN 22708 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:28:14.494 ERROR 22708 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donnÈes est dÈj‡ fermÈe (pour dÈsactiver la fermeture automatique ‡ l'arrÍt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" ‡ l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:28:14.495  WARN 22708 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:28:14.495 ERROR 22708 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donnÈes est dÈj‡ fermÈe (pour dÈsactiver la fermeture automatique ‡ l'arrÍt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" ‡ l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:28:14.495  WARN 22708 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:28:14.496  INFO 22708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:28:14.501  INFO 22708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:29:28.989  INFO 11024 --- [main] integration.PersonControllerTest         : Starting PersonControllerTest using Java 17.0.1 on DESKTOP-EVEM585 with PID 11024 (started by Ricama in F:\code\alert)
+2022-09-24 15:29:28.990  INFO 11024 --- [main] integration.PersonControllerTest         : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:29:29.656  INFO 11024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:29:29.703  INFO 11024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:29:30.042  INFO 11024 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:29:30.177  INFO 11024 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:29:30.227  INFO 11024 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:29:30.272  INFO 11024 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:29:30.410  INFO 11024 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:29:30.488  INFO 11024 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:29:30.886  INFO 11024 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:29:30.890  INFO 11024 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:29:31.538  WARN 11024 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:29:33.238  INFO 11024 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:29:33.238  INFO 11024 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:29:33.246  INFO 11024 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:29:33.269  INFO 11024 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 31 ms
+2022-09-24 15:29:33.294  INFO 11024 --- [main] integration.PersonControllerTest         : Started PersonControllerTest in 4.494 seconds (JVM running for 5.028)
+2022-09-24 15:29:33.872  INFO 11024 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getHomeByStation
+2022-09-24 15:29:33.955  INFO 11024 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:29:33.956  INFO 11024 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:29:33.958  WARN 11024 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:29:33.958 ERROR 11024 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:29:33.958  WARN 11024 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:29:33.959 ERROR 11024 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:29:33.959  WARN 11024 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:29:33.959  INFO 11024 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:29:33.961  INFO 11024 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:29:44.548  INFO 19184 --- [main] integration.PersonControllerTest         : Starting PersonControllerTest using Java 17.0.1 on DESKTOP-EVEM585 with PID 19184 (started by Ricama in F:\code\alert)
+2022-09-24 15:29:44.548  INFO 19184 --- [main] integration.PersonControllerTest         : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:29:45.247  INFO 19184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:29:45.294  INFO 19184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:29:45.718  INFO 19184 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:29:45.883  INFO 19184 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:29:45.938  INFO 19184 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:29:45.992  INFO 19184 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:29:46.136  INFO 19184 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:29:46.216  INFO 19184 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:29:46.669  INFO 19184 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:29:46.673  INFO 19184 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:29:47.340  WARN 19184 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:29:48.804  INFO 19184 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:29:48.804  INFO 19184 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:29:48.807  INFO 19184 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:29:48.823  INFO 19184 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 19 ms
+2022-09-24 15:29:48.845  INFO 19184 --- [main] integration.PersonControllerTest         : Started PersonControllerTest in 4.488 seconds (JVM running for 5.068)
+2022-09-24 15:29:49.219  INFO 19184 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getHomeByStation
+2022-09-24 15:29:49.292  INFO 19184 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:29:49.292  INFO 19184 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:29:49.294  WARN 19184 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:29:49.294 ERROR 19184 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:29:49.295  WARN 19184 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:29:49.295 ERROR 19184 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:29:49.295  WARN 19184 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:29:49.295  INFO 19184 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:29:49.296  INFO 19184 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:29:54.217  INFO 20364 --- [main] integration.PersonControllerTest         : Starting PersonControllerTest using Java 17.0.1 on DESKTOP-EVEM585 with PID 20364 (started by Ricama in F:\code\alert)
+2022-09-24 15:29:54.218  INFO 20364 --- [main] integration.PersonControllerTest         : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:29:54.851  INFO 20364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:29:54.898  INFO 20364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:29:55.292  INFO 20364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:29:55.460  INFO 20364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:29:55.514  INFO 20364 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:29:55.563  INFO 20364 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:29:55.712  INFO 20364 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:29:55.790  INFO 20364 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:29:56.209  INFO 20364 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:29:56.213  INFO 20364 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:29:57.036  WARN 20364 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:29:58.542  INFO 20364 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:29:58.542  INFO 20364 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:29:58.560  INFO 20364 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:29:58.574  INFO 20364 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 32 ms
+2022-09-24 15:29:58.596  INFO 20364 --- [main] integration.PersonControllerTest         : Started PersonControllerTest in 4.574 seconds (JVM running for 5.177)
+2022-09-24 15:29:58.969  INFO 20364 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personByAddress
+2022-09-24 15:29:59.030  INFO 20364 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:29:59.031  INFO 20364 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:29:59.032  WARN 20364 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:29:59.033 ERROR 20364 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:29:59.034  WARN 20364 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:29:59.034 ERROR 20364 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:29:59.034  WARN 20364 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:29:59.034  INFO 20364 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:29:59.036  INFO 20364 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:30:10.955  INFO 10708 --- [main] integration.PersonControllerTest         : Starting PersonControllerTest using Java 17.0.1 on DESKTOP-EVEM585 with PID 10708 (started by Ricama in F:\code\alert)
+2022-09-24 15:30:10.956  INFO 10708 --- [main] integration.PersonControllerTest         : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:30:11.576  INFO 10708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:30:11.623  INFO 10708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:30:11.972  INFO 10708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:30:12.125  INFO 10708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:30:12.183  INFO 10708 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:30:12.225  INFO 10708 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:30:12.337  INFO 10708 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:30:12.416  INFO 10708 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:30:12.815  INFO 10708 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:30:12.819  INFO 10708 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:30:13.533  WARN 10708 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:30:14.875  INFO 10708 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:30:14.875  INFO 10708 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:30:14.879  INFO 10708 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:30:14.895  INFO 10708 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 20 ms
+2022-09-24 15:30:14.917  INFO 10708 --- [main] integration.PersonControllerTest         : Started PersonControllerTest in 4.151 seconds (JVM running for 4.697)
+2022-09-24 15:30:15.310  INFO 10708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getEmailByCity
+2022-09-24 15:30:15.342  INFO 10708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personInfo
+2022-09-24 15:30:15.384  INFO 10708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : PersonByStationList
+2022-09-24 15:30:15.395  INFO 10708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:30:15.413  INFO 10708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person update
+2022-09-24 15:30:15.420  INFO 10708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:30:15.430  INFO 10708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personByAddress
+2022-09-24 15:30:15.442  INFO 10708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : childByAddress
+2022-09-24 15:30:15.453  INFO 10708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getHomeByStation
+2022-09-24 15:30:15.479  INFO 10708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getPhoneByStation
+2022-09-24 15:30:15.486  INFO 10708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:30:15.489  INFO 10708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:30:15.494  INFO 10708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:30:15.496  INFO 10708 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:30:15.506  INFO 10708 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:30:15.507  INFO 10708 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:30:15.509  WARN 10708 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:30:15.509 ERROR 10708 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:30:15.509  WARN 10708 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:30:15.509 ERROR 10708 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:30:15.509  WARN 10708 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:30:15.510  INFO 10708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:30:15.511  INFO 10708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:30:25.048  INFO 6088 --- [main] integration.FireStationControllerTest    : Starting FireStationControllerTest using Java 11.0.13 on DESKTOP-EVEM585 with PID 6088 (started by Ricama in F:\code\alert)
+2022-09-24 15:30:25.049  INFO 6088 --- [main] integration.FireStationControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:30:26.040  INFO 6088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:30:26.101  INFO 6088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:30:26.746  INFO 6088 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:30:27.122  INFO 6088 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:30:27.238  INFO 6088 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:30:27.309  INFO 6088 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:30:27.368  INFO 6088 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:30:27.535  INFO 6088 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:30:28.120  INFO 6088 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:30:28.126  INFO 6088 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:30:28.813  WARN 6088 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:30:30.111  INFO 6088 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:30:30.111  INFO 6088 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:30:30.119  INFO 6088 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:30:30.138  INFO 6088 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 27 ms
+2022-09-24 15:30:30.161  INFO 6088 --- [main] integration.FireStationControllerTest    : Started FireStationControllerTest in 5.401 seconds (JVM running for 7.312)
+2022-09-24 15:30:30.492  INFO 6088 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:30:30.572  INFO 6088 --- [main] c.s.a.controller.FireStationController   : PUT FireStation executed
+2022-09-24 15:30:30.572 ERROR 6088 --- [main] c.s.a.controller.FireStationController   : PUT FireStation.(FireStation :com.safetyNet.alert.model.FireStation@1d101a00
+2022-09-24 15:30:30.579  INFO 6088 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation update.
+2022-09-24 15:30:30.598  INFO 6088 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:30:30.614  INFO 6088 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:30:30.618  INFO 6088 --- [main] c.s.a.controller.FireStationController   : DELETE FireStation executed
+2022-09-24 15:30:30.618 ERROR 6088 --- [main] c.s.a.controller.FireStationController   : DELETE FireStation.(Param :Test
+2022-09-24 15:30:30.618  INFO 6088 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:30:30.625  INFO 6088 --- [main] c.s.a.controller.FireStationController   : POST FireStation executed
+2022-09-24 15:30:30.626 ERROR 6088 --- [main] c.s.a.controller.FireStationController   : POST FireStation.(FireStation :com.safetyNet.alert.model.FireStation@53f55a6c
+2022-09-24 15:30:30.627  INFO 6088 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:30:30.628  INFO 6088 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:30:30.634  INFO 6088 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.MedicalRecordControllerTest], using SpringBootContextLoader
+2022-09-24 15:30:30.635  INFO 6088 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.MedicalRecordControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-09-24 15:30:30.639  INFO 6088 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-09-24 15:30:30.639  INFO 6088 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@16f90f2f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3394479d, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@74819ffd, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7f518927, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@218f7195, org.springframework.test.context.support.DirtiesContextTestExecutionListener@30367296, org.springframework.test.context.transaction.TransactionalTestExecutionListener@48307d1a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3bdbdd8a, org.springframework.test.context.event.EventPublishingTestExecutionListener@618210bd, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@62a36cd9, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@29b0153a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4ce2ba0b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3d145cd2, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@44a83a0d, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6d98ee67]
+2022-09-24 15:30:30.650  INFO 6088 --- [main] c.s.a.c.MedicalRecordController          : POST MedicalRecord executed
+2022-09-24 15:30:30.650 ERROR 6088 --- [main] c.s.a.c.MedicalRecordController          : POST MedicalRecord.(MedicalRecord :com.safetyNet.alert.model.MedicalRecord@5ca1a717
+2022-09-24 15:30:30.650  INFO 6088 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:30:30.654  INFO 6088 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:30:30.656  INFO 6088 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:30:30.658  INFO 6088 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:30:30.670  INFO 6088 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:30:30.674  INFO 6088 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:30:30.676  INFO 6088 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:30:30.678  INFO 6088 --- [main] c.s.a.c.MedicalRecordController          : DELETE MedicalRecord executed
+2022-09-24 15:30:30.678 ERROR 6088 --- [main] c.s.a.c.MedicalRecordController          : DELETE MedicalRecord.(MedicalRecord :com.safetyNet.alert.model.MedicalRecord@26486a0d
+2022-09-24 15:30:30.678  INFO 6088 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord delete
+2022-09-24 15:30:30.697  INFO 6088 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:30:30.699  INFO 6088 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:30:30.700  INFO 6088 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:30:30.703  WARN 6088 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('a' (code 97)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('a' (code 97)): was expecting comma to separate Object entries<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 81]]
+2022-09-24 15:30:30.706  INFO 6088 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.PersonControllerTest], using SpringBootContextLoader
+2022-09-24 15:30:30.707  INFO 6088 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.PersonControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-09-24 15:30:30.709  INFO 6088 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-09-24 15:30:30.709  INFO 6088 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5a046968, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@36c2cbe, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@541cd67f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@70262942, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@9104107, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6b7b9547, org.springframework.test.context.transaction.TransactionalTestExecutionListener@59e61979, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@18cb473e, org.springframework.test.context.event.EventPublishingTestExecutionListener@13582559, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@243e4bd8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4d7ab3f7, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@fcaffd1, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5dea619c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@b5c8172, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@13217ee5]
+2022-09-24 15:30:30.716  INFO 6088 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getEmailByCity
+2022-09-24 15:30:30.733  INFO 6088 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personInfo
+2022-09-24 15:30:30.745  INFO 6088 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : PersonByStationList
+2022-09-24 15:30:30.756  INFO 6088 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:30:30.759  INFO 6088 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person update
+2022-09-24 15:30:30.764  INFO 6088 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:30:30.773  INFO 6088 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personByAddress
+2022-09-24 15:30:30.786  INFO 6088 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : childByAddress
+2022-09-24 15:30:30.793  INFO 6088 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getHomeByStation
+2022-09-24 15:30:30.818  INFO 6088 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getPhoneByStation
+2022-09-24 15:30:30.826  INFO 6088 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:30:30.829  INFO 6088 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:30:30.836  INFO 6088 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:30:30.839  INFO 6088 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:30:30.854  INFO 6088 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:30:30.854  INFO 6088 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:30:30.950  WARN 6088 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:30:30.950 ERROR 6088 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donnÈes est dÈj‡ fermÈe (pour dÈsactiver la fermeture automatique ‡ l'arrÍt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" ‡ l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:30:30.950  WARN 6088 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:30:30.950 ERROR 6088 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donnÈes est dÈj‡ fermÈe (pour dÈsactiver la fermeture automatique ‡ l'arrÍt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" ‡ l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:30:30.951  WARN 6088 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:30:30.951  INFO 6088 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:30:30.954  INFO 6088 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:31:15.019  INFO 5368 --- [restartedMain] com.safetyNet.alert.AlertApplication     : Starting AlertApplication using Java 17.0.1 on DESKTOP-EVEM585 with PID 5368 (F:\code\alert\target\classes started by Ricama in F:\code\alert)
+2022-09-24 15:31:15.020  INFO 5368 --- [restartedMain] com.safetyNet.alert.AlertApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:31:15.053  INFO 5368 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-24 15:31:15.053  INFO 5368 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-24 15:31:15.722  INFO 5368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:31:15.765  INFO 5368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:31:16.359  INFO 5368 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-24 15:31:16.370  INFO 5368 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-24 15:31:16.371  INFO 5368 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-09-24 15:31:16.443  INFO 5368 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-24 15:31:16.444  INFO 5368 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1391 ms
+2022-09-24 15:31:16.643  INFO 5368 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:31:16.792  INFO 5368 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:31:16.801  INFO 5368 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:demo'
+2022-09-24 15:31:17.085  INFO 5368 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:31:17.127  INFO 5368 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:31:17.290  INFO 5368 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:31:17.367  INFO 5368 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:31:17.713  INFO 5368 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:31:17.716  INFO 5368 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:31:18.288  WARN 5368 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:31:19.448  INFO 5368 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-24 15:31:19.454  INFO 5368 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:31:19.496  INFO 5368 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-24 15:31:19.506  INFO 5368 --- [restartedMain] com.safetyNet.alert.AlertApplication     : Started AlertApplication in 4.724 seconds (JVM running for 5.033)
+2022-09-24 15:31:56.260  INFO 5368 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-24 15:31:56.261  INFO 5368 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-24 15:31:56.262  INFO 5368 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-09-24 15:31:56.287  INFO 5368 --- [http-nio-8080-exec-2] com.safetyNet.alert.dao.PersonDaoImpl    : getHomeByStation
+2022-09-24 15:32:13.104  INFO 5368 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:32:13.104  INFO 5368 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:32:13.512  WARN 5368 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de donn√©es est d√©j√† ferm√©e (pour d√©sactiver la fermeture automatique √† l'arr√™t de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" √† l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:32:13.512  INFO 5368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:32:13.512  INFO 5368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:32:24.155  INFO 16048 --- [restartedMain] com.safetyNet.alert.AlertApplication     : Starting AlertApplication using Java 17.0.1 on DESKTOP-EVEM585 with PID 16048 (F:\code\alert\target\classes started by Ricama in F:\code\alert)
+2022-09-24 15:32:24.156  INFO 16048 --- [restartedMain] com.safetyNet.alert.AlertApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:32:24.186  INFO 16048 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-24 15:32:24.186  INFO 16048 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-24 15:32:24.793  INFO 16048 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:32:24.832  INFO 16048 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:32:25.367  INFO 16048 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-24 15:32:25.376  INFO 16048 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-24 15:32:25.376  INFO 16048 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-09-24 15:32:25.442  INFO 16048 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-24 15:32:25.442  INFO 16048 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1256 ms
+2022-09-24 15:32:25.672  INFO 16048 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:32:25.817  INFO 16048 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:32:25.826  INFO 16048 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:demo'
+2022-09-24 15:32:26.119  INFO 16048 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:32:26.172  INFO 16048 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:32:26.322  INFO 16048 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:32:26.393  INFO 16048 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:32:26.727  INFO 16048 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:32:26.731  INFO 16048 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:32:27.166  WARN 16048 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:32:28.091  INFO 16048 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-24 15:32:28.101  INFO 16048 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:32:28.155  INFO 16048 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-24 15:32:28.166  INFO 16048 --- [restartedMain] com.safetyNet.alert.AlertApplication     : Started AlertApplication in 4.243 seconds (JVM running for 4.525)
+2022-09-24 15:32:36.134  INFO 19176 --- [main] integration.FireStationControllerTest    : Starting FireStationControllerTest using Java 11.0.13 on DESKTOP-EVEM585 with PID 19176 (started by Ricama in F:\code\alert)
+2022-09-24 15:32:36.135  INFO 19176 --- [main] integration.FireStationControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:32:37.086  INFO 19176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:32:37.135  INFO 19176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:32:37.783  INFO 19176 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:32:38.133  INFO 19176 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:32:38.240  INFO 19176 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:32:38.294  INFO 19176 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:32:38.337  INFO 19176 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:32:38.478  INFO 19176 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:32:38.940  INFO 19176 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:32:38.948  INFO 19176 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:32:39.610  WARN 19176 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:32:40.954  INFO 19176 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:32:40.954  INFO 19176 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:32:40.960  INFO 19176 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:32:40.982  INFO 19176 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 27 ms
+2022-09-24 15:32:41.006  INFO 19176 --- [main] integration.FireStationControllerTest    : Started FireStationControllerTest in 5.171 seconds (JVM running for 7.047)
+2022-09-24 15:32:41.342  INFO 19176 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:32:41.419  INFO 19176 --- [main] c.s.a.controller.FireStationController   : PUT FireStation executed
+2022-09-24 15:32:41.419 ERROR 19176 --- [main] c.s.a.controller.FireStationController   : PUT FireStation.(FireStation :com.safetyNet.alert.model.FireStation@751240b4
+2022-09-24 15:32:41.425  INFO 19176 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation update.
+2022-09-24 15:32:41.445  INFO 19176 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:32:41.461  INFO 19176 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:32:41.465  INFO 19176 --- [main] c.s.a.controller.FireStationController   : DELETE FireStation executed
+2022-09-24 15:32:41.465 ERROR 19176 --- [main] c.s.a.controller.FireStationController   : DELETE FireStation.(Param :Test
+2022-09-24 15:32:41.465  INFO 19176 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:32:41.471  INFO 19176 --- [main] c.s.a.controller.FireStationController   : POST FireStation executed
+2022-09-24 15:32:41.472 ERROR 19176 --- [main] c.s.a.controller.FireStationController   : POST FireStation.(FireStation :com.safetyNet.alert.model.FireStation@3ed58e68
+2022-09-24 15:32:41.473  INFO 19176 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:32:41.474  INFO 19176 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:32:41.481  INFO 19176 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.MedicalRecordControllerTest], using SpringBootContextLoader
+2022-09-24 15:32:41.482  INFO 19176 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.MedicalRecordControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-09-24 15:32:41.485  INFO 19176 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-09-24 15:32:41.485  INFO 19176 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@39f2feac, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3c0bebaa, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@19f7050b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7a1bea7f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@54b26c0e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@37878b89, org.springframework.test.context.transaction.TransactionalTestExecutionListener@16f90f2f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3394479d, org.springframework.test.context.event.EventPublishingTestExecutionListener@74819ffd, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7f518927, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@218f7195, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@30367296, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@48307d1a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3bdbdd8a, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@618210bd]
+2022-09-24 15:32:41.495  INFO 19176 --- [main] c.s.a.c.MedicalRecordController          : POST MedicalRecord executed
+2022-09-24 15:32:41.496 ERROR 19176 --- [main] c.s.a.c.MedicalRecordController          : POST MedicalRecord.(MedicalRecord :com.safetyNet.alert.model.MedicalRecord@47fcdd15
+2022-09-24 15:32:41.496  INFO 19176 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:32:41.499  INFO 19176 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:32:41.500  INFO 19176 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:32:41.502  INFO 19176 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:32:41.515  INFO 19176 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:32:41.519  INFO 19176 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:32:41.520  INFO 19176 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:32:41.521  INFO 19176 --- [main] c.s.a.c.MedicalRecordController          : DELETE MedicalRecord executed
+2022-09-24 15:32:41.522 ERROR 19176 --- [main] c.s.a.c.MedicalRecordController          : DELETE MedicalRecord.(MedicalRecord :com.safetyNet.alert.model.MedicalRecord@318eba57
+2022-09-24 15:32:41.522  INFO 19176 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord delete
+2022-09-24 15:32:41.539  INFO 19176 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:32:41.542  INFO 19176 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:32:41.544  INFO 19176 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:32:41.547  WARN 19176 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('a' (code 97)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('a' (code 97)): was expecting comma to separate Object entries<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 81]]
+2022-09-24 15:32:41.550  INFO 19176 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.PersonControllerTest], using SpringBootContextLoader
+2022-09-24 15:32:41.550  INFO 19176 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.PersonControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-09-24 15:32:41.552  INFO 19176 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-09-24 15:32:41.553  INFO 19176 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@25e25bbe, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@148d0ebb, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@288e37e9, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1108d5f1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@260053c5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5a046968, org.springframework.test.context.transaction.TransactionalTestExecutionListener@36c2cbe, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@541cd67f, org.springframework.test.context.event.EventPublishingTestExecutionListener@70262942, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@9104107, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6b7b9547, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@59e61979, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@18cb473e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@13582559, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@243e4bd8]
+2022-09-24 15:32:41.560  INFO 19176 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getEmailByCity
+2022-09-24 15:32:41.574  INFO 19176 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personInfo
+2022-09-24 15:32:41.584  INFO 19176 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : PersonByStationList
+2022-09-24 15:32:41.594  INFO 19176 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:32:41.597  INFO 19176 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person update
+2022-09-24 15:32:41.603  INFO 19176 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:32:41.609  INFO 19176 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personByAddress
+2022-09-24 15:32:41.619  INFO 19176 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : childByAddress
+2022-09-24 15:32:41.626  INFO 19176 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getHomeByStation
+2022-09-24 15:32:41.637  INFO 19176 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getPhoneByStation
+2022-09-24 15:32:41.645  INFO 19176 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:32:41.648  INFO 19176 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:32:41.653  INFO 19176 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:32:41.656  INFO 19176 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:32:41.671  INFO 19176 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:32:41.671  INFO 19176 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:32:41.769  WARN 19176 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:32:41.769 ERROR 19176 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donnÈes est dÈj‡ fermÈe (pour dÈsactiver la fermeture automatique ‡ l'arrÍt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" ‡ l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:32:41.770  WARN 19176 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:32:41.770 ERROR 19176 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donnÈes est dÈj‡ fermÈe (pour dÈsactiver la fermeture automatique ‡ l'arrÍt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" ‡ l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:32:41.770  WARN 19176 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:32:41.770  INFO 19176 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:32:41.773  INFO 19176 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-24 15:36:49.072  INFO 13200 --- [main] integration.FireStationControllerTest    : Starting FireStationControllerTest using Java 11.0.13 on DESKTOP-EVEM585 with PID 13200 (started by Ricama in F:\code\alert)
+2022-09-24 15:36:49.073  INFO 13200 --- [main] integration.FireStationControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2022-09-24 15:36:50.095  INFO 13200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-24 15:36:50.171  INFO 13200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 5 JPA repository interfaces.
+2022-09-24 15:36:50.802  INFO 13200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-24 15:36:51.149  INFO 13200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-24 15:36:51.241  INFO 13200 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-24 15:36:51.292  INFO 13200 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-09-24 15:36:51.335  INFO 13200 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-24 15:36:51.502  INFO 13200 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-24 15:36:52.030  INFO 13200 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-24 15:36:52.036  INFO 13200 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:36:52.750  WARN 13200 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-24 15:36:54.227  INFO 13200 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-09-24 15:36:54.227  INFO 13200 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-09-24 15:36:54.235  INFO 13200 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-09-24 15:36:54.254  INFO 13200 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 27 ms
+2022-09-24 15:36:54.276  INFO 13200 --- [main] integration.FireStationControllerTest    : Started FireStationControllerTest in 5.48 seconds (JVM running for 7.451)
+2022-09-24 15:36:54.598  INFO 13200 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:36:54.673  INFO 13200 --- [main] c.s.a.controller.FireStationController   : PUT FireStation executed
+2022-09-24 15:36:54.673 ERROR 13200 --- [main] c.s.a.controller.FireStationController   : PUT FireStation.(FireStation :com.safetyNet.alert.model.FireStation@751240b4
+2022-09-24 15:36:54.679  INFO 13200 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation update.
+2022-09-24 15:36:54.699  INFO 13200 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:36:54.714  INFO 13200 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:36:54.718  INFO 13200 --- [main] c.s.a.controller.FireStationController   : DELETE FireStation executed
+2022-09-24 15:36:54.719 ERROR 13200 --- [main] c.s.a.controller.FireStationController   : DELETE FireStation.(Param :Test
+2022-09-24 15:36:54.719  INFO 13200 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:36:54.726  INFO 13200 --- [main] c.s.a.controller.FireStationController   : POST FireStation executed
+2022-09-24 15:36:54.726 ERROR 13200 --- [main] c.s.a.controller.FireStationController   : POST FireStation.(FireStation :com.safetyNet.alert.model.FireStation@3ed58e68
+2022-09-24 15:36:54.727  INFO 13200 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation create.
+2022-09-24 15:36:54.728  INFO 13200 --- [main] c.s.alert.dao.FirestationsDaoImpl        : FireStation delete by address
+2022-09-24 15:36:54.734  INFO 13200 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.MedicalRecordControllerTest], using SpringBootContextLoader
+2022-09-24 15:36:54.735  INFO 13200 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.MedicalRecordControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-09-24 15:36:54.738  INFO 13200 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-09-24 15:36:54.739  INFO 13200 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@39f2feac, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3c0bebaa, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@19f7050b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7a1bea7f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@54b26c0e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@37878b89, org.springframework.test.context.transaction.TransactionalTestExecutionListener@16f90f2f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3394479d, org.springframework.test.context.event.EventPublishingTestExecutionListener@74819ffd, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7f518927, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@218f7195, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@30367296, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@48307d1a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3bdbdd8a, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@618210bd]
+2022-09-24 15:36:54.749  INFO 13200 --- [main] c.s.a.c.MedicalRecordController          : POST MedicalRecord executed
+2022-09-24 15:36:54.749 ERROR 13200 --- [main] c.s.a.c.MedicalRecordController          : POST MedicalRecord.(MedicalRecord :com.safetyNet.alert.model.MedicalRecord@47fcdd15
+2022-09-24 15:36:54.749  INFO 13200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:36:54.753  INFO 13200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:36:54.755  INFO 13200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:36:54.756  INFO 13200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:36:54.779  INFO 13200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:36:54.782  INFO 13200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:36:54.783  INFO 13200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:36:54.786  INFO 13200 --- [main] c.s.a.c.MedicalRecordController          : DELETE MedicalRecord executed
+2022-09-24 15:36:54.787 ERROR 13200 --- [main] c.s.a.c.MedicalRecordController          : DELETE MedicalRecord.(MedicalRecord :com.safetyNet.alert.model.MedicalRecord@318eba57
+2022-09-24 15:36:54.787  INFO 13200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord delete
+2022-09-24 15:36:54.808  INFO 13200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : MedicalRecord create
+2022-09-24 15:36:54.810  INFO 13200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : medication save
+2022-09-24 15:36:54.811  INFO 13200 --- [main] c.s.alert.dao.MedicalrecordsDaoImpl      : allergy save
+2022-09-24 15:36:54.815  WARN 13200 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('a' (code 97)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('a' (code 97)): was expecting comma to separate Object entries<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 81]]
+2022-09-24 15:36:54.819  INFO 13200 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [integration.PersonControllerTest], using SpringBootContextLoader
+2022-09-24 15:36:54.820  INFO 13200 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [integration.PersonControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-09-24 15:36:54.823  INFO 13200 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-09-24 15:36:54.823  INFO 13200 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@25e25bbe, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@148d0ebb, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@288e37e9, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1108d5f1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@260053c5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5a046968, org.springframework.test.context.transaction.TransactionalTestExecutionListener@36c2cbe, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@541cd67f, org.springframework.test.context.event.EventPublishingTestExecutionListener@70262942, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@9104107, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6b7b9547, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@59e61979, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@18cb473e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@13582559, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@243e4bd8]
+2022-09-24 15:36:54.831  INFO 13200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getEmailByCity
+2022-09-24 15:36:54.847  INFO 13200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personInfo
+2022-09-24 15:36:54.863  INFO 13200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : PersonByStationList
+2022-09-24 15:36:54.873  INFO 13200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:36:54.877  INFO 13200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person update
+2022-09-24 15:36:54.882  INFO 13200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:36:54.889  INFO 13200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : personByAddress
+2022-09-24 15:36:54.902  INFO 13200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : childByAddress
+2022-09-24 15:36:54.911  INFO 13200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getHomeByStation
+2022-09-24 15:36:54.925  INFO 13200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : getPhoneByStation
+2022-09-24 15:36:54.933  INFO 13200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:36:54.936  INFO 13200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:36:54.942  INFO 13200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person create
+2022-09-24 15:36:54.946  INFO 13200 --- [main] com.safetyNet.alert.dao.PersonDaoImpl    : Person delete
+2022-09-24 15:36:54.961  INFO 13200 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-24 15:36:54.961  INFO 13200 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-24 15:36:55.054  WARN 13200 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:36:55.054 ERROR 13200 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donnÈes est dÈj‡ fermÈe (pour dÈsactiver la fermeture automatique ‡ l'arrÍt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" ‡ l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:36:55.055  WARN 13200 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-09-24 15:36:55.055 ERROR 13200 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : La base de donnÈes est dÈj‡ fermÈe (pour dÈsactiver la fermeture automatique ‡ l'arrÍt de la VM, ajoutez "; DB_CLOSE_ON_EXIT = FALSE" ‡ l'URL db)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-212]
+2022-09-24 15:36:55.055  WARN 13200 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2022-09-24 15:36:55.055  INFO 13200 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-24 15:36:55.058  INFO 13200 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

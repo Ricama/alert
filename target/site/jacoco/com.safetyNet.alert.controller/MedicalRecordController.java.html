@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MedicalRecordController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">alert</a> &gt; <a href="index.source.html" class="el_package">com.safetyNet.alert.controller</a> &gt; <span class="el_source">MedicalRecordController.java</span></div><h1>MedicalRecordController.java</h1><pre class="source lang-java linenums">package com.safetyNet.alert.controller;
+
+import com.safetyNet.alert.dao.MedicalRecordDao;
+import com.safetyNet.alert.model.MedicalRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping(&quot;/medicalRecord&quot;)
+public class MedicalRecordController {
+<span class="fc" id="L12">    Logger logger = LoggerFactory.getLogger(MedicalRecordController.class);</span>
+
+    private final MedicalRecordDao medicalRecordDao;
+
+<span class="fc" id="L16">    MedicalRecordController(MedicalRecordDao medicalRecordDao){</span>
+
+<span class="fc" id="L18">        this.medicalRecordDao = medicalRecordDao;</span>
+<span class="fc" id="L19">    }</span>
+
+    /**
+     * Mapping post medicalRecord
+     */
+    @PostMapping
+     public MedicalRecord postMedicalRecords(@RequestBody MedicalRecord medicalRecord){
+<span class="fc" id="L26">        logger.info(&quot;POST MedicalRecord executed&quot;);</span>
+<span class="fc" id="L27">        logger.error(&quot;POST MedicalRecord.(MedicalRecord :&quot;+medicalRecord.toString()+&quot;&quot;);</span>
+<span class="fc" id="L28">      return medicalRecordDao.create(medicalRecord);</span>
+    }
+
+    /**
+     * Mapping put medicalRecord
+     */
+    @PutMapping
+     public MedicalRecord putMedicalRecords(@RequestBody MedicalRecord medicalRecord){
+<span class="nc" id="L36">        logger.info(&quot;PUT MedicalRecord executed&quot;);</span>
+<span class="nc" id="L37">        logger.error(&quot;PUT MedicalRecord.(MedicalRecord :&quot;+medicalRecord.toString()+&quot;&quot;);</span>
+<span class="nc" id="L38">        return medicalRecordDao.updateMedical(medicalRecord);</span>
+    }
+
+    /**
+     * Mapping delete medicalRecord
+     */
+    @DeleteMapping
+     public MedicalRecord deleteMedicalRecords(@RequestBody MedicalRecord medicalRecord){
+<span class="fc" id="L46">        logger.info(&quot;DELETE MedicalRecord executed&quot;);</span>
+<span class="fc" id="L47">        logger.error(&quot;DELETE MedicalRecord.(MedicalRecord :&quot;+medicalRecord.toString()+&quot;&quot;);</span>
+<span class="fc" id="L48">        return medicalRecordDao.deleteMedical(medicalRecord.getFirstName(), medicalRecord.getLastName());</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
