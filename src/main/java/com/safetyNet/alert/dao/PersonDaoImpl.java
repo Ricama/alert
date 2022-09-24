@@ -42,7 +42,7 @@ public class PersonDaoImpl implements PersonDao {
         logger.info("Person create");
         FireStation fireStation = fireStationRepository.findFirstByAddress(person.getAddress());
         person.setFireStation(fireStation);
-        logger.debug("PersonDaoImpl create. (Person: " + person.toString() + " FireStation: " + fireStation.toString() + ")");
+        logger.debug("PersonDaoImpl create. (Person: " + person.toString() + ")");
         return personRepository.save(person);
     }
 
@@ -57,7 +57,7 @@ public class PersonDaoImpl implements PersonDao {
         personToUpdate.setPhone(person.getPhone());
         personToUpdate.setEmail(person.getEmail());
         personToUpdate.setFireStation(fireStationToUpdate);
-        logger.debug("PersonDaoImpl update. (Person: " + person.toString() + " PersonToUpdate: " + personToUpdate.toString() + " FireStationToUpdate: " + fireStationToUpdate.toString() + ")");
+        logger.debug("PersonDaoImpl update. (Person: " + person.toString() + " PersonToUpdate: " + personToUpdate.toString() + ")");
         personRepository.save(personToUpdate);
         return personToUpdate;
     }

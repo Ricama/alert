@@ -44,7 +44,7 @@ public class FirestationsDaoImpl implements FirestationDao {
 
     @Override
     public FireStation delete(String fire) {
-        if (fire == "1" || fire == "2" || fire == "3" || fire == "4") {
+        if (fire == "1" || fire == "2" || fire == "3" || fire == "4" || fire == "5") {
             logger.info("FireStation delete by station number");
             FireStation fireStationToDelete = fireStationRepository.findByStation(fire);
             fireStationRepository.delete(fireStationToDelete);

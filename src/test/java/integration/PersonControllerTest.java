@@ -94,12 +94,9 @@ public class PersonControllerTest {
 
     @Test
     public void getHomeByStationTest() throws Exception {
-        mockMvc.perform(get("/flood/stations?station=3"))
+        mockMvc.perform(get("/flood/stations?station=4"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsString("1509 Culver St")))
-                .andExpect(content().string(containsString("834 Binoc Ave")))
-                .andExpect(content().string(containsString("748 Townings Dr")))
-                .andExpect(content().string(containsString("112 Steppes Pl")));
+                .andExpect(content().string(containsString("489 Manchester St")));
     }
 
     @Test

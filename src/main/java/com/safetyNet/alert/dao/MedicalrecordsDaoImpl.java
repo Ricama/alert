@@ -47,7 +47,7 @@ public class MedicalrecordsDaoImpl implements MedicalRecordDao {
         Person person = personRepository.findByFirstNameAndLastName(medicalrecord.getFirstName(), medicalrecord.getLastName());
         medicalrecord.setPerson(person);
         medicalRecordRepository.save(medicalrecord);
-        logger.debug("MedicalRecordImpl create. (MedicalRecord: "+medicalrecord.toString()+"Person: "+person.toString()+")");
+        logger.debug("MedicalRecordImpl create. (MedicalRecord: "+medicalrecord.toString()+"Person: "+person+")");
         if (medicalrecord.getMedications() != null) {
             for (int i = 0; i < medicalrecord.getMedications().size(); i++) {
                 Medication medication = new Medication(medicalrecord.getMedications().get(i).getMedications(), medicalrecord);
@@ -74,7 +74,7 @@ public class MedicalrecordsDaoImpl implements MedicalRecordDao {
         medicalRecordToUpdate.setMedications(medicalrecord.getMedications());
         medicalRecordToUpdate.setAllergies(medicalrecord.getAllergies());
         medicalRecordToUpdate.setPerson(person);
-        logger.debug("MedicalRecordImpl update debug. (MedicalRecord: "+medicalrecord.toString()+" MedicalRecordToUpdate: "+medicalRecordToUpdate.toString()+" Person: "+person.toString()+")");
+       logger.debug("MedicalRecordImpl update debug. (MedicalRecord: "+medicalrecord.toString()+" MedicalRecordToUpdate: "+medicalRecordToUpdate.toString()+" Person: "+person+")");
         medicalRecordRepository.save(medicalRecordToUpdate);
         for (int i = 0; i < medicalRecordToUpdate.getMedications().size(); i++) {
             logger.info("medication update");
