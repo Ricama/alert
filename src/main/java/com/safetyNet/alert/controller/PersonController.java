@@ -1,11 +1,9 @@
 package com.safetyNet.alert.controller;
 
-import com.safetyNet.alert.dao.PersonDao;
+import com.safetyNet.alert.model.dao.PersonDao;
 import com.safetyNet.alert.model.*;
-import com.safetyNet.alert.repository.PersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

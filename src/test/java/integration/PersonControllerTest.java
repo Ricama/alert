@@ -1,7 +1,7 @@
 package integration;
 
 import com.safetyNet.alert.AlertApplication;
-import com.safetyNet.alert.dao.PersonDao;
+import com.safetyNet.alert.model.dao.PersonDao;
 import com.safetyNet.alert.model.FireStation;
 import com.safetyNet.alert.model.MedicalRecord;
 import com.safetyNet.alert.model.Person;

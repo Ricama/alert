@@ -4,7 +4,7 @@ import com.safetyNet.alert.model.FireStation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
-import com.safetyNet.alert.dao.FirestationDao;
+import com.safetyNet.alert.model.dao.FirestationDao;
 
 @RestController
 @RequestMapping

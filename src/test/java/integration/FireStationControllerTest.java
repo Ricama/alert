@@ -1,7 +1,7 @@
 package integration;
 
 import com.safetyNet.alert.AlertApplication;
-import com.safetyNet.alert.dao.FirestationDao;
+import com.safetyNet.alert.model.dao.FirestationDao;
 
 import com.safetyNet.alert.model.FireStation;
 import org.junit.jupiter.api.Test;

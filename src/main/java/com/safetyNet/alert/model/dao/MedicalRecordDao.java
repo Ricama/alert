@@ -1,4 +1,4 @@
-package com.safetyNet.alert.dao;
+package com.safetyNet.alert.model.dao;
 
 import com.safetyNet.alert.model.MedicalRecord;
 

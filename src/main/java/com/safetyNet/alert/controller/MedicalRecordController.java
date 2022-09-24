@@ -1,6 +1,6 @@
 package com.safetyNet.alert.controller;
 
-import com.safetyNet.alert.dao.MedicalRecordDao;
+import com.safetyNet.alert.model.dao.MedicalRecordDao;
 import com.safetyNet.alert.model.MedicalRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

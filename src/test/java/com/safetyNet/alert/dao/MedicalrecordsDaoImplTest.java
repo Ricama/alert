@@ -2,6 +2,8 @@ package com.safetyNet.alert.dao;
 
 import com.safetyNet.alert.model.*;
 
+import com.safetyNet.alert.model.dao.MedicalRecordDao;
+import com.safetyNet.alert.model.dao.MedicalrecordsDaoImpl;
 import com.safetyNet.alert.repository.AllergyRepository;
 import com.safetyNet.alert.repository.MedicalRecordRepository;
 import com.safetyNet.alert.repository.MedicationRepository;

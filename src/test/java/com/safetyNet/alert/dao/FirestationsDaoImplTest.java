@@ -1,18 +1,15 @@
 package com.safetyNet.alert.dao;
 
 import com.safetyNet.alert.model.*;
+import com.safetyNet.alert.model.dao.FirestationDao;
+import com.safetyNet.alert.model.dao.FirestationsDaoImpl;
 import com.safetyNet.alert.repository.FireStationRepository;
-import com.safetyNet.alert.repository.MedicalRecordRepository;
-import com.safetyNet.alert.repository.PersonRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;

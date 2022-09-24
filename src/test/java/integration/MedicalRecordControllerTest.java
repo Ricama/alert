@@ -1,11 +1,9 @@
 package integration;
 
 import com.safetyNet.alert.AlertApplication;
-import com.safetyNet.alert.dao.MedicalRecordDao;
+import com.safetyNet.alert.model.dao.MedicalRecordDao;
 //import com.safetyNet.alert.dao.PersonDao;
 import com.safetyNet.alert.model.*;
-import com.safetyNet.alert.repository.AllergyRepository;
-import com.safetyNet.alert.repository.MedicationRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -16,7 +14,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 @SpringBootTest(classes = AlertApplication.class)

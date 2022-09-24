@@ -1,6 +1,8 @@
 package com.safetyNet.alert.dao;
 
 import com.safetyNet.alert.model.*;
+import com.safetyNet.alert.model.dao.PersonDao;
+import com.safetyNet.alert.model.dao.PersonDaoImpl;
 import com.safetyNet.alert.repository.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
