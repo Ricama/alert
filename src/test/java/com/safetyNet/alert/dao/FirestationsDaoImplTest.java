@@ -50,7 +50,6 @@ class FirestationsDaoImplTest {
         );
     }
 
-    @DisplayName("de")
     @Test
     void deleteTest() {
         FireStation fireStation = new FireStation("1509 Culver St", "3");

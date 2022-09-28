@@ -27,9 +27,14 @@ public class PersonController {
      */
     @PostMapping(path = "/person")
     public Person postNewPerson(@RequestBody Person person) {
+        try {
+            logger.info("POST Person executed");
+            return personDao.create(person);
+        }catch (Exception e){
+            logger.error("POST Person.(Exception: "+e+" Person :"+person.toString()+"");
+            return null;
+        }
 
-
-        return personDao.create(person);
     }
 
     /**
@@ -37,8 +42,14 @@ public class PersonController {
      */
     @PutMapping(path = "/person")
     public Person putPerson(@RequestBody Person person) {
+        try {
+            logger.info("PUT Person executed");
+            return personDao.update(person);
+        }catch (Exception e){
+            logger.error("Put Person.(Exception: "+e+" Person :"+person.toString()+"");
+            return null;
+        }
 
-        return personDao.update(person);
     }
 
     /**
@@ -46,8 +57,14 @@ public class PersonController {
      */
     @DeleteMapping(path = "/person")
     public Person deletePerson(@RequestBody Person person) {
+        try {
+            logger.info("Delete Person executed");
+            return personDao.delete(person.getFirstName(), person.getLastName());
+        }catch (Exception e){
+            logger.error("Delete Person.(Exception: "+e+" Person :"+person.toString()+"");
+            return null;
+        }
 
-        return personDao.delete(person.getFirstName(), person.getLastName());
     }
 
     /**
@@ -56,8 +73,14 @@ public class PersonController {
      */
     @GetMapping(path = "/firestation")
     public PersonByStationList getPersonByStation(@RequestParam String stationNumber) {
+        try {
+            logger.info("getPersonByStation executed");
+            return personDao.getPersonByStation(stationNumber);
+        }catch (Exception e){
+            logger.error("getPersonByStation.(Exception: "+e+" stationNumber :"+stationNumber+"");
+            return null;
+        }
 
-        return personDao.getPersonByStation(stationNumber);
     }
 
     /**
@@ -66,8 +89,14 @@ public class PersonController {
      */
     @GetMapping(path = "/childAlert")
     public ChildByAddress childByAddress(@RequestParam String address) {
+        try {
+            logger.info("childByAddress executed");
+            return personDao.childByAddress(address);
+        }catch (Exception e){
+            logger.error("childByAddress.(Exception: "+e+" address :"+address+"");
+            return null;
+        }
 
-        return personDao.childByAddress(address);
     }
 
     /**
@@ -76,7 +105,14 @@ public class PersonController {
      */
     @GetMapping(path = "/phoneAlert")
     public List<String> getPhoneByStation(@RequestParam String firestation) {
-        return personDao.getPhoneByStation(firestation);
+        try {
+            logger.info("getPhoneByStation executed");
+            return personDao.getPhoneByStation(firestation);
+        }catch (Exception e){
+            logger.error("getPhoneByStation.(Exception: "+e+" firestation :"+firestation+"");
+            return null;
+        }
+
     }
 
     /**
@@ -85,7 +121,14 @@ public class PersonController {
      */
     @GetMapping(path = "/fire")
     public List<PersonByAddress> personByAddress(@RequestParam String address) {
-        return personDao.personByAddress(address);
+        try {
+            logger.info("personByAddress executed");
+            return personDao.personByAddress(address);
+        }catch (Exception e){
+            logger.error("personByAddress.(Exception: "+e+" address :"+address+"");
+            return null;
+        }
+
     }
 
     /**
@@ -94,8 +137,14 @@ public class PersonController {
      */
     @GetMapping(path = "/flood/stations")
     public List<Home> getHomeByStation(@RequestParam String station) {
+        try {
+            logger.info("getHomeByStation executed");
+            return personDao.getHomeByStation(station);
+        }catch (Exception e){
+            logger.error("getHomeByStation.(Exception: "+e+" station :"+station+"");
+            return null;
+        }
 
-        return personDao.getHomeByStation(station);
     }
 
     /**
@@ -104,8 +153,14 @@ public class PersonController {
      */
     @GetMapping(path = "/personInfo")
     public PersonInfo personInfo(@RequestParam String firstName, @RequestParam String lastName) {
+        try {
+            logger.info("personInfo executed");
+            return personDao.personInfo(firstName, lastName);
+        }catch (Exception e){
+            logger.error("personInfo.(Exception: "+e+" firstName :"+firstName+" lastName"+lastName+"");
+            return null;
+        }
 
-        return personDao.personInfo(firstName, lastName);
     }
 
     /**
@@ -115,6 +170,13 @@ public class PersonController {
      */
     @GetMapping(path = "/communityEmail")
     public List<String> getPersonByEmail(@RequestParam String city) {
-        return personDao.getEmailByCity(city);
+        try {
+            logger.info("getPersonByEmail executed");
+            return personDao.getEmailByCity(city);
+        }catch (Exception e){
+            logger.error("getPersonByEmail.(Exception: "+e+" city :"+city+")");
+            return null;
+        }
+
     }
 }

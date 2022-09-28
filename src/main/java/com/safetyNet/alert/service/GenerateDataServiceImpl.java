@@ -77,7 +77,7 @@ public class GenerateDataServiceImpl implements GenerateDataService {
 
 
             } catch (Exception e) {
-                logger.debug("generateData()", e);
+                logger.error("generateData()", e);
             }
         }
     }

@@ -23,9 +23,13 @@ public class MedicalRecordController {
      */
     @PostMapping
      public MedicalRecord postMedicalRecords(@RequestBody MedicalRecord medicalRecord){
-        logger.info("POST MedicalRecord executed");
-        logger.error("POST MedicalRecord.(MedicalRecord :"+medicalRecord.toString()+"");
-      return medicalRecordDao.create(medicalRecord);
+        try {
+            logger.info("POST MedicalRecord executed");
+            return medicalRecordDao.create(medicalRecord);
+        }catch (Exception e ){
+            logger.error("POST MedicalRecord.(Exception: "+e+" MedicalRecord :" + medicalRecord.toString() + "");
+            return null;
+        }
     }
 
     /**
@@ -33,9 +37,13 @@ public class MedicalRecordController {
      */
     @PutMapping
      public MedicalRecord putMedicalRecords(@RequestBody MedicalRecord medicalRecord){
-        logger.info("PUT MedicalRecord executed");
-        logger.error("PUT MedicalRecord.(MedicalRecord :"+medicalRecord.toString()+"");
-        return medicalRecordDao.updateMedical(medicalRecord);
+        try {
+            logger.info("PUT MedicalRecord executed");
+            return medicalRecordDao.updateMedical(medicalRecord);
+        }catch (Exception e ){
+            logger.error("PUT MedicalRecord.(Exception: "+e+" MedicalRecord :" + medicalRecord.toString() + "");
+            return null;
+        }
     }
 
     /**
@@ -43,9 +51,13 @@ public class MedicalRecordController {
      */
     @DeleteMapping
      public MedicalRecord deleteMedicalRecords(@RequestBody MedicalRecord medicalRecord){
+        try {
         logger.info("DELETE MedicalRecord executed");
-        logger.error("DELETE MedicalRecord.(MedicalRecord :"+medicalRecord.toString()+"");
         return medicalRecordDao.deleteMedical(medicalRecord.getFirstName(), medicalRecord.getLastName());
+        }catch (Exception e ) {
+            logger.error("DELETE MedicalRecord.(Exception: "+e+" MedicalRecord :"+medicalRecord.toString()+"");
+            return null;
+        }
     }
 
 }

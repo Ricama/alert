@@ -5,18 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81315f23-4586-41df-87ee-3cef2651628e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/dao/FirestationsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/dao/FirestationsDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/dao/MedicalrecordsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/dao/MedicalrecordsDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/dao/PersonDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/dao/PersonDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/integration/PersonControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/integration/PersonControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/logfile.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logfile.log.2022-09-20.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/controller/FireStationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/controller/FireStationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/controller/MedicalRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/controller/MedicalRecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/controller/PersonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/model/dao/FirestationsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/model/dao/FirestationsDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/model/dao/MedicalrecordsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/model/dao/MedicalrecordsDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/model/dao/PersonDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/model/dao/PersonDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/repository/FireStationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/repository/FireStationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/repository/MedicalRecordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/repository/MedicalRecordRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/service/GenerateDataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safetyNet/alert/service/GenerateDataServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/safetyNet/alert/dao/FirestationsDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/safetyNet/alert/dao/FirestationsDaoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/controller/FireStationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/controller/FireStationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/controller/MedicalRecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/controller/MedicalRecordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/dao/FirestationsDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/dao/FirestationsDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/dao/MedicalrecordsDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/dao/MedicalrecordsDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/model/FireStation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/model/FireStation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/model/MedicalRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/model/MedicalRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/model/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/controller/PersonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/controller/PersonController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/repository/MedicalRecordRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/repository/MedicalRecordRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/service/GenerateDataServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safetyNet/alert/service/GenerateDataServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco-sessions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/site/jacoco/jacoco.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.safetyNet.alert.dao.FirestationsDaoImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.safetyNet.alert.dao.FirestationsDaoImplTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.safetyNet.alert.dao.MedicalrecordsDaoImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.safetyNet.alert.dao.MedicalrecordsDaoImplTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.safetyNet.alert.dao.PersonsDaoImplTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.safetyNet.alert.dao.PersonsDaoImplTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-integration.FireStationControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-integration.FireStationControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-integration.MedicalRecordControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-integration.MedicalRecordControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-integration.PersonControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-integration.PersonControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.safetyNet.alert.dao.FirestationsDaoImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.safetyNet.alert.dao.FirestationsDaoImplTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.safetyNet.alert.dao.PersonsDaoImplTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.safetyNet.alert.dao.PersonsDaoImplTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/integration.FireStationControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/integration.FireStationControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/integration.MedicalRecordControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/integration.MedicalRecordControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/integration.PersonControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/integration.PersonControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/safetyNet/alert/dao/FirestationsDaoImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/safetyNet/alert/dao/FirestationsDaoImplTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +56,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -364,7 +385,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663685546250</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="v1">
+      <created>1664033536185</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1664033536185</updated>
+    </task>
+    <task id="LOCAL-00028" summary="v1">
+      <created>1664033592314</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1664033592314</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -402,6 +437,7 @@
     <MESSAGE value="100% Test" />
     <MESSAGE value="Ajout des logs" />
     <MESSAGE value="Enregistrement des logs dans un fichier" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enregistrement des logs dans un fichier" />
+    <MESSAGE value="v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1" />
   </component>
 </project>

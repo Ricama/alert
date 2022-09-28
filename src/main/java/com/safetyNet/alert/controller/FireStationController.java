@@ -24,9 +24,13 @@ public class FireStationController {
      */
     @PostMapping(path = "/firestation")
     public FireStation postFirestation(@RequestBody FireStation firestation) {
+        try{
         logger.info("POST FireStation executed");
-        logger.error("POST FireStation.(FireStation :"+firestation.toString()+"");
         return firestationsDao.create(firestation);
+        }catch (Exception e){
+            logger.error("POST FireStation.(Exception: "+e+" FireStation :"+firestation.toString()+"");
+            return null;
+        }
     }
 
     /**
@@ -34,9 +38,13 @@ public class FireStationController {
      */
     @PutMapping(path = "/firestation")
     public FireStation putFirestation(@RequestBody FireStation firestation) {
-        logger.info("PUT FireStation executed");
-        logger.error("PUT FireStation.(FireStation :"+firestation.toString()+"");
-        return firestationsDao.update(firestation);
+        try {
+            logger.info("PUT FireStation executed");
+            return firestationsDao.update(firestation);
+        }catch (Exception e ){
+            logger.error("PUT FireStation.(Exception: "+e+" FireStation :" + firestation.toString() + "");
+            return null;
+        }
     }
 
     /**
@@ -44,9 +52,13 @@ public class FireStationController {
      */
     @DeleteMapping(path = "/firestation/{fire}")
     public FireStation deleteStationFirestation(@PathVariable String fire) {
-        logger.info("DELETE FireStation executed");
-        logger.error("DELETE FireStation.(Param :"+fire+"");
-        return firestationsDao.delete(fire);
+        try {
+            logger.info("DELETE FireStation executed");
+            return firestationsDao.delete(fire);
+        }catch (Exception e ){
+            logger.error("DELETE FireStation.(Exception: "+e+" Param :" + fire + "");
+            return null;
+        }
     }
 
 }
